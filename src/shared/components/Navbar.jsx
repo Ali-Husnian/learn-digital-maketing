@@ -91,15 +91,17 @@ export default function Navbar() {
           } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
         >
           <section ref={animationParent} className="flex items-center gap-10">
-            {!isSideMenuOpen && (
-              <Image
-                src="/logo.png"
-                width={100}
-                height={100}
-                alt="logo"
-                className="hidden max-sm:block"
-              />
-            )}
+            <Link href="/">
+              {!isSideMenuOpen && (
+                <Image
+                  src="/logo.png"
+                  width={100}
+                  height={100}
+                  alt="logo"
+                  className="hidden max-sm:block"
+                />
+              )}
+            </Link>
             <div className="hidden md:flex items-center gap-4 transition-all">
               {navItems.map((d, i) => (
                 <div
@@ -158,7 +160,9 @@ function MobileNav({ closeSideMenu }) {
           />
         </section>
         <div className="flex flex-col text-base gap-2 transition-all">
-          <Image src="/logo.png" width={150} height={75} alt="logo" />
+          <Link href="/">
+            <Image src="/logo.png" width={150} height={75} alt="logo" />
+          </Link>
 
           {navItems.map((d, i) => (
             <SingleNavItem key={i} label={d.label} link={d.link}>

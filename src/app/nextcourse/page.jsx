@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaDownload } from "react-icons/fa";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import CountdownTimer from "../countdowntimer/page";
+import DynamicDate from "../dynamicDate/page";
 
 const NextCourse = () => {
   return (
@@ -12,10 +13,7 @@ const NextCourse = () => {
           <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
             Dubai's Leading Digital Marketing Course
           </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Next Digital Marketing Training Batch is Starting From September
-            2024
-          </h2>
+          <DynamicDate />
         </div>
 
         {/* Countdown Timer */}
