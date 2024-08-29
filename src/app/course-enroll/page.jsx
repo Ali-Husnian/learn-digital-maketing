@@ -5,7 +5,14 @@ import { FaDownload, FaPercent } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
 import CountUp from "react-countup";
 
-const page = ({ title, heading, description, img, btnAction = true }) => {
+const page = ({
+  title,
+  heading,
+  description,
+  img,
+  btnAction = true,
+  btnText = "Enroll Now !",
+}) => {
   const today = new Date();
   const nextBatchDate = new Date(today.getFullYear(), today.getMonth() + 1);
 
@@ -26,7 +33,7 @@ const page = ({ title, heading, description, img, btnAction = true }) => {
         <div className="flex justify-between">
           <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
             <MdDone className="hover:bg-[#1D1B4C]" />
-            Enroll Now!
+            {btnText}
           </button>
           {btnAction && (
             <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">

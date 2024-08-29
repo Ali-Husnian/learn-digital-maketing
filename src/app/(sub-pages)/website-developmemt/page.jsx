@@ -351,6 +351,7 @@ const page = () => {
         description="The “Website Development using WordPress Certification” in the UAE is a comprehensive course designed to teach you how to create professional, responsive websites using WordPress, the world’s most popular content management system."
         img="/website-01.png"
         btnAction={false}
+        btnText="RESERVE YOUR SEAT"
       />
 
       {/*Pricing Schedule section*/}
@@ -375,7 +376,7 @@ const page = () => {
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="|’’Master WordPress to turn visions into reality, empowering businesses and making a lasting impact online."
+        heading="Master WordPress to turn visions into reality, empowering businesses and making a lasting impact online."
         bgImg="/website-001.jpg"
       />
 

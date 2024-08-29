@@ -348,6 +348,7 @@ const page = () => {
         description="The “Certification in Search Engine Optimization” in the UAE is a focused program that teaches you how to improve website rankings and increase online visibility through effective SEO strategies."
         img="/seo-barner-2.png"
         btnAction={false}
+        btnText="RESERVE YOUR SEAT"
       />
 
       {/*Pricing Schedule section*/}
@@ -372,7 +373,7 @@ const page = () => {
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="|’’With certification in Search Engine Optimization, you're not just navigating the digital landscape you're shaping it"
+        heading="With certification in Search Engine Optimization, you're not just navigating the digital landscape you're shaping it"
         bgImg="/website-001.jpg"
       />
 
