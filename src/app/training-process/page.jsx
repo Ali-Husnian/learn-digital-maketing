@@ -21,7 +21,9 @@ const Page = ({ trainingSteps }) => {
               <div className="text-white bg-orange-color rounded-full w-14 h-14 mb-4 flex items-center justify-center">
                 <step.icon className="text-3xl" />
               </div>
-              <h3 className="text-xl font-bold text-blue-900">{step.title}</h3>
+              <h3 className="text-xl font-bold text-heading-color">
+                {step.title}
+              </h3>
               <p className="text-orange-color font-semibold">{step.subtitle}</p>
             </div>
           ))

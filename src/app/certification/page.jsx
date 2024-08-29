@@ -21,7 +21,7 @@ const Certification = ({ CertificateImage = "/Certificate.png" }) => {
             dream job.
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row items-center text-white p-10 border border-white rounded-lg ">
+        <div className="flex flex-col lg:flex-row items-center text-white p-10 border-2 border-dashed border-white rounded-lg ">
           <div className="lg:w-1/2 space-y-6 ">
             <div className="space-y-3">
               <div className="flex items-center space-x-3 ">

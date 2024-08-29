@@ -24,19 +24,16 @@ const modules = [
   {
     id: 1,
     title: "Module 1:",
-    description: "Introduction to WordPress",
+    description: "Introduction to SEO",
     link: "/",
     details: [
-      "History and Evolution of WordPress",
-      "Benefits of Using WordPress",
-      "Setting Up Your WordPress",
-      "Choosing a Domain and Hosting Provider",
-      "Installing WordPress",
-      "Introduction to the WordPress Dashboard",
-      "Understanding the WordPress Interface",
-      "Admin Dashboard Overview",
-      "Managing User Roles and Permissions",
-      "WordPress Settings and Configuration",
+      "What is SEO",
+      "Definition and importance",
+      "How search engines work",
+      "SEO Terminology",
+      "Key terms and concepts (e.g., SERPs, keywords, backlinks)",
+      "Understanding Search Engine Google, Bing, and other search engines",
+      "Search engine algorithms and ranking factors",
     ],
 
     imageSrc: "/module-1.png",
@@ -45,20 +42,18 @@ const modules = [
   {
     id: 2,
     title: "Module 2:",
-    description: "WordPress Themes and Customization",
+    description: "Keyword Research",
     link: "/",
     details: [
-      "Selecting and Installing Themes",
-      "Free vs. Premium Themes",
-      "Theme Installation and Activation",
-      "Customizing Themes ",
-      "Theme Frameworks and Builders",
-      "Introduction to Theme Frameworks ",
-      "Using Page Builders (e.g., Elementor, WPBakery)",
-      "Creating Custom Layouts",
-      "Responsive Design",
-      "Ensuring Mobile Responsiveness",
-      "Best Practices for Responsive Web Design",
+      "Keyword Research Basics",
+      "Types of keywords (short-tail, long-tail)",
+      "Tools for keyword research (e.g., Google Keyword Planner, SEMrush, Ahrefs)",
+      "Finding and Analyzing Keywords",
+      "Identifying target keywords",
+      "Assessing keyword competition and search volume",
+      "Keyword Strategy",
+      "Incorporating keywords into content",
+      "Avoiding keyword stuffing",
     ],
     imageSrc: "/module-2.png",
     borderColor: "border-green-500",
@@ -66,19 +61,19 @@ const modules = [
   {
     id: 3,
     title: "Module 3:",
-    description: "Plugins and Extensions",
+    description: "On-Page SEO",
     link: "/",
     details: [
-      "Finding and Installing Plugins",
-      "Essential Plugins for WordPress Websites",
-      "Managing and Updating Plugins",
-      "SEO Plugins",
-      "Introduction to Yoast SEO and Other SEO Plugins",
-      "Optimizing Content for Search Engines",
-      "Security and Backup Plugins",
-      "Importance of Website Security",
-      "Installing and Configuring Security Plugins",
-      "Backup Solutions and Plugins",
+      "Title Tags and Meta Descriptions",
+      "Crafting effective title tags and meta descriptions",
+      "Header Tags and Content Structure",
+      "Using H1, H2, H3 tags effectively",
+      "Content Optimization",
+      "Writing SEO-friendly content",
+      "Importance of keyword placement",
+      "Image Optimization",
+      "Alt text and file names",
+      "Image size and loading speed",
     ],
     imageSrc: "/module-3.png",
     borderColor: "border-purple-500",
@@ -86,19 +81,19 @@ const modules = [
   {
     id: 4,
     title: "Module 4:",
-    description: "Advanced Customization",
+    description: "Technical SEO",
     link: "/",
     details: [
-      "Custom Post Types and Taxonomies",
-      "Creating Custom Post Types",
-      "Understanding and Using Custom Taxonomies",
-      "Customizing ",
-      "Customizing with Code",
-      "Introduction to HTML, CSS, and PHP for WordPress",
-      "Using the Theme Editor Safely",
-      "Child Themes",
-      "Importance of Child Themes",
-      "Creating and Activating a Child Theme",
+      "Website Structure and Navigation",
+      "Importance of a clean URL structure",
+      "Creating a sitemap",
+      "Site Speed and Performance",
+      "Tools for testing speed (e.g., Google PageSpeed Insights)",
+      "Mobile-Friendliness",
+      "Responsive design vs. mobile version",
+      "Indexing and Crawlability",
+      "Using robots.txt and meta tags",
+      "Managing crawl errors and redirects",
     ],
     imageSrc: "/module-4.png",
     borderColor: "border-yellow-500",
@@ -106,20 +101,17 @@ const modules = [
   {
     id: 5,
     title: "Module 5:",
-    description: "Building Different Types of Websites",
+    description: "Off-Page SEO",
     link: "/",
     details: [
-      "Business Website Development",
-      "Key Features of a Business Website",
-      "Integrating Contact Forms and Maps",
-      "Ecommerce Website Development",
-      "Introduction to WooCommerce",
-      "Setting Up Products, Categories, and Tags",
-      "Configuring Payment Gateways and Shipping Options",
-      "Blog and Content Websites",
-      "Designing and Organizing a Blog",
-      "Widgets and Plugins",
-      "Promoting Content",
+      "Backlink Building",
+      "Importance of backlinks",
+      "Strategies for acquiring quality backlinks",
+      "Link Building Techniques",
+      "Guest blogging, outreach, and content marketing",
+      "Social Signals and Local SEO",
+      "Role of social media in SEO",
+      "Optimizing for local search (e.g., Google My Business)",
     ],
     imageSrc: "/module-5.png",
     borderColor: "border-blue-500",
@@ -127,21 +119,17 @@ const modules = [
   {
     id: 6,
     title: "Module 6:",
-    description: "Performance Optimization",
+    description: "SEO Analytics and Reporting",
     link: "/",
     details: [
-      "Website Speed Optimization",
-      "Analyzing Website Performance",
-      "Implementing Caching Solutions",
-      "Optimizing Images and Videos for Speed",
-      "Database Optimization",
-      "Understanding the WordPress Database",
-      "Cleaning and Optimizing the Database",
-      "Regular Maintenance for Database Performance",
-      "Content Delivery Networks (CDNs)",
-      "Introduction to CDNs",
-      "Setting Up a CDN for WordPress",
-      "Benefits and Drawbacks of Using a CDN",
+      "Understanding SEO Metrics",
+      "Key metrics to track (e.g., organic traffic, bounce rate)",
+      "Google Analytics and Search Console",
+      "Setting up and using Google Analytics",
+      "Utilizing Google Search Console for insights",
+      "Creating SEO Reports",
+      "Analyzing data and performance",
+      "Reporting tools and best practices",
     ],
     imageSrc: "/module-6.png",
     borderColor: "border-red-500",
@@ -149,19 +137,14 @@ const modules = [
   {
     id: 7,
     title: "Module 7:",
-    description: "Website Security",
+    description: "SEO Best Practices and Future Trends",
     link: "/",
     details: [
-      " Understanding WordPress Security",
-      "Common Security Threats",
-      "Best Practices for Securing a WordPress Site",
-      "Configuring HTTPS and SSL Certificates",
-      "User Authentication and Management",
-      "Implementing Strong Password Policies",
-      "Two-Factor Authentication (2FA) for WordPress",
-      "Monitoring and Recovering from Attacks",
-      "Monitoring for Suspicious Activity",
-      "Restoring a Site from Backups",
+      "SEO Best Practices",
+      "Ethical SEO practices and avoiding black-hat techniques",
+      "Keeping Up with SEO Trends",
+      "Algorithm updates and industry changes",
+      "Resources for staying informed (e.g., blogs, forums)",
     ],
     imageSrc: "/module-7.png",
     borderColor: "border-blue-500",
@@ -169,19 +152,14 @@ const modules = [
   {
     id: 8,
     title: "Module 8:",
-    description: "Website Launch and Maintenance",
+    description: "Practical Application and Case Studies",
     link: "/",
     details: [
-      "Pre-Launch Checklist",
-      "Final Testing and Quality Assurance",
-      "SEO and Social Media Integration",
-      "Setting Up Google Analytics and Webmaster Tools",
-      "Launching Your Website",
-      "Managing DNS and Domain Settings",
-      "Announcing Your Launch",
-      "Ongoing Maintenance and Updates",
-      "Regular Content Updates",
-      "WordPress Core, Theme, and Plugin Updates",
+      "Hands-On Exercises",
+      "Real-life SEO projects and tasks",
+      "Case Studies",
+      "Analyzing successful SEO strategies",
+      "Learning from SEO failures",
     ],
     imageSrc: "/module-13.webp",
     borderColor: "border-orange-500",
@@ -189,25 +167,37 @@ const modules = [
   {
     id: 9,
     title: "Module 9:",
-    description: "Additional Resources and Next Steps",
+    description: "SEO Tools and Resources",
     link: "/",
     details: [
-      "Further Learning Opportunities",
-      "Advanced WordPress Development Courses",
-      "Specialized Plugins and Theme Development",
-      "Introduction to WordPress Multisite",
-      "Career Pathways in WordPress Development",
-      "Freelancing and Contract Work",
-      "Joining a Development Team or Agency",
-      "Building Your Own WordPress-based Business",
+      "Essential SEO Tools",
+      "Overview of popular tools (e.g., Moz, Yoast SEO)",
+      "Resource Recommendations",
+      "Books, websites, and forums for continued learning",
     ],
     imageSrc: "/module-9.webp",
     borderColor: "border-green-500",
   },
+  {
+    id: 10,
+    title: "Module 10:",
+    description: "Advanced SEO Techniques (Optional)",
+    link: "/",
+    details: [
+      "Technical SEO Deep Dive",
+      "Schema markup and structured data",
+      "Advanced Link Building",
+      "Strategies for high-quality backlinks",
+      "Content Strategies",
+      "Advanced content creation and marketing strategies",
+    ],
+    imageSrc: "/module-2.png",
+    borderColor: "border-brown-500",
+  },
 ];
 const mName = "Ouer Modules";
 const mDescription =
-  "Here’s a comprehensive list of Certification in Website Development using WordPress modules.";
+  "Here’s a comprehensive list of Certification in Search Engine Optimization modules.";
 
 // components/TrainingProcess.js
 
@@ -259,32 +249,34 @@ const trainingSteps = [
   /* LevelUpSection */
 }
 const levels = [
-  "Advance Your Career: Gain a certification that highlights your expertise in WordPress website development.",
-  "Hands-On Experience: Build and customize websites with practical, real-world projects.",
-  "Learn from the Best: Get insights and guidance from experienced WordPress developers and instructors.",
-  "Flexible Learning: Study at your own pace with modules that fit your schedule.",
-  "Comprehensive Curriculum: Master everything from creating business websites to developing eCommerce platforms, blogs, and landing pages.",
+  "Advance Your Career: Stand out with an SEO certification that sets you apart in the digital landscape. ",
+  "Practical Skills: Get hands-on experience with cutting-edge SEO tools and techniques.",
+  "Expert-Led Training: Learn from seasoned SEO professionals and industry veterans.",
+  "Flexible Learning Paths: Study at your own pace with modules designed for busy professionals.",
+  "In-Depth Knowledge: Dive deep into keyword research, on-page SEO, link building, and more.",
+  "AI-Powered Strategies: Integrate AI to supercharge your SEO efforts and achieve better results.",
+  "Globally Recognized Certification: Earn a certification that proves your expertise and opens doors.",
 ];
 {
   /*Weyewsection*/
 }
 const contentData = [
   {
-    title: "Build Professional Websites with Ease",
+    title: "Master SEO with Real-Time Expert Guidance",
     description:
-      "Our WordPress Certification program teaches you how to create stunning, fully-functional websites without needing extensive coding knowledge. From simple blogs to complex e-commerce sites, you’ll learn how to leverage WordPress’s powerful features to bring any web project to life.",
+      "Our live online SEO certification is led by industry veterans who bring years of expertise to your virtual classroom. Unlike pre-recorded sessions, our live format allows you to engage with experts in real-time, ask questions, and receive personalized feedback.",
     image: "/web-1.jpg",
   },
   {
-    title: "Master Customization and Design",
+    title: "Comprehensive, Up-to-Date Curriculum",
     description:
-      "Go beyond basic templates with our in-depth training on WordPress customization and design. Learn how to use themes, plugins, and custom CSS to create unique, visually appealing websites that stand out in today’s competitive digital landscape.",
+      "Our SEO certification program is meticulously designed to cover every aspect of search engine optimization, from on-page and off-page SEO to the latest in technical SEO. The curriculum is continually updated to align with the latest search engine algorithms.",
     image: "/web-2.jpg",
   },
   {
-    title: "Launch and Manage Your Website with Confidence",
+    title: "Flexible Learning, Real-World Results",
     description:
-      "Our WordPress Certification doesn’t just teach you how to build a website; it prepares you to launch, manage, and maintain it effectively. Learn how to optimize your site for search engines, integrate essential security features, and ensure fast load times.",
+      "We know your time is valuable, which is why our SEO certification offers flexibility without sacrificing quality. Attend live sessions from anywhere, at times that fit your schedule, and immediately apply what you learn to your work.",
     image: "/web-3.jpg",
   },
 ];
@@ -294,50 +286,55 @@ const contentData = [
 }
 const faqs = [
   {
-    question:
-      "What does the Website Development using WordPress Certification cover?",
+    question: "What is Search Engine Optimization (SEO)?",
     answer:
-      "The certification covers a wide range of topics including setting up a WordPress site, choosing and customizing themes, installing and configuring plugins, creating and managing content, and optimizing your site for SEO. You’ll also learn about building different types of websites, such as business sites, eCommerce stores, blogs, and landing pages.",
+      "SEO stands for Search Engine Optimization. It involves optimizing websites and content to improve their visibility in search engine results pages (SERPs). The goal is to increase organic (non-paid) traffic to a website.",
   },
   {
-    question: "Who is this certification program designed for?",
+    question: "Who should take this SEO Certification course?",
     answer:
-      "This program is designed for anyone interested in learning how to build and manage websites using WordPress. It’s suitable for beginners with no prior experience in web development, as well as those looking to enhance their skills or transition to a career in web design and development.",
+      "This course is ideal for digital marketers, content creators, web developers, business owners, and anyone interested in improving a website’s visibility on search engines. No prior SEO experience is required, but basic digital marketing knowledge can be helpful.",
   },
-  {
-    question: "Are there any prerequisites for this certification?",
-    answer:
-      "There are no formal prerequisites. However, a basic understanding of the internet and how websites function will be beneficial. The course is designed to take you from beginner to proficient in WordPress website development.",
-  },
-  {
-    question: "Will I receive a certificate after completing the course?",
-    answer:
-      "Yes, upon successful completion of the course and passing the final assessment, you will receive a certification that is recognized in the UAE. This certificate can be used to enhance your resume or support your career development in web design and development.",
-  },
-  {
-    question: "Is there any support available during the course?",
-    answer:
-      "Yes, you’ll have access to a support team that can help with any technical or course-related queries. Additionally, you can participate in online forums to connect with instructors and fellow students for advice and support.",
-  },
-  {
-    question: "What career opportunities can this certification lead to?",
 
+  {
+    question: "What will I learn in this SEO Certification course?",
     answer:
-      "This certification can open doors to careers in web development, web design, digital marketing, and content management. It’s especially valuable for those looking to work as freelance web developers or in-house WordPress experts within a company.",
+      "The course covers fundamental to advanced SEO topics, including keyword research, on-page and off-page optimization, technical SEO, content strategy, link building, and analytics. You’ll also learn how to use SEO tools and stay updated with the latest SEO trends.",
   },
   {
-    question: "Is this certification recognized globally?",
+    question: "Is this SEO Certification recognized?",
     answer:
-      "Yes, the certification is recognized globally, making it valuable for professionals in the UAE and abroad.",
+      "Yes, upon successful completion of the course, you will receive a certificate recognized in the digital marketing industry, enhancing your credibility and career prospects.",
   },
   {
-    question: "Will I receive hands-on training during the course?",
-    answer: "Will I receive hands-on training during the course?",
+    question: "Do I need any technical skills to enroll in this course?",
+    answer:
+      "Basic computer skills and an understanding of how websites work are beneficial but not mandatory. The course is designed to cater to beginners as well as professionals looking to update their SEO knowledge.",
   },
   {
-    question: " How is the course assessed?",
+    question: "Will there be practical assignments or projects?",
     answer:
-      "The course is assessed through a combination of quizzes, practical assignments, and a final project.",
+      "Yes, the course includes practical assignments and real-world projects to help you apply the concepts you learn. This hands-on experience is crucial for mastering SEO skills.",
+  },
+  {
+    question: "Is this certification recognized internationally?",
+    answer:
+      "Yes, the certification is recognized both in the UAE and internationally, making it valuable for global opportunities.",
+  },
+  {
+    question: "How is the course structured?",
+    answer:
+      "The course is divided into modules, each focusing on a specific aspect of SEO, with a mix of theory and practical exercises.",
+  },
+  {
+    question: "What kind of SEO projects will I work on during the course?",
+    answer:
+      "You will work on projects involving website audits, keyword research, content optimization, and link-building strategies.",
+  },
+  {
+    question: "Can I use this certification to advance my career in the UAE?",
+    answer:
+      "Yes, the certification is recognized by employers in the UAE and can help you advance in digital marketing and related fields.",
   },
 ];
 
@@ -347,21 +344,25 @@ const page = () => {
       {/* Course Enroll section*/}
       <CourseEnroll
         title="The Only Training You'll Ever Need"
-        heading="Website Development using WordPress Certification in UAE"
-        description="The “Website Development using WordPress Certification” in the UAE is a comprehensive course designed to teach you how to create professional, responsive websites using WordPress, the world’s most popular content management system."
+        heading="Certification in Search Engine Optimization in UAE"
+        description="The “Certification in Search Engine Optimization” in the UAE is a focused program that teaches you how to improve website rankings and increase online visibility through effective SEO strategies."
         img="/seo-barner-2.png"
         btnAction={false}
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
-        duration="30 Weeks"
-        price="1000 AED"
-        Schedule="Every Saturday ( 09:00 AM GMT+4 )"
+        duration="Almost 6 Months"
+        price="1500 AED"
+        Schedule="Once a Week Every Thursday"
       />
 
       {/*View full details*/}
-      <CourseDetails />
+      <CourseDetails
+        heading="Become Certified in Search Engine Optimization (SEO)"
+        content1="Search Engine Optimization. (SEO)"
+        content2="Full Stack Digital Marketing Course"
+      />
       {/*Modules section*/}
       <Modules
         moduleName={mName}
@@ -371,7 +372,7 @@ const page = () => {
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="|’’Master WordPress to turn visions into reality, empowering businesses and making a lasting impact online."
+        heading="|’’With certification in Search Engine Optimization, you're not just navigating the digital landscape you're shaping it"
         bgImg="/website-001.jpg"
       />
 
@@ -384,9 +385,9 @@ const page = () => {
           {/* Title Section */}
           <div className="text-center space-y-4 mb-12">
             <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-              UAE Leading Website Development using WordPress Certification
+              UAE Leading Search Engine Optimization (SEO) Certification
             </h3>
-            <DynamicDate heading="Next Certification in Website Development using WordPress Batch is Starting From" />
+            <DynamicDate heading="Next Certification in Search Engine Optimization Batch is Starting From" />
           </div>
           {/* Countdown Timer */}
           <CountdownTimer />
@@ -396,17 +397,17 @@ const page = () => {
       {/* LevelUpSection */}
       <LevelUpSection
         levels={levels}
-        heading="Design, Develop, and Deliver with a WordPress Certification."
+        heading="Master the Art of Visibility with a Certification in Search Engine Optimization (SEO)."
       />
 
       {/*Whyewsection*/}
       <Whyewsection
         contentData={contentData}
-        heading="Why we are Dubai’s Best Live Online Certification in Website Development using WordPress Program Provider"
+        heading="Why we are Dubai’s Best Live Online Certification in Search Engine Optimization Program Provider."
       />
 
       {/*certification*/}
-      <Certification CertificateImage="/diploma-web.png" />
+      <Certification CertificateImage="/seo-cartificate-1.png" />
 
       {/*faq-component*/}
       <FAQ faqArray={faqs} />

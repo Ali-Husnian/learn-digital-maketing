@@ -361,7 +361,11 @@ const page = () => {
       />
 
       {/*View full details*/}
-      <CourseDetails />
+      <CourseDetails
+        heading="Become Certified in Website Development (Using WordPress)"
+        content1="Website Development using WordPress"
+        content2="Full Stack Digital Marketing Course "
+      />
       {/*Modules section*/}
       <Modules
         moduleName={mName}

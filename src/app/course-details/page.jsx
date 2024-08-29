@@ -1,29 +1,25 @@
 import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const page = ({ heading, content1, content2 }) => {
   return (
     <section className="max-w-6xl mx-auto">
       <div className="mx-4 py-12 my-12 px-5 border-2 border-dashed border-orange-color shadow-lg rounded-lg ">
         <div className="text-center space-y-8">
           <h2 className="text-2xl md:text-3xl font-bold text-heading-color">
-            Become Certified in Website Development (Using WordPress)
+            {heading}
           </h2>
           <p className="text-text-color">
             Enhance your skills with our Certification in{" "}
-            <span className="text-orange-color font-semibold">
-              Website Development using WordPress
-            </span>
-            . This certification is available as a standalone program, designed
-            to give you the specialized knowledge you need in the field of
-            digital marketing.
+            <span className="text-orange-color font-semibold">{content1}</span>.
+            This certification is available as a standalone program, designed to
+            give you the specialized knowledge you need in the field of digital
+            marketing.
           </p>
           <p className="text-text-color">
             Additionally, this certification is a key component of our{" "}
-            <span className="text-orange-color font-semibold">
-              Full Stack Digital Marketing Course
-            </span>
-            , allowing you to integrate this expertise into a broader marketing
+            <span className="text-orange-color font-semibold">{content2}</span>,
+            allowing you to integrate this expertise into a broader marketing
             skill set.
           </p>
         </div>
