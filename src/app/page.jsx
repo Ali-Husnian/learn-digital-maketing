@@ -14,13 +14,17 @@ const page = () => {
   return (
     <>
       <Home />
+      {/*add new Full Stack Digital Marketing Course*/}
+      <Success />
+      <Modules />
+      {/*add Button*/}
+
+      <CourseInfoCard />
+      {/*add LDM Certifications*/}
       <div className="my-20">
         <DigitalMarketingCard />
       </div>
       <LearningMethodologies />
-      <Modules />
-      <Success />
-      <CourseInfoCard />
       <TransformativeOutcomes />
       <Certification />
       <FAQComponent />

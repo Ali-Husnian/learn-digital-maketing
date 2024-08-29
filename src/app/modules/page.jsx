@@ -138,7 +138,7 @@ const Modules = ({
                 </div>
                 <div className="absolute h-full w-full bg-white rounded-md flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div className="px-10 text-start">
-                    <ul className="text-text-color text-sm font-normal list-disc space-y-3">
+                    <ul className="text-text-color text-sm font-normal list-disc space-y-1">
                       {module.details.map((detail, index) => (
                         <li key={index}>{detail}</li>
                       ))}
