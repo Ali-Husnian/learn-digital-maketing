@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const page = ({ contentData, heading }) => {
+const Page = ({ contentData, heading }) => {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -14,29 +14,38 @@ const page = ({ contentData, heading }) => {
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-8">
-          {contentData.map((item, index) => (
-            <div key={index} className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  className="rounded-xl shadow-md -shadow-md"
-                  width={400}
-                  height={250}
-                />
+          {Array.isArray(contentData) && contentData.length > 0 ? (
+            contentData.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col md:flex-row items-center"
+              >
+                <div className="md:w-1/2">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="rounded-xl shadow-md -shadow-md"
+                    width={400}
+                    height={250}
+                  />
+                </div>
+                <div className="md:w-full mt-4 md:mt-0 px-6 py-8 bg-li-gray shadow-md rounded-r-xl space-y-8">
+                  <h3 className="text-3xl font-bold text-heading-color mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-text-color taxt-md">{item.description}</p>
+                </div>
               </div>
-              <div className="md:w-full mt-4 md:mt-0 px-6 py-8 bg-li-gray shadow-md rounded-r-xl space-y-8">
-                <h3 className="text-3xl font-bold text-heading-color mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-text-color taxt-md">{item.description}</p>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="text-gray-600 text-center">
+              No content available at the moment.
+            </p>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default page;
+export default Page;
