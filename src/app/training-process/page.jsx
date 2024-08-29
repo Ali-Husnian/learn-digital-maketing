@@ -1,6 +1,6 @@
 import React from "react";
 
-const page = ({ trainingSteps }) => {
+const Page = ({ trainingSteps }) => {
   return (
     <div className="max-w-6xl mx-auto py-16">
       <div className="text-center space-y-4 mb-12">
@@ -12,21 +12,27 @@ const page = ({ trainingSteps }) => {
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 px-4">
-        {trainingSteps.map((step, index) => (
-          <div
-            key={index}
-            className="border-dashed border-2 border-orange-color justify-center p-2 rounded-lg flex flex-col items-center text-center h-52"
-          >
-            <div className="text-white bg-orange-color rounded-full w-14 h-14 mb-4 flex items-center justify-center">
-              <step.icon className="text-3xl" />
+        {Array.isArray(trainingSteps) && trainingSteps.length > 0 ? (
+          trainingSteps.map((step, index) => (
+            <div
+              key={index}
+              className="border-dashed border-2 border-orange-color justify-center p-2 rounded-lg flex flex-col items-center text-center h-52"
+            >
+              <div className="text-white bg-orange-color rounded-full w-14 h-14 mb-4 flex items-center justify-center">
+                <step.icon className="text-3xl" />
+              </div>
+              <h3 className="text-xl font-bold text-blue-900">{step.title}</h3>
+              <p className="text-orange-color font-semibold">{step.subtitle}</p>
             </div>
-            <h3 className="text-xl font-bold text-blue-900">{step.title}</h3>
-            <p className="text-orange-color font-semibold">{step.subtitle}</p>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-center col-span-full text-gray-500">
+            No training steps available.
+          </p>
+        )}
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

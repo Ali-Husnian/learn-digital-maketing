@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
-const page = ({ levels, heading }) => {
+const Page = ({ levels, heading }) => {
   return (
     <section className="bg-orange-color py-12">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -11,12 +11,16 @@ const page = ({ levels, heading }) => {
             {heading}
           </h2>
           <ul className="space-y-4 text-white text-lg">
-            {levels.map((item, index) => (
-              <li key={index} className="flex items-center">
-                <FaCheckCircle className="text-white mr-3" />
-                {item}
-              </li>
-            ))}
+            {Array.isArray(levels) && levels.length > 0 ? (
+              levels.map((item, index) => (
+                <li key={index} className="flex items-center">
+                  <FaCheckCircle className="text-white mr-3" />
+                  {item}
+                </li>
+              ))
+            ) : (
+              <p>No levels available.</p>
+            )}
           </ul>
         </div>
 
@@ -43,4 +47,4 @@ const page = ({ levels, heading }) => {
   );
 };
 
-export default page;
+export default Page;

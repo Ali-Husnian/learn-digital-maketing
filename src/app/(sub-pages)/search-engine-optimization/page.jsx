@@ -349,7 +349,7 @@ const page = () => {
         title="The Only Training You'll Ever Need"
         heading="Website Development using WordPress Certification in UAE"
         description="The “Website Development using WordPress Certification” in the UAE is a comprehensive course designed to teach you how to create professional, responsive websites using WordPress, the world’s most popular content management system."
-        img="/"
+        img="/seo-barner-2.png"
         btnAction={false}
       />
 
