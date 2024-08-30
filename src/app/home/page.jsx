@@ -1,6 +1,6 @@
 import React from "react";
 import { CiDesktopMouse1 } from "react-icons/ci";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaMouse } from "react-icons/fa";
 
 function Home() {
   return (
@@ -21,7 +21,7 @@ function Home() {
 
             <div className="flex flex-wrap mt-10 gap-y-4 gap-x-24">
               <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
-                <CiDesktopMouse1 className="hover:bg-[#1D1B4C]" />
+                <FaMouse className="hover:bg-[#1D1B4C]" />
                 Click Here To Enroll
               </button>
               <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-280px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">

@@ -9,7 +9,6 @@ import TransformativeOutcomes from "./transformative-outcomes/page";
 import Certification from "./certification/page";
 import FAQComponent from "./faq-component/page";
 import NextCourse from "./nextcourse/page";
-import LDMCertifications from "./ldm-certificates/page";
 
 const page = () => {
   return (
