@@ -2,6 +2,8 @@ import TopNav from "@/shared/components/TopNav";
 import "./globals.css";
 import Navbar from "@/shared/components/Navbar";
 import Footer from "@/shared/components/Footer";
+import TopScrollButton from "@/shared/components/TopScrollButton";
+import WhatsappButton from "@/shared/components/WhatsappButton";
 
 export const metadata = {
   title: "Digital Marketing",
@@ -15,9 +17,10 @@ export default function RootLayout({ children }) {
         <TopNav />
         <Navbar />
         {children}
+        <WhatsappButton />
+        <TopScrollButton />
         <Footer />
       </body>
-
     </html>
   );
 }

@@ -25,7 +25,7 @@ const page = ({ heading, content1, content2 }) => {
         </div>
         <div className="text-center mt-6">
           <Link
-            href="/"
+            href="/digital-marketing"
             className="bg-orange-color hover:text-orange-color text-white text-lg font-semibold px-6 py-2 border border-orange-color hover:bg-white transition-colors"
           >
             View Full Stack Digital Marketing Course
