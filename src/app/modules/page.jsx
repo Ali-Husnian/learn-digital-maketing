@@ -151,9 +151,11 @@ const Modules = ({
           ))}
         </div>
         <div className=" flex text-center justify-center space-y-4 mt-12">
-          <button className=" bg-orange-500 text-white font-medium text-17px flex items-center gap-2 justify-center w-320px h-50px  cursor-pointer">
-            <FaRegArrowAltCircleRight />   View all Digital Marketing Modules
-          </button>
+          <Link href={"/checkout"}>
+            <button href={"/"} className=" bg-orange-500 text-white font-medium text-17px flex items-center gap-2 justify-center w-320px h-50px  cursor-pointer">
+              <FaRegArrowAltCircleRight />   View all Digital Marketing Modules
+            </button>
+          </Link>
         </div>
       </div>
     </>

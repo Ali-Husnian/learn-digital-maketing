@@ -79,7 +79,7 @@ export default function LDMCertifications() {
                                         <p className="mt-4 font-bold">Certification Fee: {cert.fee}</p>
                                         <button className="mt-4 bg-white text-orange-600 px-4 py-2 rounded-lg hover:bg-orange-600 hover:text-white border-2 border-orange-600 transition-all">
                                             RESERVE YOUR SEAT
-                                        </button>
+                                            </button>
                                     </div>
                                 </div>
                             </div>
