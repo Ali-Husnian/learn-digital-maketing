@@ -59,6 +59,15 @@ const page = () => {
           Discover the right certification for you and start your journey
           towards becoming a digital marketing expert.
         </p>
+        <div className="text-center">
+          <Image
+            src="/country.png"
+            width={1200}
+            height={500}
+            quality={100}
+            alt="countris"
+          />
+        </div>
         <center className="mt-10">
           <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
             <FaMouse className="hover:bg-[#1D1B4C] " />

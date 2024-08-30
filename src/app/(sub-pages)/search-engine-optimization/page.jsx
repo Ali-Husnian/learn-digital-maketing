@@ -369,6 +369,7 @@ const page = () => {
         moduleName={mName}
         moduleDescription={mDescription}
         moduleObj={modules}
+        visableButton={false}
       />
       {/* Parallax Background */}
       <ParallaxBackground

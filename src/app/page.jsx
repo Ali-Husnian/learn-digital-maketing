@@ -10,12 +10,14 @@ import Certification from "./certification/page";
 import FAQComponent from "./faq-component/page";
 import NextCourse from "./nextcourse/page";
 import LDMCertifications from "./ldm-certificates/page";
+import CourcePathAway from "./cource-pathaway/page";
 
 const page = () => {
   return (
     <>
       <Home />
       {/*add new Full Stack Digital Marketing Course*/}
+      <CourcePathAway />
       <Success />
       <Modules />
       {/*add Button*/}

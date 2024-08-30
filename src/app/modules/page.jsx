@@ -1,7 +1,6 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const modules = [
   {
@@ -101,12 +100,26 @@ const modules = [
     imageSrc: "/module-2.png",
     borderColor: "border-black-500",
   },
+  {
+    id: 8,
+    title: "Module 8:",
+    description: "Analytics and Data Interpretation (6 hours)",
+    link: "/",
+    details: [
+      "Importance of data in digital marketing.",
+      "Google Analytics: setup, key metrics, reporting.",
+      "Data-driven decision making and KPI tracking.",
+    ],
+    imageSrc: "/module-12.webp",
+    borderColor: "border-green-500",
+  },
 ];
 
 const Modules = ({
   moduleName = "Our Modules",
   moduleDescription = "Here’s a comprehensive list of Full Stack Digital Marketing modules that form a robust training curriculum",
   moduleObj = modules,
+  visableButton = true,
 }) => {
   return (
     <>
@@ -150,13 +163,16 @@ const Modules = ({
             </Link>
           ))}
         </div>
-        <div className=" flex text-center justify-center space-y-4 mt-12">
-          <Link href={"/checkout"}>
-            <button href={"/"} className=" bg-orange-500 text-white font-medium text-17px flex items-center gap-2 justify-center w-320px h-50px  cursor-pointer">
-              <FaRegArrowAltCircleRight />   View all Digital Marketing Modules
-            </button>
-          </Link>
-        </div>
+        {visableButton && (
+          <div className=" flex text-center justify-center space-y-4 mt-12">
+            <Link href="/digital-marketing">
+              <button className=" bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center w-full h-44px px-4 rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer">
+                View all Digital Marketing Modules
+                <IoArrowForwardCircleOutline />
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );

@@ -45,7 +45,7 @@ function Home() {
                 <span className="">
                   Course Fee:{" "}
                   <span className="line-through text-pink-500">AED 7000</span>{" "}
-                  <b className="text-black">AED 3500</b>
+                  <b className="text-black underline">AED 3500</b>
                 </span>
               </li>
             </ul>

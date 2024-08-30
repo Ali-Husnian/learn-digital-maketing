@@ -35,15 +35,7 @@ const navItems = [
       },
     ],
   },
-  {
-    label: "For Companies",
-    link: "#",
-    children: [
-      { label: "eCommerce Development", link: "#" },
-      { label: "Lead Generation", link: "#" },
-      { label: "Customize Modules", link: "#" },
-    ],
-  },
+
   {
     label: "For Entrepreneur",
     link: "#",
@@ -51,6 +43,17 @@ const navItems = [
       { label: "Diploma digital Marketing", link: "#" },
       { label: "Business Setup + (1 To 1 Session)", link: "#" },
       { label: "On Demand Modules", link: "#" },
+    ],
+  },
+
+  { label: "Other institutes", link: "#" },
+  {
+    label: "For Companies",
+    link: "#",
+    children: [
+      { label: "eCommerce Development", link: "#" },
+      { label: "Lead Generation", link: "#" },
+      { label: "Customize Modules", link: "#" },
     ],
   },
   {
@@ -65,7 +68,6 @@ const navItems = [
       { label: "Blog", link: "#" },
     ],
   },
-  { label: "Contact us", link: "/contact-us" },
 ];
 
 export default function Navbar() {
