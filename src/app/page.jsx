@@ -9,13 +9,12 @@ import TransformativeOutcomes from "./transformative-outcomes/page";
 import Certification from "./certification/page";
 import FAQComponent from "./faq-component/page";
 import NextCourse from "./nextcourse/page";
-import CoursePathAway from "./cource-pathaway/page";
+import LDMCertifications from "./ldm-certificates/page";
 
 const page = () => {
   return (
     <>
       <Home />
-      <CoursePathAway />
       {/*add new Full Stack Digital Marketing Course*/}
       <Success />
       <Modules />
@@ -23,6 +22,7 @@ const page = () => {
 
       <CourseInfoCard />
       {/*add LDM Certifications*/}
+      <LDMCertifications />
       <div className="my-20">
         <DigitalMarketingCard />
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const modules = [
   {
@@ -148,6 +149,13 @@ const Modules = ({
               </div>
             </Link>
           ))}
+        </div>
+        <div className=" flex text-center justify-center space-y-4 mt-12">
+          <Link href={"/checkout"}>
+            <button href={"/"} className=" bg-orange-500 text-white font-medium text-17px flex items-center gap-2 justify-center w-320px h-50px  cursor-pointer">
+              <FaRegArrowAltCircleRight />   View all Digital Marketing Modules
+            </button>
+          </Link>
         </div>
       </div>
     </>
