@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
         <TopNav />
         <Navbar />
         {children}
-        <WhatsappButton />
         <TopScrollButton />
+        <WhatsappButton />
         <Footer />
       </body>
     </html>
