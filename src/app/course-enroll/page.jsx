@@ -4,6 +4,7 @@ import React from "react";
 import { FaDownload, FaPercent } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
 import CountUp from "react-countup";
+import Link from "next/link";
 
 const page = ({
   title,
@@ -31,10 +32,12 @@ const page = ({
         </h2>
         <p className="text-text-color mb-6">{description}</p>
         <div className="flex justify-between">
-          <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
-            <MdDone className="hover:bg-[#1D1B4C]" />
-            {btnText}
-          </button>
+          <Link href={"/checkout"}>
+            <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
+              <MdDone className="hover:bg-[#1D1B4C]" />
+              {btnText}
+            </button>
+          </Link>
           {btnAction && (
             <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
               <FaDownload />
