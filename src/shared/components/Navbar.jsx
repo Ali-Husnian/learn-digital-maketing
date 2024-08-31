@@ -93,8 +93,8 @@ export default function Navbar() {
           } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
         >
           <section ref={animationParent} className="flex items-center gap-10">
-            <Link href="/">
-              {!isSideMenuOpen && (
+            {!isSideMenuOpen && (
+              <Link href="/">
                 <Image
                   src="/logo.png"
                   width={100}
@@ -102,8 +102,9 @@ export default function Navbar() {
                   alt="logo"
                   className="hidden max-sm:block"
                 />
-              )}
-            </Link>
+              </Link>
+            )}
+
             <div className="hidden md:flex items-center gap-4 transition-all">
               {navItems.map((d, i) => (
                 <div

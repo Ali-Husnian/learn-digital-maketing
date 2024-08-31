@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: #3ddda0;
+}
 .whatsapp-link {
   position: fixed;
   bottom: -80;
