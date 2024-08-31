@@ -176,7 +176,8 @@ const Footer = () => {
 
       <div className="w-full py-6 px-4 bg-black text-center text-white text-sm text-gray-500">
         <p className="font-semibold text-md tracking-wide">
-          2024 © All rights reserved by Learn Digital Marketing. Powered by{" "}
+          {new Date().getFullYear()} © All rights reserved by Learn Digital
+          Marketing. Powered by{" "}
           <span className="text-orange-color ">Bab el Najah</span>.
         </p>
       </div>
