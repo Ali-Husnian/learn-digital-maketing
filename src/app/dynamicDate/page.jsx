@@ -8,7 +8,7 @@ const page = ({
 
   useEffect(() => {
     const today = new Date();
-    const nextBatchDate = new Date(today.getFullYear(), today.getMonth() + 1);
+    const nextBatchDate = new Date(today.getFullYear(), today.getMonth(), 21);
 
     const options = { year: "numeric", month: "long", day: "numeric" };
     const formattedDate = nextBatchDate.toLocaleDateString("en-US", options);

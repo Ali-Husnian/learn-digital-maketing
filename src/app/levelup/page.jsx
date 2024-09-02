@@ -14,7 +14,9 @@ const Page = ({ levels, heading }) => {
             {Array.isArray(levels) && levels.length > 0 ? (
               levels.map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <FaCheckCircle className="text-white mr-3" />
+                  <span>
+                    <FaCheckCircle size={25} className="text-white mr-3" />
+                  </span>
                   {item}
                 </li>
               ))

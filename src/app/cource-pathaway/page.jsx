@@ -60,11 +60,13 @@ const page = () => {
       </div>
       <div className="mt-12 text-center">
         <h2 className="text-4xl font-bold text-orange-color">
-          Explore Your Path Today
+          Exclusive Digital Marketing Training for Gulf.
         </h2>
         <p className="mt-5 text-lg text-text-color">
-          Discover the right certification for you and start your journey
-          towards becoming a digital marketing expert.
+          We offer personalized digital marketing training for entrepreneurs
+          across the Gulf region. Learn from experts, gain practical skills, and
+          elevate your business with training designed to meet your unique needs
+          and goals.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 py-8">
           {countries.map((country, index) => (

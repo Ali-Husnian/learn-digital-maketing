@@ -166,7 +166,9 @@ const FAQComponent = ({ faqArray = faqs }) => {
       {faqArray.map((faq, index) => (
         <div key={index} className="border border-light-gray mb-2px">
           <button
-            className="w-full text-left p-4 bg-orange-color text-white font-semibold"
+            className={`w-full text-left p-4 bg-orange-color ${
+              openIndex === index ? "bg-orange-600" : "bg-orange-color"
+            } hover:bg-orange-600 transition-colors text-white font-semibold`}
             onClick={() => toggleFAQ(index)}
           >
             <span className="flex items-center">
