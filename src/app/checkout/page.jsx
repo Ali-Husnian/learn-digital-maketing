@@ -13,7 +13,9 @@ function checkout() {
           <h1 className="text-5xl font-bold mb-4">
             <span>Checkout</span>
           </h1>
-          <h2 className="text-lg tracking-wide flex gap-0">Home - checkout</h2>
+          <h2 className="text-lg tracking-wide flex text-green-color gap-0">
+            Home - checkout
+          </h2>
         </div>
       </div>
 
