@@ -24,12 +24,251 @@ const modules = [
   {
     id: 1,
     title: "Module 1:",
-    description: "Introduction to Social Media Marketing",
+    description: "Introduction to Affiliate Marketing",
     link: "/",
     details: [
-      "Overview of Social Media Platforms: Introduction to major platforms (Facebook, Instagram, LinkedIn, TikTok).",
-      "Importance of Social Media: How social media fits into the broader marketing strategy.",
-      "Key Concepts: Terminology and basic principles of social media marketing.",
+      "What is Affiliate Marketing?",
+      "Definition and key concepts",
+      "How affiliate marketing work",
+      "Affiliate Marketing Terminology",
+      "Key terms (e.g., CPA, CPL, CPC, EPC)",
+      "The Affiliate Marketing Ecosystem",
+      "Affiliates, merchants, networks, and consumers",
+    ],
+
+    imageSrc: "/module-1.png",
+    borderColor: "border-orange-500",
+  },
+  {
+    id: 2,
+    title: "Module 2:",
+    description: "Finding and Choosing Affiliate Programs",
+    link: "/",
+    details: [
+      "Types of Affiliate Programs",
+      "CPA, CPL, and CPC programs",
+      "Finding Affiliate Programs",
+      "Networks (e.g., ShareASale, CJ Affiliate)",
+      "Direct partnerships with companies",
+      "Evaluating Affiliate Programs",
+      "Commission structures",
+      "Product relevance and reputation",
+    ],
+    imageSrc: "/module-2.png",
+    borderColor: "border-green-500",
+  },
+  {
+    id: 3,
+    title: "Module 3:",
+    description: "Setting Up Your Affiliate Marketing Business",
+    link: "/",
+    details: [
+      "Creating a Niche Website or Blog",
+      "Choosing a niche",
+      "Building a website or blog",
+      "Content Creation and SEO",
+      "Writing effective content",
+      "SEO best practices for affiliate marketing",
+    ],
+    imageSrc: "/module-3.png",
+    borderColor: "border-purple-500",
+  },
+  {
+    id: 4,
+    title: "Module 4:",
+    description: "Traffic Generation Strategies",
+    link: "/",
+    details: [
+      "Organic Traffic",
+      "SEO techniques for affiliate sites",
+      "Paid Traffic",
+      "PPC advertising (e.g., Google Ads, Facebook Ads)",
+      "Social media advertising",
+      "Email Marketing",
+      "Building and managing an email list",
+      "Crafting effective email campaigns",
+    ],
+    imageSrc: "/module-4.png",
+    borderColor: "border-yellow-500",
+  },
+  {
+    id: 5,
+    title: "Module 5:",
+    description: "Conversion Optimization",
+    link: "/",
+    details: [
+      "Understanding Conversions",
+      "Metrics to track (e.g., conversion rate, ROI)",
+      "Improving Conversion Rates",
+      "A/B testing and optimization strategies",
+      "Landing Pages and Calls to Action",
+      "Designing high-converting landing pages",
+    ],
+    imageSrc: "/module-5.png",
+    borderColor: "border-blue-500",
+  },
+  {
+    id: 6,
+    title: "Module 6:",
+    description: "Compliance and Best Practices",
+    link: "/",
+    details: [
+      "Disclosure and Transparency",
+      "FTC guidelines for affiliate marketing",
+      "Avoiding Common Pitfalls",
+      "Avoiding black-hat tactics",
+      "Ethical Marketing Practices",
+      "Building trust with your audience",
+    ],
+    imageSrc: "/module-6.png",
+    borderColor: "border-red-500",
+  },
+  {
+    id: 7,
+    title: "Module 7:",
+    description: "Analytics and Reporting",
+    link: "/",
+    details: [
+      "Tracking Performance",
+      "Using affiliate dashboards and tools",
+      "Analyzing Data",
+      "Interpreting reports and metrics",
+      "Making Data-Driven Decisions",
+      "Adjusting strategies based on performance",
+    ],
+    imageSrc: "/module-7.png",
+    borderColor: "border-blue-500",
+  },
+];
+const modules2 = [
+  {
+    id: 1,
+    title: "Module 1:",
+    description: "Introduction to Dropshipping",
+    link: "/",
+    details: [
+      "What is Dropshipping?",
+      "Definition and how it works",
+      "Dropshipping vs. Traditional Retail",
+      "Pros and cons of Dropshipping",
+    ],
+
+    imageSrc: "/module-1.png",
+    borderColor: "border-orange-500",
+  },
+  {
+    id: 2,
+    title: "Module 2:",
+    description: "Finding a Profitable Niche",
+    link: "/",
+    details: [
+      "Market Research",
+      "Identifying profitable niches",
+      "Evaluating Products",
+      "Product research tools and techniques",
+      "Competitor Analysis",
+      "Analyzing competitors in your niche",
+    ],
+    imageSrc: "/module-2.png",
+    borderColor: "border-green-500",
+  },
+  {
+    id: 3,
+    title: "Module 3:",
+    description: "Setting Up Your Dropshipping Business",
+    link: "/",
+    details: [
+      "Choosing a Platform",
+      "Platforms (e.g., Shopify, WooCommerce)",
+      "Setting Up Your Online Store",
+      "Store design and user experience",
+      "Finding and Partnering with Suppliers",
+      "Using directories (e.g., AliExpress, Oberto)",
+      "Establishing supplier relationships",
+    ],
+    imageSrc: "/module-3.png",
+    borderColor: "border-purple-500",
+  },
+  {
+    id: 4,
+    title: "Module 4:",
+    description: "Marketing Your Dropshipping Store",
+    link: "/",
+    details: [
+      "Traffic Generation",
+      "SEO for eCommerce",
+      "Social media marketing",
+      "Influencer partnerships",
+      "Paid Advertising",
+      "Google Ads, Facebook Ads, Instagram Ads",
+      "Content Marketing",
+      "Blogging and content strategies",
+    ],
+    imageSrc: "/module-4.png",
+    borderColor: "border-yellow-500",
+  },
+  {
+    id: 5,
+    title: "Module 5:",
+    description: "Managing Orders and Customer Service",
+    link: "/",
+    details: [
+      "Order Fulfillment",
+      "Handling orders and shipping",
+      "Customer Service Best Practices",
+      "Providing excellent customer support",
+      "Managing Returns and Refunds",
+      "Policies and procedures",
+    ],
+    imageSrc: "/module-5.png",
+    borderColor: "border-blue-500",
+  },
+  {
+    id: 6,
+    title: "Module 6:",
+    description: "Analytics and Optimization",
+    link: "/",
+    details: [
+      "Tracking Performance",
+      "Using analytics tools (e.g., Google Analytics)",
+      "Conversion Rate Optimization",
+      "Improving sales and user experience",
+      "A/B Testing",
+      "Testing and optimizing store elements",
+    ],
+    imageSrc: "/module-6.png",
+    borderColor: "border-red-500",
+  },
+  {
+    id: 7,
+    title: "Module 7:",
+    description: "Trends and Innovations",
+    link: "/",
+    details: [
+      "Scaling Your Dropshipping Business",
+
+      "Scaling Strategies",
+      "Expanding product lines and markets",
+      "Automation Tools",
+      "Tools for automating tasks and processes",
+      "Outsourcing and Delegation",
+      "Hiring virtual assistants and other support",
+    ],
+    imageSrc: "/module-7.png",
+    borderColor: "border-blue-500",
+  },
+];
+const modules3 = [
+  {
+    id: 1,
+    title: "Module 1:",
+    description: "Introduction to Ecommerce Marketing",
+    link: "/",
+    details: [
+      "What is Ecommerce Marketing?",
+      "Definition and importance",
+      "Ecommerce Marketing Channels",
+      "Overview of various channels (e.g., SEO, PPC, email marketing)",
     ],
 
     imageSrc: "/module-1.png",
@@ -41,10 +280,12 @@ const modules = [
     description: "Social Media Strategy Development",
     link: "/",
     details: [
-      "Content Strategy: Developing a content plan and calendar.",
-      "Content Types: Understanding different types of content (posts, stories, videos).",
-      "Copywriting: Writing.",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
+      "Website Optimization for Ecommerce",
+
+      "User Experience (UX)",
+      "Designing an effective ecommerce site",
+      "Conversion Rate Optimization (CRO)",
+      "Improving checkout process and user flow",
     ],
     imageSrc: "/module-2.png",
     borderColor: "border-green-500",
@@ -52,13 +293,15 @@ const modules = [
   {
     id: 3,
     title: "Module 3:",
-    description: "Content Creation and Management",
+    description: "SEO for Ecommerce",
     link: "/",
     details: [
-      "Content Strategy",
-      "Content Types: Understanding different types of content (posts, stories, videos, infographics)",
-      "Copywriting",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
+      "On-Page SEO",
+      "Product page optimization",
+      "Technical SEO",
+      "Site structure, URL optimization",
+      "Content Marketing",
+      "Blogging and content strategies for ecommerce",
     ],
     imageSrc: "/module-3.png",
     borderColor: "border-purple-500",
@@ -66,12 +309,15 @@ const modules = [
   {
     id: 4,
     title: "Module 4:",
-    description: "Community Engagement and Managment",
+    description: "Paid Advertising Strategies",
     link: "/",
     details: [
-      "Building a Community: Techniques for growing and nurturing a social media community.",
-      "Engagement Best Practices: Best practices for interacting with followers.",
-      "Handling Negative Feedback: Strategies for managing and responding to negative comments or reviews.",
+      "Google Ads for Ecommerce",
+      "Setting up and managing Google Ads campaigns",
+      "Social Media Advertising",
+      "Facebook Ads, Instagram Ads, Pinterest Ads",
+      "Retargeting Campaigns",
+      "Techniques for re-engaging visitors",
     ],
     imageSrc: "/module-4.png",
     borderColor: "border-yellow-500",
@@ -79,13 +325,15 @@ const modules = [
   {
     id: 5,
     title: "Module 5:",
-    description: "Social Media Advertising",
+    description: "Email Marketing for Ecommerce",
     link: "/",
     details: [
-      "Introduction to Paid Social Media",
-      "Ad Creation: Designing effective ads and creating compelling calls-to-action.",
-      "Targeting and Segmentation",
-      "Budgeting and Bidding",
+      "Building an Email List",
+      "Strategies for list growth",
+      "Crafting Effective Campaigns",
+      "Segmentation and personalization",
+      "Automated Email Sequences",
+      "Abandoned cart emails, post-purchase follow-ups",
     ],
     imageSrc: "/module-5.png",
     borderColor: "border-blue-500",
@@ -93,13 +341,15 @@ const modules = [
   {
     id: 6,
     title: "Module 6:",
-    description: "Analytics and Reporting",
+    description: "Social Media Marketing",
     link: "/",
     details: [
-      "Key Metrics and KPIs",
-      "Tools for Analytics: Overview of tools like Google Analytics, Facebook Insights, Twitter Analytics.",
-      "Creating Reports: How to create and interpret social media reports.",
-      "Data-Driven Decision Making: Using insights from analytics to adjust strategies.",
+      "Platforms and Strategies",
+      "Best practices for various social platforms",
+      "Content Creation",
+      "Creating engaging social media content",
+      "Community Engagement",
+      "Building and managing an online community",
     ],
     imageSrc: "/module-6.png",
     borderColor: "border-red-500",
@@ -107,12 +357,15 @@ const modules = [
   {
     id: 7,
     title: "Module 7:",
-    description: "Trends and Innovations",
+    description: "Analytics and Reporting",
     link: "/",
     details: [
-      "Emerging Trends: Current trends in social media marketing (e.g., short-form video, social commerce).",
-      "Platform Updates: Keeping up with changes and new features on social media platforms.",
-      "Innovative Techniques: Exploring new technologies and approaches (e.g., AR/VR, AI).",
+      "Measuring Performance",
+      "Key metrics to track (e.g., sales, traffic sources)",
+      "Using Analytics Tools",
+      "Google Analytics, ecommerce dashboards",
+      "Data-Driven Decision Making",
+      "Adjusting strategies based on insights",
     ],
     imageSrc: "/module-7.png",
     borderColor: "border-blue-500",
@@ -120,72 +373,24 @@ const modules = [
   {
     id: 8,
     title: "Module 8:",
-    description: "Compliance and Best Practices",
+    description: "Advanced Ecommerce Strategies",
     link: "/",
     details: [
-      "Legal Considerations: Understanding regulations and compliance (e.g., GDPR, advertising standards).",
-      "Ethical Marketing: Promoting ethical practices in social media marketing.",
-      "Brand Safety: Ensuring your brand maintains a positive reputation.",
+      "Customer Retention Strategies",
+      "Loyalty programs and retention tactics",
+      "International Ecommerce",
+      "Expanding into global markets",
+      "Multi-Channel Selling",
+      "Selling on multiple platforms (e.g., Amazon, eBay)",
     ],
     imageSrc: "/module-13.webp",
     borderColor: "border-orange-500",
   },
-  {
-    id: 9,
-    title: "Module 9:",
-    description: "Influencer Marketing",
-    link: "/",
-    details: [
-      "Identifying Influencers: How to find and choose influencers for your brand.",
-      "Managing Relationships: Best practices for working with influencers.",
-      "Measuring Impact: Evaluating the effectiveness of influencer campaigns.",
-    ],
-    imageSrc: "/module-9.webp",
-    borderColor: "border-green-500",
-  },
-  {
-    id: 10,
-    title: "Module 10:",
-    description: "Crisis Management and Recovery",
-    link: "/",
-    details: [
-      "Developing a Crisis Plan: Creating a strategy for managing potential crises.",
-      "Responding to Crises: Effective communication strategies during a crisis.",
-      "Post-Crisis Analysis: Evaluating and learning from the crisis situation.",
-    ],
-    imageSrc: "/module-2.png",
-    borderColor: "border-brown-500",
-  },
-  {
-    id: 11,
-    title: "Module 11:",
-    description: "Practical Application and Case Studies",
-    link: "/",
-    details: [
-      "Real-World Examples: Analysis of successful and unsuccessful social media campaigns.",
-      "Hands-On Exercises: Practical activities to apply learned concepts.",
-      "Group Projects: Collaborative projects to create and execute social media strategies.",
-    ],
-    imageSrc: "/module-3.png",
-    borderColor: "border-purple-500",
-  },
-  {
-    id: 12,
-    title: "Module 12:",
-    description: "Advanced Topics and Future Outlook",
-    link: "/",
-    details: [
-      "Advanced Analytics: Deep dive into advanced data analysis techniques.",
-      "Integration with Other Channels: How social media fits into broader marketing and communication strategies.",
-      "Future Trends: Preparing for the future of social media marketing.",
-    ],
-    imageSrc: "/module-4.png",
-    borderColor: "border-yellow-500",
-  },
 ];
 const mName = "Ouer Modules";
-const mDescription =
-  "Here’s a comprehensive list of Certification in Social Media Marketing modules.";
+const mDescription = "Affiliate Marketing Training Modules";
+const mDescription2 = "Dropshipping Training Modules";
+const mDescription3 = "Ecommerce Marketing Training Modules";
 
 // components/TrainingProcess.js
 
@@ -237,34 +442,33 @@ const trainingSteps = [
   /* LevelUpSection */
 }
 const levels = [
-  "Boost Your Resume: Gain an industry-recognized certification that sets you apart from the competition.",
-  "Hands-On Learning: Get practical experience with real-world social media campaigns and analytics.",
-  "Master Top Platforms: Learn strategies and tools for Facebook, Instagram, LinkedIn, Twitter, and more.",
-  "Stay Ahead with AI: Harness the power of AI to optimize your social media marketing efforts.",
-  "Flexible Learning: Access online courses anytime, anywhere, at your own pace.",
-  "Expert Instructors: Learn from seasoned digital marketers with years of experience in the field.",
+  "Build Your Future: Get certified in online business and turn your entrepreneurial dreams into reality.",
+  "Comprehensive Training: Master the essentials of dropshipping, affiliate marketing, and eCommerce marketing.",
+  "Real-World Insights: Learn practical strategies that you can immediately apply to your online business.",
+  "Expand Your Network: Connect with like-minded entrepreneurs and potential partners.",
+  "Career-Ready Skills: Develop the skills needed to build, manage, and grow a successful online business.",
 ];
 {
   /*Weyewsection*/
 }
 const contentData = [
   {
-    title: "Expert-Led Live Sessions Learn from Industry Leaders",
+    title: "Master Dropshipping Launch Your Business with Minimal Risk",
     description:
-      "Our Social Media Marketing program is not just another online course. We bring the classroom to you through interactive live sessions led by industry experts. You’ll gain insights from professionals who have successfully navigated the complexities of digital marketing.",
-    image: "/media-1.jpg",
+      "Our Dropshipping Training module equips you with the knowledge and tools to start your own online business with little to no upfront investment. Learn how to select profitable products, find reliable suppliers, and manage your online store without the need to hold inventory.",
+    image: "/Online-Business-4.jpg",
   },
   {
-    title: "Tailored Curriculum Master the Skills that Matter",
+    title: "Affiliate Marketing Earn Passive Income Like a Pro",
     description:
-      "We understand that the digital landscape is ever-changing, which is why our curriculum is meticulously designed to meet the demands of today’s market. Our program covers everything from content creation and analytics to advanced advertising techniques across all major platforms.",
-    image: "/media-2.jpg",
+      "Discover the secrets of successful affiliate marketing with our comprehensive training module. Whether you’re new to affiliate marketing or looking to enhance your existing skills, our course covers everything you need to know.",
+    image: "/Online-Business-5.jpg",
   },
   {
-    title: "Flexible Learning Certification on Your Terms",
+    title: "Ecommerce Marketing Drive Traffic, Boost Sales, and Build a Brand",
     description:
-      "At our academy, flexibility is key. We offer a program that fits around your schedule, allowing you to balance work, life, and learning seamlessly. With live classes available at various times, recorded sessions for later viewing, and a Mobile-Friendly platform.",
-    image: "/media-3.jpg",
+      "Our Ecommerce Marketing Training module is designed to turn you into a digital marketing expert. Learn how to attract and retain customers, optimize your online store for search engines, and create powerful marketing campaigns that convert.",
+    image: "/Online-Business-6.jpg",
   },
 ];
 
@@ -273,29 +477,56 @@ const contentData = [
 }
 const faqs = [
   {
-    question: "What is the Certification in Social Media Marketing?",
+    question: "What is included in the Dropshipping Training?",
     answer:
-      "The Certification in Social Media Marketing is a professional course designed to equip you with the skills and knowledge needed to effectively create, manage, and analyze social media campaigns across various platforms.",
+      "The Dropshipping Training covers everything from setting up your online store to selecting profitable products, managing suppliers, and optimizing your sales channels. You’ll also learn about customer service, handling returns, and marketing strategies specific to dropshipping.",
   },
   {
-    question: "Who should enroll in this certification program?",
+    question: "What will I learn in the Affiliate Marketing Training?",
     answer:
-      "This program is ideal for digital marketers, social media managers, content creators, entrepreneurs, and anyone interested in mastering social media marketing strategies.",
+      "In the Affiliate Marketing Training, you’ll learn how to choose profitable niches, find and join affiliate programs, create content that converts, and drive traffic to your affiliate offers. The course also covers tracking and optimizing your campaigns for maximum revenue.",
   },
   {
-    question: "Are there any prerequisites for enrolling in this course?",
+    question: "What topics are covered in the Ecommerce Marketing Training?",
     answer:
-      "There are no specific prerequisites. However, a basic understanding of marketing principles and familiarity with social media platforms will be helpful.",
+      "The Ecommerce Marketing Training includes a comprehensive overview of digital marketing strategies tailored for online stores. Topics include SEO, email marketing, social media marketing, paid advertising, conversion rate optimization, and analytics. You’ll also learn about customer retention techniques and building brand loyalty.",
+  },
+  {
+    question: "Are there any prerequisites for enrolling in these courses?",
+    answer:
+      "No formal prerequisites are required. However, a basic understanding of online business concepts and familiarity with digital tools will be beneficial. The courses are designed for beginners as well as those looking to enhance their existing knowledge.",
   },
   {
     question: "Will I receive a certificate upon completion?",
     answer:
-      "Yes, upon successful completion of the course, you will receive a certification that can be added to your resume and LinkedIn profile.",
+      "es, upon successfully completing all the modules and passing the final assessment, you will receive a certification that you can showcase to potential employers or use to build your online business credentials.",
   },
   {
-    question: "What kind of support is available during the course?",
+    question:
+      "What kind of career opportunities can this certification open up for me?",
     answer:
-      "You will have access to instructors, course materials, and a student community for support. Some programs may also offer one-on-one mentoring sessions.",
+      "This certification can open doors to various online business careers, such as becoming an eCommerce entrepreneur, digital marketer, dropshipping expert, or affiliate marketing specialist. The skills you acquire will be valuable for starting your own online business or enhancing your role in a digital marketing team.",
+  },
+  {
+    question: "How is the Online Business course structured?",
+    answer:
+      "The course is divided into modules, each focusing on different aspects of online business, with a mix of theory and practical exercises.",
+  },
+  {
+    question:
+      "Will I receive hands-on training in building an online business?",
+    answer:
+      "Yes, the course includes practical assignments and projects to provide hands-on experience in setting up and managing an online business.",
+  },
+  {
+    question: "How is the course assessed?",
+    answer:
+      "The course is assessed through quizzes, practical tasks, and a final project where you will develop and launch an online business strategy.",
+  },
+  {
+    question: "How do I enroll in the Online Business Certification course?",
+    answer:
+      "Enrollment can be completed online through our website by selecting your preferred course schedule and filling out the registration form.",
   },
 ];
 
@@ -305,37 +536,113 @@ const page = () => {
       {/* Course Enroll section*/}
       <CourseEnroll
         title="The Only Training You'll Ever Need"
-        heading="Certification in Social Media Marketing in UAE"
-        description="The Certification in Social Media Marketing is a specialized sub-module of our comprehensive Digital Marketing Diploma. This certification equips you with essential skills to master social media platforms."
-        img="/media-barner.png"
+        heading="Mastering in Online Business"
+        description="The Certification in Online Business equips you with essential skills to succeed in the digital marketplace, offering comprehensive training in Affiliate Marketing, Dropshipping, and Ecommerce Marketing."
+        img="/Online-Business-1.webp"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
-        duration="Almost 6 Months"
+        duration="3 Weeks"
         price="1500 AED"
-        Schedule="Once a Week Every Thursday"
+        Schedule="Every Saturday (09:00 AM GMT+4)"
       />
 
       {/*View full details*/}
       <CourseDetails
-        heading="Become Certified in Social Media Marketing (SMM)"
-        content1=" Social Media Marketing (SMM) "
+        heading="Become Certified in Online Business"
+        content1="Online Business"
         content2="Full Stack Digital Marketing Course"
       />
       {/*Modules section*/}
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap  lg:flex-nowrap md:flex-nowrap items-start space-x-4 p-6 mb-4 border-2 border-dashed border-red-500 rounded-lg bg-white shadow hover:shadow-slate-500 hover:shadow-lg transition-all">
+          <img
+            src="/Online-Business-2.webp"
+            alt="Online-Business"
+            className="w-32 h-32 object-contain items-center"
+          />
+          <div>
+            <h3 className="text-3xl text-[#1D1B4C] font-bold text-gray-900 mb-2">
+              Affiliate Marketing Training
+            </h3>
+            <p className="text-gray-700 text-sm">
+              Unlock the power of affiliate marketing with our expert-led
+              training programs. Our courses are designed to equip you with the
+              skills and strategies needed to succeed in the dynamic world of
+              online marketing.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <Modules
         moduleName={mName}
         moduleDescription={mDescription}
         moduleObj={modules}
         visableButton={false}
       />
+
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap  lg:flex-nowrap md:flex-nowrap items-start space-x-4 p-6 mb-4 border-2 border-dashed border-red-500 rounded-lg bg-white shadow hover:shadow-slate-500 hover:shadow-lg transition-all">
+          <img
+            src="/module-3.png"
+            alt="Online-Business"
+            className="w-32 h-32 object-contain items-center"
+          />
+          <div>
+            <h3 className="text-3xl text-[#1D1B4C] font-bold text-gray-900 mb-2">
+              Dropshipping Training
+            </h3>
+            <p className="text-gray-700 text-sm">
+              Master the art of dropshipping with our comprehensive training
+              programs. Learn the ins and outs of creating a successful online
+              store, from sourcing products to managing logistics.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Modules
+        moduleName={mName}
+        moduleDescription={mDescription2}
+        moduleObj={modules2}
+        visableButton={false}
+      />
+
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap  lg:flex-nowrap md:flex-nowrap items-start space-x-4 p-6 mb-4 border-2 border-dashed border-red-500 rounded-lg bg-white shadow hover:shadow-slate-500 hover:shadow-lg transition-all">
+          <img
+            src="/module-12.webp"
+            alt="Online-Business"
+            className="w-32 h-32 object-contain items-center"
+          />
+          <div>
+            <h3 className="text-3xl text-[#1D1B4C] font-bold text-gray-900 mb-2">
+              Ecommerce Marketing Training
+            </h3>
+            <p className="text-gray-700 text-sm">
+              Elevate your e-commerce game with our specialized marketing
+              training. Our courses cover everything from SEO and social media
+              to conversion optimization and paid ads, giving you the tools to
+              drive traffic and increase sales.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Modules
+        moduleName={mName}
+        moduleDescription={mDescription3}
+        moduleObj={modules3}
+        visableButton={false}
+      />
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="Certify your skills, amplify your impact.social media mastery starts here."
+        heading="Master the art of dropshipping, affiliate marketing, and ecommerce, and you'll hold the keys to creating a thriving online empire."
         bgImg="/website-001.jpg"
       />
 
@@ -348,9 +655,9 @@ const page = () => {
           {/* Title Section */}
           <div className="text-center space-y-4 mb-12">
             <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-              UAE Leading Certification in Social Media Marketing
+              UAE Leading Certification in Online Business
             </h3>
-            <DynamicDate heading="Next Certification in Social Media Marketing Batch is Starting From" />
+            <DynamicDate heading="Next Certification in Online Business Batch is Starting From" />
           </div>
           {/* Countdown Timer */}
           <CountdownTimer />
@@ -360,7 +667,7 @@ const page = () => {
       {/* LevelUpSection */}
       <LevelUpSection
         levels={levels}
-        heading="Elevate Your Career with Certification in Social Media Marketing"
+        heading="Enroll Today and Start Building Your Successful Online Business!"
       />
 
       {/*Whyewsection*/}

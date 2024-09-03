@@ -8,6 +8,7 @@ import Image from "next/image";
 import { MdPhoneInTalk } from "react-icons/md";
 import { IoIosMail } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
+import { HiOutlineLogin } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
 
@@ -26,7 +27,7 @@ const navItems = [
         label: "Mastering Social Media Marketing",
         link: "/social-media-marketing",
       },
-      { label: "MAstering in Google Marketing", link: "/google-marketing" },
+      { label: "Mastering in Google Marketing", link: "/google-marketing" },
       { label: "Mastering in Google Analytics", link: "/google-analytics" },
       { label: "Mastering in Email Marketing", link: "/email-marketing" },
       {
@@ -41,12 +42,12 @@ const navItems = [
     link: "/",
     children: [
       { label: "Diploma digital Marketing", link: "#" },
-      { label: "Business Setup + (1 To 1 Session)", link: "/business-setup" },
+      { label: "Business Setup + (1 To 1 Session)", link: "#" },
       { label: "On Demand Modules", link: "#" },
     ],
   },
 
-  { label: "Other institutes", link: "#" },
+  { label: "Other institutes", link: "/other-institutes" },
   {
     label: "For Companies",
     link: "#",
@@ -68,6 +69,7 @@ const navItems = [
       { label: "Blog", link: "#" },
     ],
   },
+  { label: "Login", link: "/sign-in", login: ["login"] },
 ];
 
 export default function Navbar() {
@@ -88,8 +90,9 @@ export default function Navbar() {
       {/*Navbar*/}
       <Headroom className="absolute m-auto right-0 left-0">
         <div
-          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-start max-sm:justify-between px-4 md:px-[100px] ${!isSideMenuOpen && "py-3"
-            } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
+          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-start max-sm:justify-between px-4 md:px-[100px] ${
+            !isSideMenuOpen && "py-3"
+          } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
         >
           <section ref={animationParent} className="flex items-center gap-10">
             {!isSideMenuOpen && (
@@ -116,6 +119,12 @@ export default function Navbar() {
                       {d.children && (
                         <IoIosArrowDown className="rotate-180 transition-all group-hover:rotate-0" />
                       )}
+                      {d.login && (
+                        <HiOutlineLogin
+                          size={20}
+                          className=" text-orange-color font-bold transition-all"
+                        />
+                      )}
                     </p>
                   </Link>
                   {d.children && (
@@ -141,8 +150,9 @@ export default function Navbar() {
 
           <FiMenu
             onClick={openSideMenu}
-            className={`cursor-pointer text-4xl md:hidden ${isSideMenuOpen && "hidden"
-              }`}
+            className={`cursor-pointer text-4xl md:hidden ${
+              isSideMenuOpen && "hidden"
+            }`}
           />
         </div>
       </Headroom>

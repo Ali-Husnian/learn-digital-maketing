@@ -5,19 +5,18 @@ import Image from "next/image";
 function checkout() {
   return (
     <>
-      <div className="bg-[url('/checkout1.jpg')] h-65vh bg-cover ">
-        <div className="w-full max-w-6xl mx-auto">
-          <div className="flex flex-col items-center justify-center h-80vh">
-            <div className="text-center text-5xl font-bold text-white">
-              Checkout
-            </div>
-            {/* <br /> */}
-            <div className="text-center text-[20px] font-bold text-white">
-              Home - Checkout
-            </div>
-          </div>
+      <div className="relative h-55vh ">
+        <div className="absolute inset-0 bg-cover bg-center bg-fixed bg-[url('/checkout1.jpg')]"></div>
+
+        {/* Overlay */}
+        <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
+          <h1 className="text-5xl font-bold mb-4">
+            <span>Checkout</span>
+          </h1>
+          <h2 className="text-lg tracking-wide flex gap-0">Home - checkout</h2>
         </div>
       </div>
+
       <div className="max-w-6xl py-12 mx-auto px-4">
         <div className="flex gap-2 lg:items-center md:items-center sm:items-start   bg-slate-100 border-t-4 border-t-orange-500 p-6">
           <RiCalendarView color="orange" size="20px" />

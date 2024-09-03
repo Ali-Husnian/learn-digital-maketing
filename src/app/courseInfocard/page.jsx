@@ -42,6 +42,25 @@ export default function CourseInfoCard() {
               <li>✔️ and Many More Digital Marketing Tools Taught</li>
             </ul>
           </div>
+          <p className="text-2xl font-bold text-gray-900 line-through">
+            7000 AED
+          </p>
+          <p className="text-3xl font-bold text-orange-600 mb-4">
+            3500 AED in 90 Days.
+          </p>
+          <h3 className="font-bold text-gray-900 mb-4">55+ Modules Covered</h3>
+          <ul className="text-gray-700 space-y-2">
+            <li>✔️ Search Engine Optimisation (SEO)</li>
+            <li>✔️ Pay-per-click PPC</li>
+            <li>✔️ Social Media Marketing</li>
+            <li>✔️ Influence Marketing</li>
+            <li>✔️ Growth and Performance Marketing</li>
+            <li>✔️ Content Marketing</li>
+            <li>✔️ Top Artificial Intelligence Tools like ChatGPT</li>
+            <li>✔️ Email Marketing</li>
+            <li>✔️ How to create Website using WordPress</li>
+            <li>✔️ and Many More Digital Marketing Tools Taught</li>
+          </ul>
         </div>
 
         {/* Enrollment Form Section */}

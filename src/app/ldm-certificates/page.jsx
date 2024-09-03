@@ -15,7 +15,7 @@ export default function LDMCertifications() {
       title: "Ecommerce Website Development",
       description:
         "This course is designed to help you develop skills in ecommerce web design, covering key areas such as platform selection, website security, and payment gateway integration. By the end of this course, you'll be able to build a fully functional ecommerce website from scratch.",
-      fee: "AED 1500",
+      fee: "AED 1000",
       icon: <FaGlobe />, // Icon representing website or globe
     },
     {
@@ -50,7 +50,7 @@ export default function LDMCertifications() {
       title: "Mastering in Online Business",
       description:
         "Build and grow your online business with this comprehensive course. Topics include business planning, digital marketing, customer acquisition, and scaling your business to new heights.",
-      fee: "AED 2500",
+      fee: "AED 1500",
       icon: <FaDollarSign />, // Icon representing business or briefcase
     },
     {
