@@ -42,7 +42,10 @@ const navItems = [
     link: "/",
     children: [
       { label: "Diploma digital Marketing", link: "#" },
-      { label: "Business Setup + (1 To 1 Session)", link: "#" },
+      {
+        label: "Business Setup + (1 To 1 Session)",
+        link: "/business-setup-1-to-1-session",
+      },
       { label: "On Demand Modules", link: "#" },
     ],
   },
