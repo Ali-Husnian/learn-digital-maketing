@@ -4,10 +4,9 @@ import React from "react";
 export default function CourseInfoCard() {
   return (
     <div className="mx-auto max-w-6xl py-12 px-4 md:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-orange-50  rounded-lg shadow-lg">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-orange-50 rounded-none lg:rounded-lg">
         {/* Course Info Section */}
         <div className="p-8">
-
           <div className="pr-6">
             <h2 className="text-orange-600 font-bold uppercase tracking-widest mb-2">
               Course Info
@@ -17,30 +16,13 @@ export default function CourseInfoCard() {
               Affordable from UAE Market
             </h1>
             <div className="flex items-center mb-4">
-              <span className="text-orange-600 text-xl font-semibold">★★★★★</span>
+              <span className="text-orange-600 text-xl font-semibold">
+                ★★★★★
+              </span>
               <span className="ml-2 text-gray-600 text-sm">
                 4.9 out of 5 based on 10K Reviews.
               </span>
             </div>
-            <p className="text-2xl font-bold text-gray-900 line-through">
-              6000 AED
-            </p>
-            <p className="text-3xl font-bold text-orange-600 mb-4">
-              3000 AED in 90 Days.
-            </p>
-            <h3 className="font-bold text-gray-900 mb-4">55+ Modules Covered</h3>
-            <ul className="text-gray-700 space-y-2">
-              <li>✔️ Search Engine Optimisation (SEO)</li>
-              <li>✔️ Pay-per-click PPC</li>
-              <li>✔️ Social Media Marketing</li>
-              <li>✔️ Influence Marketing</li>
-              <li>✔️ Growth and Performance Marketing</li>
-              <li>✔️ Content Marketing</li>
-              <li>✔️ Top Artificial Intelligence Tools like ChatGPT</li>
-              <li>✔️ Email Marketing</li>
-              <li>✔️ How to create Website using WordPress</li>
-              <li>✔️ and Many More Digital Marketing Tools Taught</li>
-            </ul>
           </div>
           <p className="text-2xl font-bold text-gray-900 line-through">
             7000 AED
@@ -64,7 +46,7 @@ export default function CourseInfoCard() {
         </div>
 
         {/* Enrollment Form Section */}
-        <div className="bg-orange-500 p-6 ">
+        <div className="bg-orange-500 p-6 rounded-none lg:rounded-r-lg">
           <h2 className="text-white font-bold uppercase tracking-widest mb-4">
             Enrollment Form
           </h2>
@@ -72,12 +54,8 @@ export default function CourseInfoCard() {
             FEES 50% OFF FOR NEXT BATCH
           </h3>
           <div className="flex gap-4 items-center ">
-            <div className="line-through font-bold text-2xl ">
-              7000 AED
-            </div>
-            <div className="font-bold text-white text-2xl">
-              3500 AED.
-            </div>
+            <div className="line-through font-bold text-2xl ">7000 AED</div>
+            <div className="font-bold text-white text-2xl">3500 AED.</div>
           </div>
 
           <ul className="text-white space-y-2 mb-4">
