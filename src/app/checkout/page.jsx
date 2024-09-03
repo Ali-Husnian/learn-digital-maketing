@@ -5,17 +5,15 @@ import Image from "next/image";
 function checkout() {
   return (
     <>
-      <div className="bg-[url('/checkout1.jpg')] h-full bg-cover ">
-        <div className="bg-black/50">
-          <div className="w-full max-w-6xl mx-auto">
-            <div className="flex flex-col items-center justify-center h-80vh">
-              <div className="text-center text-5xl font-bold text-white">
-                Checkout
-              </div>
-              {/* <br /> */}
-              <div className="text-center text-[20px] font-bold text-white">
-                Home - Checkout
-              </div>
+      <div className="bg-[url('/checkout1.jpg')] h-65vh bg-cover ">
+        <div className="w-full max-w-6xl mx-auto">
+          <div className="flex flex-col items-center justify-center h-80vh">
+            <div className="text-center text-5xl font-bold text-white">
+              Checkout
+            </div>
+            {/* <br /> */}
+            <div className="text-center text-[20px] font-bold text-white">
+              Home - Checkout
             </div>
           </div>
         </div>

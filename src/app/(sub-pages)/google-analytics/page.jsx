@@ -24,168 +24,49 @@ const modules = [
   {
     id: 1,
     title: "Module 1:",
-    description: "Introduction to Social Media Marketing",
+    description: "Introduction to Google Analytics",
     link: "/",
     details: [
-      "Overview of Social Media Platforms: Introduction to major platforms (Facebook, Instagram, LinkedIn, TikTok).",
-      "Importance of Social Media: How social media fits into the broader marketing strategy.",
-      "Key Concepts: Terminology and basic principles of social media marketing.",
+      "Overview of Digital Analytics",
+      "What is Google Analytics?",
+      "How Google Analytics Works",
+      "Setting Up Google Analytics Account",
+      "Understanding Google Analytics Dashboard",
     ],
-
     imageSrc: "/module-1.png",
-    borderColor: "border-orange-500",
+    borderColor: "border-purple-500",
   },
   {
     id: 2,
     title: "Module 2:",
-    description: "Social Media Strategy Development",
+    description: "Analytics and Data Interpretation (6 Hours)",
     link: "/",
     details: [
-      "Content Strategy: Developing a content plan and calendar.",
-      "Content Types: Understanding different types of content (posts, stories, videos).",
-      "Copywriting: Writing.",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
+      "Importance of data in digital marketing.",
+      "Google Analytics: setup, key metrics, reporting.",
+      "Data driven decision making and KPI tracking.",
     ],
-    imageSrc: "/module-2.png",
-    borderColor: "border-green-500",
+
+    imageSrc: "/modules-15.webp",
+    borderColor: "border-orange-500",
   },
   {
     id: 3,
     title: "Module 3:",
-    description: "Content Creation and Management",
+    description: "Conversion Rate Optimization (CRO) (3 Hours)",
     link: "/",
     details: [
-      "Content Strategy",
-      "Content Types: Understanding different types of content (posts, stories, videos, infographics)",
-      "Copywriting",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
-    ],
-    imageSrc: "/module-3.png",
-    borderColor: "border-purple-500",
-  },
-  {
-    id: 4,
-    title: "Module 4:",
-    description: "Community Engagement and Managment",
-    link: "/",
-    details: [
-      "Building a Community: Techniques for growing and nurturing a social media community.",
-      "Engagement Best Practices: Best practices for interacting with followers.",
-      "Handling Negative Feedback: Strategies for managing and responding to negative comments or reviews.",
-    ],
-    imageSrc: "/module-4.png",
-    borderColor: "border-yellow-500",
-  },
-  {
-    id: 5,
-    title: "Module 5:",
-    description: "Social Media Advertising",
-    link: "/",
-    details: [
-      "Introduction to Paid Social Media",
-      "Ad Creation: Designing effective ads and creating compelling calls-to-action.",
-      "Targeting and Segmentation",
-      "Budgeting and Bidding",
-    ],
-    imageSrc: "/module-5.png",
-    borderColor: "border-blue-500",
-  },
-  {
-    id: 6,
-    title: "Module 6:",
-    description: "Analytics and Reporting",
-    link: "/",
-    details: [
-      "Key Metrics and KPIs",
-      "Tools for Analytics: Overview of tools like Google Analytics, Facebook Insights, Twitter Analytics.",
-      "Creating Reports: How to create and interpret social media reports.",
-      "Data-Driven Decision Making: Using insights from analytics to adjust strategies.",
-    ],
-    imageSrc: "/module-6.png",
-    borderColor: "border-red-500",
-  },
-  {
-    id: 7,
-    title: "Module 7:",
-    description: "Trends and Innovations",
-    link: "/",
-    details: [
-      "Emerging Trends: Current trends in social media marketing (e.g., short-form video, social commerce).",
-      "Platform Updates: Keeping up with changes and new features on social media platforms.",
-      "Innovative Techniques: Exploring new technologies and approaches (e.g., AR/VR, AI).",
-    ],
-    imageSrc: "/module-7.png",
-    borderColor: "border-blue-500",
-  },
-  {
-    id: 8,
-    title: "Module 8:",
-    description: "Compliance and Best Practices",
-    link: "/",
-    details: [
-      "Legal Considerations: Understanding regulations and compliance (e.g., GDPR, advertising standards).",
-      "Ethical Marketing: Promoting ethical practices in social media marketing.",
-      "Brand Safety: Ensuring your brand maintains a positive reputation.",
+      "Techniques for improving website conversions.",
+      "A/B testing and multivariate testing.",
+      "Analyzing and interpreting test results.",
     ],
     imageSrc: "/module-13.webp",
-    borderColor: "border-orange-500",
-  },
-  {
-    id: 9,
-    title: "Module 9:",
-    description: "Influencer Marketing",
-    link: "/",
-    details: [
-      "Identifying Influencers: How to find and choose influencers for your brand.",
-      "Managing Relationships: Best practices for working with influencers.",
-      "Measuring Impact: Evaluating the effectiveness of influencer campaigns.",
-    ],
-    imageSrc: "/module-9.webp",
     borderColor: "border-green-500",
-  },
-  {
-    id: 10,
-    title: "Module 10:",
-    description: "Crisis Management and Recovery",
-    link: "/",
-    details: [
-      "Developing a Crisis Plan: Creating a strategy for managing potential crises.",
-      "Responding to Crises: Effective communication strategies during a crisis.",
-      "Post-Crisis Analysis: Evaluating and learning from the crisis situation.",
-    ],
-    imageSrc: "/module-2.png",
-    borderColor: "border-brown-500",
-  },
-  {
-    id: 11,
-    title: "Module 11:",
-    description: "Practical Application and Case Studies",
-    link: "/",
-    details: [
-      "Real-World Examples: Analysis of successful and unsuccessful social media campaigns.",
-      "Hands-On Exercises: Practical activities to apply learned concepts.",
-      "Group Projects: Collaborative projects to create and execute social media strategies.",
-    ],
-    imageSrc: "/module-3.png",
-    borderColor: "border-purple-500",
-  },
-  {
-    id: 12,
-    title: "Module 12:",
-    description: "Advanced Topics and Future Outlook",
-    link: "/",
-    details: [
-      "Advanced Analytics: Deep dive into advanced data analysis techniques.",
-      "Integration with Other Channels: How social media fits into broader marketing and communication strategies.",
-      "Future Trends: Preparing for the future of social media marketing.",
-    ],
-    imageSrc: "/module-4.png",
-    borderColor: "border-yellow-500",
   },
 ];
 const mName = "Ouer Modules";
 const mDescription =
-  "Here’s a comprehensive list of Certification in Google Analytics Marketing modules.";
+  "Here’s a comprehensive list of Mastering in Google Analytics .";
 
 // components/TrainingProcess.js
 
@@ -237,34 +118,34 @@ const trainingSteps = [
   /* LevelUpSection */
 }
 const levels = [
-  "Boost Your Resume: Gain an industry-recognized certification that sets you apart from the competition.",
-  "Hands-On Learning: Get practical experience with real-world social media campaigns and analytics.",
-  "Master Top Platforms: Learn strategies and tools for Facebook, Instagram, LinkedIn, Twitter, and more.",
-  "Stay Ahead with AI: Harness the power of AI to optimize your social media marketing efforts.",
-  "Flexible Learning: Access online courses anytime, anywhere, at your own pace.",
-  "Expert Instructors: Learn from seasoned digital marketers with years of experience in the field.",
+  "Boost Your Career: Gain a competitive edge with expert knowledge in Google Analytics.",
+  "Hands-On Learning: Analyze real-world data and gain practical experience with Google Analytics tools.",
+  "Expert Instruction: Learn from industry professionals who are experts in data analytics and digital marketing.",
+  "Flexible Study Options: Access the course at your convenience, designed to fit your busy schedule.",
+  "Networking Opportunities: Connect with other analytics enthusiasts and professionals.",
+  "Career Support: Receive guidance on leveraging your analytics skills for career advancement.",
 ];
 {
   /*Weyewsection*/
 }
 const contentData = [
   {
-    title: "Expert-Led Live Sessions Learn from Industry Leaders",
+    title: "Unlock Data-Driven Decision Making",
     description:
-      "Our Social Media Marketing program is not just another online course. We bring the classroom to you through interactive live sessions led by industry experts. You’ll gain insights from professionals who have successfully navigated the complexities of digital marketing.",
-    image: "/media-1.jpg",
+      "Our Mastering Google Analytics program is designed to turn data into actionable insights. Learn how to track, analyze, and interpret data to make informed decisions that drive business growth. From understanding user behavior to optimizing conversion rates.",
+    image: "/web-1.jpg",
   },
   {
-    title: "Tailored Curriculum Master the Skills that Matter",
+    title: "Hands-On Learning with Real-World Applications",
     description:
-      "We understand that the digital landscape is ever-changing, which is why our curriculum is meticulously designed to meet the demands of today’s market. Our program covers everything from content creation and analytics to advanced advertising techniques across all major platforms.",
-    image: "/media-2.jpg",
+      "We believe the best way to master Google Analytics is by doing. Our program offers a hands-on approach, with live projects and case studies that mirror real-world scenarios. You’ll learn how to set up tracking codes, configure goals, and analyze key metrics",
+    image: "/web-2.jpg",
   },
   {
-    title: "Flexible Learning Certification on Your Terms",
+    title: "Expert-Led Training with Industry Insights",
     description:
-      "At our academy, flexibility is key. We offer a program that fits around your schedule, allowing you to balance work, life, and learning seamlessly. With live classes available at various times, recorded sessions for later viewing, and a Mobile-Friendly platform.",
-    image: "/media-3.jpg",
+      "Our program is led by Google Analytics-certified professionals who bring years of industry experience to the table. Benefit from their expertise as they guide you through both basic and advanced analytics techniques.",
+    image: "/web-3.jpg",
   },
 ];
 
@@ -273,29 +154,54 @@ const contentData = [
 }
 const faqs = [
   {
-    question: "What is the Certification in Social Media Marketing?",
+    question: "Who is this program designed for?",
     answer:
-      "The Certification in Social Media Marketing is a professional course designed to equip you with the skills and knowledge needed to effectively create, manage, and analyze social media campaigns across various platforms.",
+      "This program is designed for digital marketers, business analysts, website managers, and anyone looking to gain a deeper understanding of Google Analytics. Whether you’re a beginner or have some experience with the platform, our course content is tailored to provide valuable insights and skills at all levels.",
   },
   {
-    question: "Who should enroll in this certification program?",
+    question: "What will I learn in this program?",
     answer:
-      "This program is ideal for digital marketers, social media managers, content creators, entrepreneurs, and anyone interested in mastering social media marketing strategies.",
+      "You will learn how to set up and configure Google Analytics, track key metrics, analyze user behavior, and create custom reports. The program also covers advanced topics like goal tracking, conversion optimization, and integrating Google Analytics with other marketing tools. By the end of the course, you’ll have a comprehensive understanding of how to use Google Analytics to drive data-driven decisions.",
   },
   {
-    question: "Are there any prerequisites for enrolling in this course?",
+    question: "Is the program suitable for beginners?",
     answer:
-      "There are no specific prerequisites. However, a basic understanding of marketing principles and familiarity with social media platforms will be helpful.",
-  },
-  {
-    question: "Will I receive a certificate upon completion?",
-    answer:
-      "Yes, upon successful completion of the course, you will receive a certification that can be added to your resume and LinkedIn profile.",
+      "Yes, our program is suitable for beginners as well as those with some experience in Google Analytics. We start with the basics and gradually move to more advanced topics, ensuring that all participants can follow along and gain valuable insights, regardless of their prior knowledge.",
   },
   {
     question: "What kind of support is available during the course?",
     answer:
-      "You will have access to instructors, course materials, and a student community for support. Some programs may also offer one-on-one mentoring sessions.",
+      "Throughout the program, you will have access to expert instructors who can answer your questions and provide guidance. We also offer supplementary resources, such as video tutorials, case studies, and discussion forums, to enhance your learning experience.",
+  },
+  {
+    question: "Will I receive a certification upon completion?",
+    answer:
+      "Yes, upon successfully completing the program, you will receive a certification that recognizes your proficiency in Google Analytics. This certification can be a valuable addition to your resume, helping you to stand out in the job market or advance in your current role.",
+  },
+  {
+    question: "How are the classes conducted?",
+    answer:
+      "Our classes are conducted online, offering you the flexibility to learn from anywhere. Sessions are live and interactive, allowing you to engage with instructors and fellow participants in real-time. Recorded sessions are also available if you need to review the material at your own pace.",
+  },
+  {
+    question: "What are the prerequisites for enrolling in the program?",
+    answer:
+      "There are no strict prerequisites for enrolling in the Mastering Google Analytics program. However, having a basic understanding of digital marketing or website management can be beneficial. We also recommend familiarity with Google tools, but it’s not required as the program covers everything you need to know.",
+  },
+  {
+    question: "How is the Google Analytics course structured?",
+    answer:
+      "The course is divided into modules, each focusing on different aspects of Google Analytics, with a mix of theoretical and practical learning.",
+  },
+  {
+    question: "How is the course assessed?",
+    answer:
+      "The course is assessed through quizzes, practical tasks, and a final project where you will analyze website data using Google Analytics.",
+  },
+  {
+    question: "Can I use this certification to advance my career?",
+    answer:
+      "Yes, the certification is recognized by employers and can help you advance in roles related to digital marketing, data analysis, and web management.",
   },
 ];
 
@@ -314,7 +220,7 @@ const page = () => {
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
-        duration="30 Weeks"
+        duration="3 Weeks"
         price="2000 AED"
         Schedule="Every Saturday ( 09:00 AM GMT+4)"
       />
@@ -335,7 +241,7 @@ const page = () => {
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="Certify your skills, amplify your impact.social media mastery starts here."
+        heading="Unlock the power of data and transform insights into action. Master Google Analytics, and turn every click into an opportunity for growth."
         bgImg="/website-001.jpg"
       />
 
@@ -348,9 +254,9 @@ const page = () => {
           {/* Title Section */}
           <div className="text-center space-y-4 mb-12">
             <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-              UAE Leading Certification in Social Media Marketing
+              UAE Leading Mastering in Google Analytics
             </h3>
-            <DynamicDate heading="Next Certification in Social Media Marketing Batch is Starting From" />
+            <DynamicDate heading="Next Mastering in Google Analytics Batch is Starting" />
           </div>
           {/* Countdown Timer */}
           <CountdownTimer />
@@ -360,17 +266,17 @@ const page = () => {
       {/* LevelUpSection */}
       <LevelUpSection
         levels={levels}
-        heading="Elevate Your Career with Certification in Social Media Marketing"
+        heading="Unlock Data-Driven Success with Mastering Google Analytics"
       />
 
       {/*Whyewsection*/}
       <Whyewsection
         contentData={contentData}
-        heading="Why we are Dubai’s Best Live Online Certification in Social Media Marketing Program Provider."
+        heading="Why we are Dubai’s Best Live Online Mastering in Google Analytics Program Provider"
       />
 
       {/*certification*/}
-      <Certification CertificateImage="/seo-cartificate-1.png" />
+      <Certification CertificateImage="/Google-Analytics-Certificate-4.png" />
 
       {/*faq-component*/}
       <FAQ faqArray={faqs} />

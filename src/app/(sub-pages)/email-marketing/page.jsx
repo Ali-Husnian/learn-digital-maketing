@@ -24,168 +24,22 @@ const modules = [
   {
     id: 1,
     title: "Module 1:",
-    description: "Introduction to Social Media Marketing",
+    description: "Email Marketing",
     link: "/",
     details: [
-      "Overview of Social Media Platforms: Introduction to major platforms (Facebook, Instagram, LinkedIn, TikTok).",
-      "Importance of Social Media: How social media fits into the broader marketing strategy.",
-      "Key Concepts: Terminology and basic principles of social media marketing.",
+      "Building and managing email lists.",
+      "Crafting effective email campaigns.",
+      "Email automation and drip campaigns.",
+      "Analyzing email performance (open rates, clickthrough rates).",
     ],
 
-    imageSrc: "/module-1.png",
+    imageSrc: "/Email-marketing-2.png",
     borderColor: "border-orange-500",
-  },
-  {
-    id: 2,
-    title: "Module 2:",
-    description: "Social Media Strategy Development",
-    link: "/",
-    details: [
-      "Content Strategy: Developing a content plan and calendar.",
-      "Content Types: Understanding different types of content (posts, stories, videos).",
-      "Copywriting: Writing.",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
-    ],
-    imageSrc: "/module-2.png",
-    borderColor: "border-green-500",
-  },
-  {
-    id: 3,
-    title: "Module 3:",
-    description: "Content Creation and Management",
-    link: "/",
-    details: [
-      "Content Strategy",
-      "Content Types: Understanding different types of content (posts, stories, videos, infographics)",
-      "Copywriting",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
-    ],
-    imageSrc: "/module-3.png",
-    borderColor: "border-purple-500",
-  },
-  {
-    id: 4,
-    title: "Module 4:",
-    description: "Community Engagement and Managment",
-    link: "/",
-    details: [
-      "Building a Community: Techniques for growing and nurturing a social media community.",
-      "Engagement Best Practices: Best practices for interacting with followers.",
-      "Handling Negative Feedback: Strategies for managing and responding to negative comments or reviews.",
-    ],
-    imageSrc: "/module-4.png",
-    borderColor: "border-yellow-500",
-  },
-  {
-    id: 5,
-    title: "Module 5:",
-    description: "Social Media Advertising",
-    link: "/",
-    details: [
-      "Introduction to Paid Social Media",
-      "Ad Creation: Designing effective ads and creating compelling calls-to-action.",
-      "Targeting and Segmentation",
-      "Budgeting and Bidding",
-    ],
-    imageSrc: "/module-5.png",
-    borderColor: "border-blue-500",
-  },
-  {
-    id: 6,
-    title: "Module 6:",
-    description: "Analytics and Reporting",
-    link: "/",
-    details: [
-      "Key Metrics and KPIs",
-      "Tools for Analytics: Overview of tools like Google Analytics, Facebook Insights, Twitter Analytics.",
-      "Creating Reports: How to create and interpret social media reports.",
-      "Data-Driven Decision Making: Using insights from analytics to adjust strategies.",
-    ],
-    imageSrc: "/module-6.png",
-    borderColor: "border-red-500",
-  },
-  {
-    id: 7,
-    title: "Module 7:",
-    description: "Trends and Innovations",
-    link: "/",
-    details: [
-      "Emerging Trends: Current trends in social media marketing (e.g., short-form video, social commerce).",
-      "Platform Updates: Keeping up with changes and new features on social media platforms.",
-      "Innovative Techniques: Exploring new technologies and approaches (e.g., AR/VR, AI).",
-    ],
-    imageSrc: "/module-7.png",
-    borderColor: "border-blue-500",
-  },
-  {
-    id: 8,
-    title: "Module 8:",
-    description: "Compliance and Best Practices",
-    link: "/",
-    details: [
-      "Legal Considerations: Understanding regulations and compliance (e.g., GDPR, advertising standards).",
-      "Ethical Marketing: Promoting ethical practices in social media marketing.",
-      "Brand Safety: Ensuring your brand maintains a positive reputation.",
-    ],
-    imageSrc: "/module-13.webp",
-    borderColor: "border-orange-500",
-  },
-  {
-    id: 9,
-    title: "Module 9:",
-    description: "Influencer Marketing",
-    link: "/",
-    details: [
-      "Identifying Influencers: How to find and choose influencers for your brand.",
-      "Managing Relationships: Best practices for working with influencers.",
-      "Measuring Impact: Evaluating the effectiveness of influencer campaigns.",
-    ],
-    imageSrc: "/module-9.webp",
-    borderColor: "border-green-500",
-  },
-  {
-    id: 10,
-    title: "Module 10:",
-    description: "Crisis Management and Recovery",
-    link: "/",
-    details: [
-      "Developing a Crisis Plan: Creating a strategy for managing potential crises.",
-      "Responding to Crises: Effective communication strategies during a crisis.",
-      "Post-Crisis Analysis: Evaluating and learning from the crisis situation.",
-    ],
-    imageSrc: "/module-2.png",
-    borderColor: "border-brown-500",
-  },
-  {
-    id: 11,
-    title: "Module 11:",
-    description: "Practical Application and Case Studies",
-    link: "/",
-    details: [
-      "Real-World Examples: Analysis of successful and unsuccessful social media campaigns.",
-      "Hands-On Exercises: Practical activities to apply learned concepts.",
-      "Group Projects: Collaborative projects to create and execute social media strategies.",
-    ],
-    imageSrc: "/module-3.png",
-    borderColor: "border-purple-500",
-  },
-  {
-    id: 12,
-    title: "Module 12:",
-    description: "Advanced Topics and Future Outlook",
-    link: "/",
-    details: [
-      "Advanced Analytics: Deep dive into advanced data analysis techniques.",
-      "Integration with Other Channels: How social media fits into broader marketing and communication strategies.",
-      "Future Trends: Preparing for the future of social media marketing.",
-    ],
-    imageSrc: "/module-4.png",
-    borderColor: "border-yellow-500",
   },
 ];
 const mName = "Ouer Modules";
 const mDescription =
-  "Here’s a comprehensive list of Certification in Social Media Marketing modules.";
+  "Here’s a comprehensive list of Mastering in Email Marketing modules.";
 
 // components/TrainingProcess.js
 
@@ -237,33 +91,33 @@ const trainingSteps = [
   /* LevelUpSection */
 }
 const levels = [
-  "Boost Your Resume: Gain an industry-recognized certification that sets you apart from the competition.",
-  "Hands-On Learning: Get practical experience with real-world social media campaigns and analytics.",
-  "Master Top Platforms: Learn strategies and tools for Facebook, Instagram, LinkedIn, Twitter, and more.",
-  "Stay Ahead with AI: Harness the power of AI to optimize your social media marketing efforts.",
-  "Flexible Learning: Access online courses anytime, anywhere, at your own pace.",
-  "Expert Instructors: Learn from seasoned digital marketers with years of experience in the field.",
+  "Elevate Your Career: Gain a certification that showcases your expertise in email marketing.",
+  "Actionable Skills: Master the art of crafting compelling emails that convert.",
+  "Expert Guidance: Learn from industry-leading email marketers and strategists.",
+  "Flexible Learning Options: Study at your own pace with courses designed for your busy lifestyle.",
+  "Network & Collaborate: Connect with a community of email marketing professionals and peers.",
+  "Access Premium Tools: Use advanced tools, templates, and resources to enhance your email marketing strategy.",
 ];
 {
   /*Weyewsection*/
 }
 const contentData = [
   {
-    title: "Expert-Led Live Sessions Learn from Industry Leaders",
+    title: "Learn from Industry Experts in Real Time",
     description:
-      "Our Social Media Marketing program is not just another online course. We bring the classroom to you through interactive live sessions led by industry experts. You’ll gain insights from professionals who have successfully navigated the complexities of digital marketing.",
+      "Our live online Email Marketing certification is designed and delivered by top professionals who have mastered the art of crafting effective email campaigns. Engage directly with these experts in interactive sessions where you can ask questions.",
     image: "/media-1.jpg",
   },
   {
-    title: "Tailored Curriculum Master the Skills that Matter",
+    title: "Cutting-Edge Curriculum Tailored to Modern Marketers",
     description:
-      "We understand that the digital landscape is ever-changing, which is why our curriculum is meticulously designed to meet the demands of today’s market. Our program covers everything from content creation and analytics to advanced advertising techniques across all major platforms.",
+      "Stay ahead in the fast-evolving world of email marketing with our comprehensive and up-to-date curriculum. From building engaging email lists and designing impactful newsletters to mastering automation and analytics, our course covers every aspect of modern email marketing.",
     image: "/media-2.jpg",
   },
   {
-    title: "Flexible Learning Certification on Your Terms",
+    title: "Flexible Learning, Real-World Results",
     description:
-      "At our academy, flexibility is key. We offer a program that fits around your schedule, allowing you to balance work, life, and learning seamlessly. With live classes available at various times, recorded sessions for later viewing, and a Mobile-Friendly platform.",
+      "Our program is designed for busy professionals who need flexibility without compromising on quality. Attend live sessions from anywhere in the world, with the freedom to balance your learning with other commitments.",
     image: "/media-3.jpg",
   },
 ];
@@ -273,29 +127,60 @@ const contentData = [
 }
 const faqs = [
   {
-    question: "What is the Certification in Social Media Marketing?",
+    question: "What is the Certification in Email Marketing?",
     answer:
-      "The Certification in Social Media Marketing is a professional course designed to equip you with the skills and knowledge needed to effectively create, manage, and analyze social media campaigns across various platforms.",
+      "The Certification in Email Marketing is a comprehensive course designed to equip you with the skills and knowledge needed to create effective email marketing campaigns. You’ll learn about best practices, tools, and strategies to engage your audience and drive conversions through email marketing.",
   },
   {
-    question: "Who should enroll in this certification program?",
+    question:
+      "Do I need any prior experience in email marketing to take this course?",
     answer:
-      "This program is ideal for digital marketers, social media managers, content creators, entrepreneurs, and anyone interested in mastering social media marketing strategies.",
+      "No prior experience is required. The course covers both basic and advanced concepts, making it suitable for beginners as well as those with some marketing experience.",
   },
   {
-    question: "Are there any prerequisites for enrolling in this course?",
-    answer:
-      "There are no specific prerequisites. However, a basic understanding of marketing principles and familiarity with social media platforms will be helpful.",
+    question: "What will I learn in this course?",
+    answer: `In this course, you will learn:
+    The fundamentals of email marketing.
+    How to design and implement successful email campaigns.
+    Segmentation and personalization techniques.
+    How to analyze email campaign performance.
+    Best practices for avoiding spam filters and maximizing deliverability.`,
   },
   {
-    question: "Will I receive a certificate upon completion?",
+    question: "Is the certification recognized?",
     answer:
-      "Yes, upon successful completion of the course, you will receive a certification that can be added to your resume and LinkedIn profile.",
+      "Yes, the certification is recognized, making it a valuable addition to your professional credentials.",
   },
   {
-    question: "What kind of support is available during the course?",
+    question:
+      "Will I have access to course materials after completing the course?",
     answer:
-      "You will have access to instructors, course materials, and a student community for support. Some programs may also offer one-on-one mentoring sessions.",
+      "Yes, you will have lifetime access to all course materials, including any updates to the content, even after you complete the course.",
+  },
+  {
+    question: "Are there any additional resources or tools provided?",
+    answer:
+      "Yes, you will receive access to a range of resources, including templates, case studies, and software tools to help you implement what you learn.",
+  },
+  {
+    question: "Is this certification recognized internationally?",
+    answer:
+      "Yes, the certification is recognized both in the UAE and internationally, making it valuable for career growth globally.",
+  },
+  {
+    question: "Will I receive hands-on training in creating email campaigns?",
+    answer:
+      "Yes, the course includes practical assignments and projects to provide hands-on experience in designing and executing email marketing campaigns.",
+  },
+  {
+    question: "How is the course assessed?",
+    answer:
+      "The course is assessed through quizzes, practical tasks, and a final project where you will create and analyze a complete email marketing campaign.",
+  },
+  {
+    question: "How do I enroll in the Email Marketing Certification course?",
+    answer:
+      "Enrollment is straightforward and can be done online through our website by selecting your preferred course schedule and completing the registration form.",
   },
 ];
 
@@ -305,24 +190,25 @@ const page = () => {
       {/* Course Enroll section*/}
       <CourseEnroll
         title="The Only Training You'll Ever Need"
-        heading="Certification in Social Media Marketing in UAE"
-        description="The Certification in Social Media Marketing is a specialized sub-module of our comprehensive Digital Marketing Diploma. This certification equips you with essential skills to master social media platforms."
-        img="/media-barner.png"
+        heading="Mastering in Email Marketing in UAE"
+        description="The “Certification in Email Marketing” in the UAE is a targeted program that helps you master the art of creating impactful email campaigns that engage audiences and drive conversions."
+        img="/Email-marketing-1.png"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
-        duration="Almost 6 Months"
-        price="1500 AED"
-        Schedule="Once a Week Every Thursday"
+        duration="3 Weeks"
+        price="2000 AED"
+        Schedule="Every Saturday (09:00 AM GMT+4)
+"
       />
 
       {/*View full details*/}
       <CourseDetails
-        heading="Become Certified in Social Media Marketing (SMM)"
-        content1=" Social Media Marketing (SMM) "
+        heading="Become Certified in Email Marketing "
+        content1=" Email Marketing"
         content2="Full Stack Digital Marketing Course"
       />
       {/*Modules section*/}
@@ -335,7 +221,7 @@ const page = () => {
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="Certify your skills, amplify your impact.social media mastery starts here."
+        heading="Every email you craft has the power to build relationships—certification ensures those emails truly resonate."
         bgImg="/website-001.jpg"
       />
 
@@ -348,9 +234,9 @@ const page = () => {
           {/* Title Section */}
           <div className="text-center space-y-4 mb-12">
             <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-              UAE Leading Certification in Social Media Marketing
+              UAE Leading Mastering in Email Marketing
             </h3>
-            <DynamicDate heading="Next Certification in Social Media Marketing Batch is Starting From" />
+            <DynamicDate heading="Next Mastering in Email Marketing Batch is Starting From" />
           </div>
           {/* Countdown Timer */}
           <CountdownTimer />
@@ -360,17 +246,17 @@ const page = () => {
       {/* LevelUpSection */}
       <LevelUpSection
         levels={levels}
-        heading="Elevate Your Career with Certification in Social Media Marketing"
+        heading="Transform Your Outreach with a Mastering in Email Marketing"
       />
 
       {/*Whyewsection*/}
       <Whyewsection
         contentData={contentData}
-        heading="Why we are Dubai’s Best Live Online Certification in Social Media Marketing Program Provider."
+        heading="Why we are Dubai’s Best Live Online Mastering in Email Marketing Program Provider."
       />
 
       {/*certification*/}
-      <Certification CertificateImage="/seo-cartificate-1.png" />
+      <Certification CertificateImage="/Email-marketing-3.png" />
 
       {/*faq-component*/}
       <FAQ faqArray={faqs} />

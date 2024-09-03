@@ -24,12 +24,13 @@ const modules = [
   {
     id: 1,
     title: "Module 1:",
-    description: "Introduction to Social Media Marketing",
+    description: "Introduction to PPC and search engine marketing.",
     link: "/",
     details: [
-      "Overview of Social Media Platforms: Introduction to major platforms (Facebook, Instagram, LinkedIn, TikTok).",
-      "Importance of Social Media: How social media fits into the broader marketing strategy.",
-      "Key Concepts: Terminology and basic principles of social media marketing.",
+      "Google Ads: campaign setup, keyword research, ad creation.",
+      "Display advertising and remarketing.",
+      " Mobile applications and videos Ads that run on YouTube and mobile apps developed for Android.",
+      " PPC analytics and optimization.",
     ],
 
     imageSrc: "/module-1.png",
@@ -38,13 +39,12 @@ const modules = [
   {
     id: 2,
     title: "Module 2:",
-    description: "Social Media Strategy Development",
+    description: "Mobile Apps Marketing (3 Hours)",
     link: "/",
     details: [
-      "Content Strategy: Developing a content plan and calendar.",
-      "Content Types: Understanding different types of content (posts, stories, videos).",
-      "Copywriting: Writing.",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
+      "Mobile app marketing and optimization.",
+      " SMS and push notifications.",
+      "Mobile ad formats and strategies.",
     ],
     imageSrc: "/module-2.png",
     borderColor: "border-green-500",
@@ -52,13 +52,12 @@ const modules = [
   {
     id: 3,
     title: "Module 3:",
-    description: "Content Creation and Management",
+    description: "YouTube Marketing (3 Hours)",
     link: "/",
     details: [
-      "Content Strategy",
-      "Content Types: Understanding different types of content (posts, stories, videos, infographics)",
-      "Copywriting",
-      "Visual Design: Principles of design and tools for creating visuals (e.g., Canva, Adobe Spark).",
+      "Video ads creation and strategies.",
+      "Video Formats and Size.",
+      "Video ads vs Image ads.",
     ],
     imageSrc: "/module-3.png",
     borderColor: "border-purple-500",
@@ -66,126 +65,29 @@ const modules = [
   {
     id: 4,
     title: "Module 4:",
-    description: "Community Engagement and Managment",
+    description: "Display Ads Marketing (3 Hours)",
     link: "/",
-    details: [
-      "Building a Community: Techniques for growing and nurturing a social media community.",
-      "Engagement Best Practices: Best practices for interacting with followers.",
-      "Handling Negative Feedback: Strategies for managing and responding to negative comments or reviews.",
-    ],
+    details: ["Audience targeting", "Creative Design", "Clear Call To Action"],
     imageSrc: "/module-4.png",
     borderColor: "border-yellow-500",
   },
   {
     id: 5,
     title: "Module 5:",
-    description: "Social Media Advertising",
+    description: "Register your Business on Google (3 Hours)",
     link: "/",
     details: [
-      "Introduction to Paid Social Media",
-      "Ad Creation: Designing effective ads and creating compelling calls-to-action.",
-      "Targeting and Segmentation",
-      "Budgeting and Bidding",
+      "Claim. Create a Business Profile, or manage an existing profile on Search and Maps.",
+      "Personalize. Add hours, photos, and other details and get discovered by customers near you.",
+      "Manage Share updates, respond to reviews, and connect with customers on Google",
     ],
     imageSrc: "/module-5.png",
     borderColor: "border-blue-500",
   },
-  {
-    id: 6,
-    title: "Module 6:",
-    description: "Analytics and Reporting",
-    link: "/",
-    details: [
-      "Key Metrics and KPIs",
-      "Tools for Analytics: Overview of tools like Google Analytics, Facebook Insights, Twitter Analytics.",
-      "Creating Reports: How to create and interpret social media reports.",
-      "Data-Driven Decision Making: Using insights from analytics to adjust strategies.",
-    ],
-    imageSrc: "/module-6.png",
-    borderColor: "border-red-500",
-  },
-  {
-    id: 7,
-    title: "Module 7:",
-    description: "Trends and Innovations",
-    link: "/",
-    details: [
-      "Emerging Trends: Current trends in social media marketing (e.g., short-form video, social commerce).",
-      "Platform Updates: Keeping up with changes and new features on social media platforms.",
-      "Innovative Techniques: Exploring new technologies and approaches (e.g., AR/VR, AI).",
-    ],
-    imageSrc: "/module-7.png",
-    borderColor: "border-blue-500",
-  },
-  {
-    id: 8,
-    title: "Module 8:",
-    description: "Compliance and Best Practices",
-    link: "/",
-    details: [
-      "Legal Considerations: Understanding regulations and compliance (e.g., GDPR, advertising standards).",
-      "Ethical Marketing: Promoting ethical practices in social media marketing.",
-      "Brand Safety: Ensuring your brand maintains a positive reputation.",
-    ],
-    imageSrc: "/module-13.webp",
-    borderColor: "border-orange-500",
-  },
-  {
-    id: 9,
-    title: "Module 9:",
-    description: "Influencer Marketing",
-    link: "/",
-    details: [
-      "Identifying Influencers: How to find and choose influencers for your brand.",
-      "Managing Relationships: Best practices for working with influencers.",
-      "Measuring Impact: Evaluating the effectiveness of influencer campaigns.",
-    ],
-    imageSrc: "/module-9.webp",
-    borderColor: "border-green-500",
-  },
-  {
-    id: 10,
-    title: "Module 10:",
-    description: "Crisis Management and Recovery",
-    link: "/",
-    details: [
-      "Developing a Crisis Plan: Creating a strategy for managing potential crises.",
-      "Responding to Crises: Effective communication strategies during a crisis.",
-      "Post-Crisis Analysis: Evaluating and learning from the crisis situation.",
-    ],
-    imageSrc: "/module-2.png",
-    borderColor: "border-brown-500",
-  },
-  {
-    id: 11,
-    title: "Module 11:",
-    description: "Practical Application and Case Studies",
-    link: "/",
-    details: [
-      "Real-World Examples: Analysis of successful and unsuccessful social media campaigns.",
-      "Hands-On Exercises: Practical activities to apply learned concepts.",
-      "Group Projects: Collaborative projects to create and execute social media strategies.",
-    ],
-    imageSrc: "/module-3.png",
-    borderColor: "border-purple-500",
-  },
-  {
-    id: 12,
-    title: "Module 12:",
-    description: "Advanced Topics and Future Outlook",
-    link: "/",
-    details: [
-      "Advanced Analytics: Deep dive into advanced data analysis techniques.",
-      "Integration with Other Channels: How social media fits into broader marketing and communication strategies.",
-      "Future Trends: Preparing for the future of social media marketing.",
-    ],
-    imageSrc: "/module-4.png",
-    borderColor: "border-yellow-500",
-  },
 ];
 const mName = "Ouer Modules";
 const mDescription =
-  "Here’s a comprehensive list of Certification in Social Media Marketing modules.";
+  "Here’s a comprehensive list Mastering in Google Marketing modules.";
 
 // components/TrainingProcess.js
 
@@ -237,34 +139,34 @@ const trainingSteps = [
   /* LevelUpSection */
 }
 const levels = [
-  "Boost Your Resume: Gain an industry-recognized certification that sets you apart from the competition.",
-  "Hands-On Learning: Get practical experience with real-world social media campaigns and analytics.",
-  "Master Top Platforms: Learn strategies and tools for Facebook, Instagram, LinkedIn, Twitter, and more.",
-  "Stay Ahead with AI: Harness the power of AI to optimize your social media marketing efforts.",
-  "Flexible Learning: Access online courses anytime, anywhere, at your own pace.",
-  "Expert Instructors: Learn from seasoned digital marketers with years of experience in the field.",
+  "Boost Your Career: Elevate your professional profile with an industry-recognized SEM certification.",
+  "Hands-On Training: Gain practical experience with real-world projects and tools.",
+  "Learn from Experts: Get insights and strategies from industry leaders in digital marketing.",
+  "Flexible Learning: Access self-paced modules tailored to fit your schedule.",
+  "Career Support: Receive job placement assistance and resume building tips.",
+  "Certified for Success: Obtain a globally recognized certification to enhance your credibility.",
 ];
 {
   /*Weyewsection*/
 }
 const contentData = [
   {
-    title: "Expert-Led Live Sessions Learn from Industry Leaders",
+    title: "Expert-Led, Interactive Learning Experience",
     description:
-      "Our Social Media Marketing program is not just another online course. We bring the classroom to you through interactive live sessions led by industry experts. You’ll gain insights from professionals who have successfully navigated the complexities of digital marketing.",
-    image: "/media-1.jpg",
+      "Our Search Engine Marketing (SEM) certification program is crafted and delivered by industry experts with years of hands-on experience. Unlike pre-recorded courses, our live online sessions allow you to interact directly with seasoned professionals.",
+    image: "/web-20.jpg",
   },
   {
-    title: "Tailored Curriculum Master the Skills that Matter",
+    title: "Cutting-Edge Curriculum Aligned with Industry Standards",
     description:
-      "We understand that the digital landscape is ever-changing, which is why our curriculum is meticulously designed to meet the demands of today’s market. Our program covers everything from content creation and analytics to advanced advertising techniques across all major platforms.",
+      "Stay ahead of the curve with a curriculum that’s constantly updated to reflect the latest trends and best practices in SEM. Our program covers everything from foundational principles to advanced techniques, ensuring you have the comprehensive knowledge needed to succeed.",
+    image: "/web-21.jpg",
+  },
+  {
+    title: "Flexible Learning with Real-World Application",
+    description:
+      "We understand that our students have busy schedules, which is why our program offers flexible learning options without compromising quality. With our live online certification, you can attend classes from anywhere in the world and apply what you learn in real-time to your projects or job.",
     image: "/media-2.jpg",
-  },
-  {
-    title: "Flexible Learning Certification on Your Terms",
-    description:
-      "At our academy, flexibility is key. We offer a program that fits around your schedule, allowing you to balance work, life, and learning seamlessly. With live classes available at various times, recorded sessions for later viewing, and a Mobile-Friendly platform.",
-    image: "/media-3.jpg",
   },
 ];
 
@@ -273,29 +175,54 @@ const contentData = [
 }
 const faqs = [
   {
-    question: "What is the Certification in Social Media Marketing?",
+    question: "What is the Certification in Mastering in Google Marketing?",
     answer:
-      "The Certification in Social Media Marketing is a professional course designed to equip you with the skills and knowledge needed to effectively create, manage, and analyze social media campaigns across various platforms.",
+      "The Certification in Search Engine Marketing (SEM) is a specialized course designed to teach you the skills needed to effectively promote websites through paid advertising on search engines like Google and Bing.",
   },
   {
-    question: "Who should enroll in this certification program?",
+    question: "Who should take this certification program?",
     answer:
-      "This program is ideal for digital marketers, social media managers, content creators, entrepreneurs, and anyone interested in mastering social media marketing strategies.",
+      "This program is ideal for digital marketers, business owners, marketing professionals, and anyone looking to enhance their knowledge and skills in paid search marketing.",
   },
   {
     question: "Are there any prerequisites for enrolling in this course?",
     answer:
-      "There are no specific prerequisites. However, a basic understanding of marketing principles and familiarity with social media platforms will be helpful.",
+      "No specific prerequisites are required. However, a basic understanding of digital marketing concepts and familiarity with search engines will be beneficial.",
   },
   {
-    question: "Will I receive a certificate upon completion?",
+    question: "How is the program delivered?",
     answer:
-      "Yes, upon successful completion of the course, you will receive a certification that can be added to your resume and LinkedIn profile.",
+      "The program is delivered online through a mix of video lectures, live webinars, quizzes, assignments, and hands-on projects. Some programs may also include case studies and group discussions.",
   },
   {
-    question: "What kind of support is available during the course?",
+    question: "What kind of support will I receive during the course?",
     answer:
-      "You will have access to instructors, course materials, and a student community for support. Some programs may also offer one-on-one mentoring sessions.",
+      "You will have access to instructors, course materials, and a community of peers. Some programs also offer dedicated mentoring or office hours for additional support.",
+  },
+  {
+    question: "Will I receive hands-on training in SEM during the course?",
+    answer:
+      "Yes, the course includes practical assignments and projects that provide hands-on experience in running and optimizing SEM campaigns.",
+  },
+  {
+    question: "Is the SEM Certification recognized globally?",
+    answer:
+      "Yes, the certification is recognized both in the UAE and internationally, making it valuable for global career opportunities.",
+  },
+  {
+    question: "How is the SEM course structured?",
+    answer:
+      "The course is divided into modules, each focusing on a different aspect of SEM, with a blend of theoretical knowledge and practical application.",
+  },
+  {
+    question: "What types of SEM projects will I work on during the course?",
+    answer:
+      "You will work on projects such as setting up and optimizing paid search campaigns, conducting keyword research, and analyzing campaign performance.",
+  },
+  {
+    question: "How do I enroll in the SEM Certification course?",
+    answer:
+      "Enrollment is easy and can be completed online through our website by selecting your preferred course schedule and filling out the registration form.",
   },
 ];
 
@@ -305,24 +232,24 @@ const page = () => {
       {/* Course Enroll section*/}
       <CourseEnroll
         title="The Only Training You'll Ever Need"
-        heading="Certification in Social Media Marketing in UAE"
-        description="The Certification in Social Media Marketing is a specialized sub-module of our comprehensive Digital Marketing Diploma. This certification equips you with essential skills to master social media platforms."
-        img="/media-barner.png"
+        heading="Mastering in Google Marketing in UAE"
+        description="The “Certification in Search Engine Marketing” in the UAE is a specialized course designed to equip you with essential skills in optimizing online visibility and driving targeted traffic through search engines."
+        img="/Google-maketing-barner.webp"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
-        duration="Almost 6 Months"
-        price="1500 AED"
-        Schedule="Once a Week Every Thursday"
+        duration="6 Weeks"
+        price="200 AED"
+        Schedule="Every Saturday (09:00 AM GMT+4)"
       />
 
       {/*View full details*/}
       <CourseDetails
-        heading="Become Certified in Social Media Marketing (SMM)"
-        content1=" Social Media Marketing (SMM) "
+        heading="Become Certified in Search Engine Marketing (SEM)"
+        content1="Search Engine Marketing (SEM)"
         content2="Full Stack Digital Marketing Course"
       />
       {/*Modules section*/}
@@ -335,7 +262,7 @@ const page = () => {
       {/* Parallax Background */}
       <ParallaxBackground
         title=""
-        heading="Certify your skills, amplify your impact.social media mastery starts here."
+        heading="Every keyword is a step closer to success, keep optimizing, keep growing."
         bgImg="/website-001.jpg"
       />
 
@@ -348,9 +275,9 @@ const page = () => {
           {/* Title Section */}
           <div className="text-center space-y-4 mb-12">
             <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-              UAE Leading Certification in Social Media Marketing
+              UAE Leading Mastering in Google Marketing
             </h3>
-            <DynamicDate heading="Next Certification in Social Media Marketing Batch is Starting From" />
+            <DynamicDate heading="Next Mastering in Google Marketing Batch is Starting From" />
           </div>
           {/* Countdown Timer */}
           <CountdownTimer />
@@ -360,17 +287,17 @@ const page = () => {
       {/* LevelUpSection */}
       <LevelUpSection
         levels={levels}
-        heading="Elevate Your Career with Certification in Social Media Marketing"
+        heading="Unlock Your Future with a Mastering in Google Marketing"
       />
 
       {/*Whyewsection*/}
       <Whyewsection
         contentData={contentData}
-        heading="Why we are Dubai’s Best Live Online Certification in Social Media Marketing Program Provider."
+        heading="Why we are Dubai’s Best Live Online Mastering in Google Marketing Program Provider."
       />
 
       {/*certification*/}
-      <Certification CertificateImage="/seo-cartificate-1.png" />
+      <Certification CertificateImage="/Google-Marketing-Certificate-3.png" />
 
       {/*faq-component*/}
       <FAQ faqArray={faqs} />

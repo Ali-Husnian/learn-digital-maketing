@@ -35,25 +35,84 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white text-gray-800">
+    <footer className="bg-white text-text-color">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4 py-12">
         {/* Logo and Description */}
         <div className="col-span-1 space-y-2 md:lg:space-y-6">
           <div className="flex items-center mb-4">
-            <Image src="/logo.png" alt="Logo" width={150} height={150} />
+            <Link href="/">
+              <Image src="/logo.png" alt="Logo" width={150} height={150} />
+            </Link>
           </div>
-          <p className="text-sm">
+          <p className="text-md">
             We work with a passion of taking challenges and creating new ones in
             the advertising sector.
           </p>
         </div>
 
-        {/* Newsletter */}
+        {/* Our Cources */}
         <div className="col-span-1 space-y-2 md:lg:space-y-6">
-          <h4 className="text-xl font-bold mb-4">Newsletter</h4>
-          <p className="text-sm mb-4">
-            Subscribe to our newsletter to get our latest updates & news.
+          <h4 className="text-xl text-heading-color font-bold mb-4">
+            Our Cources
+          </h4>
+          <ul className="text-sm text-text-color mb-4 space-y-2">
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/digital-marketing">Diploma Digital Marketing</Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/website-developmemt">
+                Ecommerce Website Development
+              </Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/search-engine-optimization">
+                Mastering in Search Engine Optimization
+              </Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/social-media-marketing">
+                Mastering in Social Media Marketing
+              </Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/google-marketing">
+                Mastering in Google Marketing
+              </Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/email-marketing">Mastering in Email Marketing</Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/google-analytics">
+                Mastering in Google Analytics
+              </Link>
+            </li>
+            <li className="hover:text-green-color transition-colors">
+              <Link href="/online-busieness">Online Busieness in 30 Days</Link>
+            </li>
+          </ul>
+          {/*Links*/}
+        </div>
+
+        {/* Official Info */}
+        <div className="col-span-1 space-y-2 md:lg:space-y-6">
+          <h4 className="text-xl text-heading-color font-bold mb-4">
+            Official info:
+          </h4>
+          <p className="text-sm text-text-color">
+            <span className="flex items-center mb-2">
+              <FaMapMarkerAlt className="text-orange-600 mr-2" /> Dubai UAE
+            </span>
+            <span className="flex items-center mb-2">
+              <FaPhoneAlt className="text-orange-600 mr-2" /> 1-888-452-1505
+            </span>
           </p>
+          <p className="text-sm text-heading-color font-bold">Open Hours:</p>
+          <span className="text-text-color">
+            Mon - Sat: 8 am - 5 pm,
+            <br />
+            Sunday: CLOSED
+          </span>
           <div className="flex space-x-4">
             <a href="#" className="text-blue-600">
               <FaFacebookF />
@@ -70,28 +129,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Official Info */}
-        <div className="col-span-1 space-y-2 md:lg:space-y-6">
-          <h4 className="text-xl font-bold mb-4">Official info:</h4>
-          <p className="text-sm">
-            <span className="flex items-center mb-2">
-              <FaMapMarkerAlt className="text-orange-600 mr-2" /> Dubai UAE
-            </span>
-            <span className="flex items-center mb-2">
-              <FaPhoneAlt className="text-orange-600 mr-2" /> 1-888-452-1505
-            </span>
-          </p>
-          <p className="text-sm font-bold">Open Hours:</p>
-          <span>
-            Mon - Sat: 8 am - 5 pm,
-            <br />
-            Sunday: CLOSED
-          </span>
-        </div>
-
         {/* Gallery */}
         <div className="col-span-1">
-          <h4 className="text-xl font-bold mb-4">Gallery</h4>
+          <h4 className="text-xl text-heading-color font-bold mb-4">Gallery</h4>
           <div className="grid grid-cols-3 gap-2">
             {images.map((image, index) => (
               <div
@@ -136,7 +176,8 @@ const Footer = () => {
 
       <div className="w-full py-6 px-4 bg-black text-center text-white text-sm text-gray-500">
         <p className="font-semibold text-md tracking-wide">
-          2024 © All rights reserved by Learn Digital Marketing. Powered by{" "}
+          {new Date().getFullYear()} © All rights reserved by Learn Digital
+          Marketing. Powered by{" "}
           <span className="text-orange-color ">Bab el Najah</span>.
         </p>
       </div>

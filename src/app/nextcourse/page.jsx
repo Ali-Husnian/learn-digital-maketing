@@ -34,7 +34,7 @@ const NextCourse = () => {
                 </p>
 
                 <div className="flex justify-start flex-wrap mt-8 gap-3">
-                  <button className=" bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center w-200px h-44px rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer">
+                  <button className="bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center w-200px h-44px rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer">
                     Enroll me now
                     <IoArrowForwardCircleOutline />
                   </button>

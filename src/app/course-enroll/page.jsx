@@ -21,7 +21,7 @@ const page = ({
   const formattedDate = nextBatchDate.toLocaleDateString("en-US", options);
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto my-100px px-4 bg-white">
+    <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-100px px-4 bg-white">
       {/* Text Content */}
       <div className="max-w-lg">
         <p className="text-black mb-6 text-md tracking-wide font-semibold flex items-center justify-start before:content-[''] before:h-3px before:w-10 before:bg-orange-color before:mr-2">

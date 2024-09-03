@@ -1,7 +1,14 @@
 import React from "react";
 import { FaHome, FaExpand, FaMouse } from "react-icons/fa";
 import Image from "next/image";
-import { CiDesktopMouse1 } from "react-icons/ci";
+const countries = [
+  { name: "United Arab Emirates", img: "/con2-United-Arab-Emirates.png" },
+  { name: "Saudi Arabia", img: "/con3-Saudi-Arabia.png" },
+  { name: "Oman", img: "/con4-Oman.png" },
+  { name: "Qatar", img: "/con1-Qatar.png" },
+  { name: "Kuwait", img: "/con5-Kuwait.png" },
+  { name: "Bahrain", img: "/con6-Bahrain.png" },
+];
 
 const page = () => {
   return (
@@ -53,20 +60,28 @@ const page = () => {
       </div>
       <div className="mt-12 text-center">
         <h2 className="text-4xl font-bold text-orange-color">
-          Explore Your Path Today
+          Exclusive Digital Marketing Training for Gulf.
         </h2>
         <p className="mt-5 text-lg text-text-color">
-          Discover the right certification for you and start your journey
-          towards becoming a digital marketing expert.
+          We offer personalized digital marketing training for entrepreneurs
+          across the Gulf region. Learn from experts, gain practical skills, and
+          elevate your business with training designed to meet your unique needs
+          and goals.
         </p>
-        <div className="text-center">
-          <Image
-            src="/country.png"
-            width={1200}
-            height={500}
-            quality={100}
-            alt="countris"
-          />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 py-8">
+          {countries.map((country, index) => (
+            <div key={index} className="text-center">
+              <Image
+                src={country.img}
+                alt={country.name}
+                className="rounded-full shadow-md"
+                width={200}
+                height={200}
+                quality={100}
+              />
+              <p className="mt-2 text-sm font-medium">{country.name}</p>
+            </div>
+          ))}
         </div>
         <center className="mt-10">
           <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
