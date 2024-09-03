@@ -39,13 +39,10 @@ const navItems = [
 
   {
     label: "For Entrepreneur",
-    link: "#",
+    link: "/",
     children: [
       { label: "Diploma digital Marketing", link: "#" },
-      {
-        label: "Business Setup + (1 To 1 Session)",
-        link: "/business-setup-1-to-1-session",
-      },
+      { label: "Business Setup + (1 To 1 Session)", link: "#" },
       { label: "On Demand Modules", link: "#" },
     ],
   },

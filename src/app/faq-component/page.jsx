@@ -174,9 +174,8 @@ const FAQComponent = ({ faqArray = faqs }) => {
             <span className="flex items-center">
               <MdKeyboardArrowRight
                 size={25}
-                className={`transform transition-transform duration-300 ${
-                  openIndex === index ? "rotate-90" : ""
-                }`}
+                className={`transform transition-transform duration-300 ${openIndex === index ? "rotate-90" : ""
+                  }`}
               />
               {faq.question}
             </span>
