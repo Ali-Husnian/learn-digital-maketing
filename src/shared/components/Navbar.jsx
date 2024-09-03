@@ -50,7 +50,7 @@ const navItems = [
     ],
   },
 
-  { label: "Other institutes", link: "/other-institutes" },
+  { label: "Other institutes", link: "/other-institute" },
   {
     label: "For Companies",
     link: "#",
