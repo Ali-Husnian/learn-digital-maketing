@@ -215,7 +215,7 @@ function BusinessSetup() {
                 </div>
             </div>
             <div className="text-center space-y-4 mb-12 mt-20">
-                <h3 className="text-green-500 text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-500 before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-500 after:ml-2">
+                <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
                     How It Works
                 </h3>
                 <h2 className="text-3xl md:text-4xl text-wrap font-extrabold pb-5 text-gray-900 text-blue-950">
@@ -232,8 +232,8 @@ function BusinessSetup() {
                                 key={step.id}
                                 className="relative flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/4 group"
                             >
-                                <div className="relative w-36 h-36 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-color">
-                                    <div className="absolute -top-2 -left-2 w-8 h-8 bg-black group-hover:bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                <div className="relative w-36 h-36  transition-colors bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-color">
+                                    <div className="absolute -top-2 -left-2 w-6 h-6 bg-black/70 group-hover:bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
                                         {step.id}
                                     </div>
                                     <img src={step.icon} alt={step.title} className="w-20 h-20 " />
