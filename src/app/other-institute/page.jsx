@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-function BusinessSetup() {
+function OtherInstitute() {
     const cardData = [
         {
             icon: "/1.png",
@@ -151,17 +151,17 @@ function BusinessSetup() {
             <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto my-100px px-4 bg-white">
                 <div className="max-w-lg">
                     <p className="text-black mb-6 text-1xl tracking-wide font-bold flex items-center justify-start before:content-[''] before:h-3px before:w-10 before:bg-orange-color before:mr-2">
-                        We Provide Business Setup + (1 to 1 Session)
+                        We Provide Trainers & Team
                     </p>
                     <h2 className="text-4xl font-bold text-heading-color mb-6">
-                        Personalized Digital Marketing Training for Entrepreneurs.
+                        Customized Digital  <br />Marketing Training for  <br /> Your Institute.
                     </h2>
-                    <p className="text-text-color mb-6">Get exactly what you need with tailored, live 1-on-1 sessions via Zoom. Learn at your pace, on your terms.Bye. Bye. </p>
+                    <p className="text-text-color mb-6">GIn today’s digital world, equipping your students with digital marketing expertise is essential. We offer comprehensive digital marketing training solutions tailored for institutes like yours. By partnering with us, you can offer a complete digital marketing course, backed by our team of experts and high-quality training materials. This is your chance to enhance your curriculum without the hassle of developing new content from scratch.</p>
                     <div className="flex justify-between">
                         <Link href={"/checkout"}>
                             <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
                                 <MdDone className="hover:bg-[#1D1B4C]" />
-                                Book Your Personalized Session
+                                Request a Free Consultation
                             </button>
                         </Link>
                     </div>
@@ -169,7 +169,7 @@ function BusinessSetup() {
                 <div className="relative mt-6 md:mt-0 md:w-1/2 flex justify-center">
                     <div className="relative">
                         <Image
-                            src="/setup.jpg"
+                            src="/new.jpg"
                             width={450}
                             height={450}
                         />
@@ -215,7 +215,7 @@ function BusinessSetup() {
                 </div>
             </div>
             <div className="text-center space-y-4 mb-12 mt-20">
-                <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
+                <h3 className="text-green-500 text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-500 before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-500 after:ml-2">
                     How It Works
                 </h3>
                 <h2 className="text-3xl md:text-4xl text-wrap font-extrabold pb-5 text-gray-900 text-blue-950">
@@ -232,8 +232,8 @@ function BusinessSetup() {
                                 key={step.id}
                                 className="relative flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/4 group"
                             >
-                                <div className="relative w-36 h-36  transition-colors bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-color">
-                                    <div className="absolute -top-2 -left-2 w-6 h-6 bg-black/70 group-hover:bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                                <div className="relative w-36 h-36 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-orange-color">
+                                    <div className="absolute -top-2 -left-2 w-8 h-8 bg-black group-hover:bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
                                         {step.id}
                                     </div>
                                     <img src={step.icon} alt={step.title} className="w-20 h-20 " />
@@ -410,4 +410,4 @@ function BusinessSetup() {
     );
 };
 
-export default BusinessSetup;
+export default OtherInstitute;
