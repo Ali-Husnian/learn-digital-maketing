@@ -21,10 +21,10 @@ export default function CourseInfoCard() {
             </span>
           </div>
           <p className="text-2xl font-bold text-gray-900 line-through">
-            6000 AED
+            7000 AED
           </p>
           <p className="text-3xl font-bold text-orange-600 mb-4">
-            3000 AED in 90 Days.
+            3500 AED in 90 Days.
           </p>
           <h3 className="font-bold text-gray-900 mb-4">55+ Modules Covered</h3>
           <ul className="text-gray-700 space-y-2">

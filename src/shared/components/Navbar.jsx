@@ -8,6 +8,7 @@ import Image from "next/image";
 import { MdPhoneInTalk } from "react-icons/md";
 import { IoIosMail } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
+import { HiOutlineLogin } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
 
@@ -26,7 +27,7 @@ const navItems = [
         label: "Mastering Social Media Marketing",
         link: "/social-media-marketing",
       },
-      { label: "MAstering in Google Marketing", link: "/google-marketing" },
+      { label: "Mastering in Google Marketing", link: "/google-marketing" },
       { label: "Mastering in Google Analytics", link: "/google-analytics" },
       { label: "Mastering in Email Marketing", link: "/email-marketing" },
       {
@@ -41,12 +42,15 @@ const navItems = [
     link: "#",
     children: [
       { label: "Diploma digital Marketing", link: "#" },
-      { label: "Business Setup + (1 To 1 Session)", link: "#" },
+      {
+        label: "Business Setup + (1 To 1 Session)",
+        link: "/business-setup-1-to-1-session",
+      },
       { label: "On Demand Modules", link: "#" },
     ],
   },
 
-  { label: "Other institutes", link: "#" },
+  { label: "Other institutes", link: "/other-institutes" },
   {
     label: "For Companies",
     link: "#",
@@ -68,6 +72,7 @@ const navItems = [
       { label: "Blog", link: "#" },
     ],
   },
+  { label: "Login", link: "/sign-in", login: ["login"] },
 ];
 
 export default function Navbar() {
@@ -116,6 +121,12 @@ export default function Navbar() {
                       <span>{d.label}</span>
                       {d.children && (
                         <IoIosArrowDown className="rotate-180 transition-all group-hover:rotate-0" />
+                      )}
+                      {d.login && (
+                        <HiOutlineLogin
+                          size={20}
+                          className=" text-orange-color font-bold transition-all"
+                        />
                       )}
                     </p>
                   </Link>

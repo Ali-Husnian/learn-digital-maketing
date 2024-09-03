@@ -446,8 +446,8 @@ const page = () => {
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
-        duration="Almost 6 Months"
-        price="3000 AED"
+        duration="Almost 7.5 Months"
+        price="3500 AED"
         Schedule="Once a Week Every Thursday"
       />
 

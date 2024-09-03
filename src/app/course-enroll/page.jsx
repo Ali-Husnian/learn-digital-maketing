@@ -15,7 +15,13 @@ const page = ({
   btnText = "Enroll Now !",
 }) => {
   const today = new Date();
-  const nextBatchDate = new Date(today.getFullYear(), today.getMonth() + 1);
+  const nextBatchDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    21,
+    0,
+    0
+  );
 
   const options = { year: "numeric", month: "long", day: "numeric" };
   const formattedDate = nextBatchDate.toLocaleDateString("en-US", options);
@@ -81,7 +87,7 @@ const page = ({
             </div>
           </div>
         </div>
-        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-white font-bold text-sm text-blue-950 p-2">
+        <div className="absolute -bottom-10 left-1/3 transform -translate-x-1/3 bg-white font-bold text-sm text-blue-950 p-2">
           Next Batch Starting from {formattedDate}
         </div>
       </div>
