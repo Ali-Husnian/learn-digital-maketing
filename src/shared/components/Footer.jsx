@@ -100,12 +100,19 @@ const Footer = () => {
             Official info:
           </h4>
           <p className="text-sm text-text-color">
-            <span className="flex items-center mb-2">
-              <FaMapMarkerAlt className="text-orange-600 mr-2" /> Dubai UAE
-            </span>
-            <span className="flex items-center mb-2">
-              <FaPhoneAlt className="text-orange-600 mr-2" /> 1-888-452-1505
-            </span>
+            <Link
+              href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
+              target="_blank"
+            >
+              <span className="flex items-center mb-2">
+                <FaMapMarkerAlt className="text-orange-600 mr-2" /> Dubai UAE
+              </span>
+            </Link>
+            <Link href="https://wa.me/+96871197788">
+              <span className="flex items-center mb-2">
+                <FaPhoneAlt className="text-orange-600 mr-2" /> +96871197788
+              </span>
+            </Link>
           </p>
           <p className="text-sm text-heading-color font-bold">Open Hours:</p>
           <span className="text-text-color">

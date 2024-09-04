@@ -63,12 +63,15 @@ const TopNav = () => {
           {/* Contact Info Section */}
           <div className="flex items-center space-x-8 text-sm text-gray-600">
             {/* Phone */}
-            <Link href="#" className="flex items-center space-x-4">
+            <Link
+              href="https://wa.me/+96871197788"
+              className="flex items-center space-x-4"
+            >
               <MdPhoneInTalk className="text-orange-color text-4xl font-bold" />
               <span>
-                <b className="text-heading-color">Requesting a Call:</b> <br />
+                <b className="text-heading-color">WhatsApp Now:</b> <br />
                 <strong className="text-sm font-light text-text-color">
-                  (210) 123 451
+                  +96871197788
                 </strong>
               </span>
             </Link>
@@ -77,7 +80,10 @@ const TopNav = () => {
             <div className="border-l h-8 border-gray-300"></div>
 
             {/* Email */}
-            <Link href="#" className="flex items-center space-x-4">
+            <Link
+              href="mailto:info@learndigitalmarketing.academy"
+              className="flex items-center space-x-4"
+            >
               <IoIosMail className="text-orange-color text-4xl font-bold" />
               <span>
                 <b className="text-heading-color">Mail us for help:</b> <br />
@@ -91,7 +97,11 @@ const TopNav = () => {
             <div className="border-l h-8 border-gray-300"></div>
 
             {/* Location */}
-            <Link href="#" className="flex items-center space-x-4">
+            <Link
+              href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
+              target="_blank"
+              className="flex items-center space-x-4"
+            >
               <MdLocationOn className="text-orange-color text-4xl font-bold" />
               <span>
                 <b className="text-heading-color">09, SAIF Zone 514789</b>{" "}

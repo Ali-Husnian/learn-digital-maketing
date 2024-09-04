@@ -12,6 +12,7 @@ import { HiOutlineLogin } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
 
+// Navigation items data
 const navItems = [
   {
     label: "For Professionals",
@@ -82,15 +83,18 @@ export default function Navbar() {
   useEffect(() => {
     setSideMenu(false);
   }, []);
+
   function openSideMenu() {
     setSideMenu(true);
   }
+
   function closeSideMenu() {
     setSideMenu(false);
   }
+
   return (
     <>
-      {/*Navbar*/}
+      {/* Navbar */}
       <Headroom className="absolute m-auto right-0 left-0">
         <div
           className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-start max-sm:justify-between px-4 md:px-[100px] ${
@@ -125,7 +129,7 @@ export default function Navbar() {
                       {d.login && (
                         <HiOutlineLogin
                           size={20}
-                          className=" text-orange-color font-bold transition-all"
+                          className="text-orange-color font-bold transition-all"
                         />
                       )}
                     </p>
@@ -179,26 +183,35 @@ function MobileNav({ closeSideMenu }) {
           </Link>
 
           {navItems.map((d, i) => (
-            <SingleNavItem key={i} label={d.label} link={d.link}>
-              {d.children}
-            </SingleNavItem>
+            <SingleNavItem
+              key={i}
+              label={d.label}
+              link={d.link}
+              children={d.children}
+              closeSideMenu={closeSideMenu}
+            />
           ))}
         </div>
         <section className="flex flex-col gap-4 mt-4 items-start text-gray-800 md:hidden">
           {/* Contact Info Section */}
-          <div className="space-y-2 text-start ">
-            <Link href="#" className="flex items-center space-x-2">
+          <div className="space-y-2 text-start">
+            <Link
+              href="https://wa.me/+96871197788"
+              className="flex items-center space-x-2"
+            >
               <MdPhoneInTalk className="text-orange-color text-3xl font-bold" />
               <span>
-                <b className="text-heading-color">Requesting a Call:</b> <br />
+                <b className="text-heading-color">WhatsApp Now:</b> <br />
                 <strong className="text-sm font-light text-text-color">
-                  (210) 123 451
+                  +96871197788
                 </strong>
               </span>
             </Link>
 
-            {/* Email */}
-            <Link href="#" className="flex items-center space-x-2">
+            <Link
+              href="mailto:info@learndigitalmarketing.academy"
+              className="flex items-center space-x-2"
+            >
               <IoIosMail className="text-orange-color text-3xl font-bold" />
               <span>
                 <b className="text-heading-color">Mail us for help:</b> <br />
@@ -208,8 +221,11 @@ function MobileNav({ closeSideMenu }) {
               </span>
             </Link>
 
-            {/* Location */}
-            <Link href="#" className="flex items-center space-x-2">
+            <Link
+              href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
+              target="_blank"
+              className="flex items-center space-x-2"
+            >
               <MdLocationOn className="text-orange-color text-3xl font-bold" />
               <span>
                 <b className="text-heading-color">09, SAIF Zone 514789</b>{" "}
@@ -226,7 +242,7 @@ function MobileNav({ closeSideMenu }) {
   );
 }
 
-function SingleNavItem(d) {
+function SingleNavItem({ label, link, children, closeSideMenu }) {
   const [animationParent] = useAutoAnimate();
   const [isItemOpen, setItem] = useState(false);
 
@@ -235,28 +251,25 @@ function SingleNavItem(d) {
   }
 
   return (
-    <div
-      ref={animationParent}
-      onClick={toggleItem}
-      className="relative px-2 py-1 transition-all"
-    >
-      <Link href={d.link ?? "#"}>
+    <div ref={animationParent} className="relative px-2 py-1 transition-all">
+      <Link href={link ?? "#"} onClick={toggleItem}>
         <p className="flex cursor-pointer items-center gap-2 text-text-color group-hover:text-green-color">
-          <span>{d.label}</span>
-          {d.children && (
+          <span>{label}</span>
+          {children && (
             <IoIosArrowDown
               className={`text-xs transition-all ${isItemOpen && "rotate-180"}`}
             />
           )}
         </p>
       </Link>
-      {isItemOpen && d.children && (
+      {isItemOpen && children && (
         <div className="w-auto flex-col gap-1 rounded-lg bg-white py-3 transition-all flex">
-          {d.children.map((ch, i) => (
+          {children.map((ch, i) => (
             <Link
               key={i}
               href={ch.link ?? "#"}
               className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-text-color hover:text-green-color"
+              onClick={closeSideMenu} // Close side menu when a child link is clicked
             >
               <span className="whitespace-nowrap pl-3">{ch.label}</span>
             </Link>
