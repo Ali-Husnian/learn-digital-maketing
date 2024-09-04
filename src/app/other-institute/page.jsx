@@ -147,11 +147,9 @@ function OtherInstitute() {
             }
         });
     }, [openIndex]);
-
-
     return (
         <>
-            <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto my-100px px-4 bg-white">
+            <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-100px px-4 bg-white">
                 <div className="max-w-lg mb-20 ">
                     <p className="text-black mb-6 text-1xl tracking-wide font-bold flex items-center justify-start before:content-[''] before:h-3px before:w-10 before:bg-orange-color before:mr-2">
                         We Provide Trainers & Team
@@ -159,7 +157,7 @@ function OtherInstitute() {
                     <h2 className="text-4xl font-bold text-heading-color mb-6">
                         Customized Digital  <br />Marketing Training for  <br /> Your Institute.
                     </h2>
-                    <p className="text-text-color mb-6 w-full md:w-400px ">In today’s digital world, equipping your students with digital marketing expertise is essential. We offer comprehensive digital marketing training solutions tailored for institutes like yours. By partnering with us, you can offer a complete digital marketing course, backed by our team of experts and high-quality training materials. This is your chance to enhance your curriculum without the hassle of developing new content from scratch.</p>
+                    <p className="text-text-color mb-6 ">In today’s digital world, equipping your students with digital marketing expertise is essential. We offer comprehensive digital marketing training solutions tailored for institutes like yours. By partnering with us, you can offer a complete digital marketing course, backed by our team of experts and high-quality training materials. This is your chance to enhance your curriculum without the hassle of developing new content from scratch.</p>
                     <div className="flex justify-between">
                         <Link href={"/checkout"}>
                             <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
