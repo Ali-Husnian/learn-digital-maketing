@@ -47,7 +47,7 @@ const navItems = [
     ],
   },
 
-  { label: "Other institutes", link: "/other-institutes" },
+  { label: "Other institutes", link: "/other-institute" },
   {
     label: "For Companies",
     link: "#",
@@ -90,9 +90,8 @@ export default function Navbar() {
       {/*Navbar*/}
       <Headroom className="absolute m-auto right-0 left-0">
         <div
-          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-start max-sm:justify-between px-4 md:px-[100px] ${
-            !isSideMenuOpen && "py-3"
-          } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
+          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-start max-sm:justify-between px-4 md:px-[100px] ${!isSideMenuOpen && "py-3"
+            } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
         >
           <section ref={animationParent} className="flex items-center gap-10">
             {!isSideMenuOpen && (
@@ -150,9 +149,8 @@ export default function Navbar() {
 
           <FiMenu
             onClick={openSideMenu}
-            className={`cursor-pointer text-4xl md:hidden ${
-              isSideMenuOpen && "hidden"
-            }`}
+            className={`cursor-pointer text-4xl md:hidden ${isSideMenuOpen && "hidden"
+              }`}
           />
         </div>
       </Headroom>
