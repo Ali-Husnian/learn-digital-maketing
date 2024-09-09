@@ -4,6 +4,7 @@ import Navbar from "@/shared/components/Navbar";
 import Footer from "@/shared/components/Footer";
 import TopScrollButton from "@/shared/components/TopScrollButton";
 import WhatsappButton from "@/shared/components/WhatsappButton";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Digital Marketing",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         {/*
         
         */}
+        <Toaster />
         {children}
         <TopScrollButton />
         <WhatsappButton />
