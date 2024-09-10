@@ -8,9 +8,12 @@ import Image from "next/image";
 import { MdPhoneInTalk } from "react-icons/md";
 import { IoIosMail } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
-import { HiOutlineLogin } from "react-icons/hi";
+import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 // Navigation items data
 const navItems = [
@@ -73,10 +76,10 @@ const navItems = [
       { label: "Blog", link: "#" },
     ],
   },
-  { label: "Login", link: "/sign-in", login: ["login"] },
 ];
 
 export default function Navbar() {
+  const router = useRouter();
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenu] = useState(false);
 
@@ -92,13 +95,27 @@ export default function Navbar() {
     setSideMenu(false);
   }
 
+  // Define the handleLogout function
+  const handleLogout = async () => {
+    try {
+      await axios.get("http://localhost:3000/api/users/logout");
+      toast.success("Logout Successfully!");
+      closeSideMenu();
+      router.push("/sign-in");
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
+
   return (
     <>
       {/* Navbar */}
       <Headroom className="absolute m-auto right-0 left-0">
         <div
-          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-start max-sm:justify-between px-4 md:px-[100px] ${!isSideMenuOpen && "py-3"
-            } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
+          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-between max-sm:justify-between px-4 md:px-[100px] ${
+            !isSideMenuOpen && "py-3"
+          } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
         >
           <section ref={animationParent} className="flex items-center gap-10">
             {!isSideMenuOpen && (
@@ -108,12 +125,12 @@ export default function Navbar() {
                   width={100}
                   height={100}
                   alt="logo"
-                  className="hidden max-sm:block"
+                  className="block lg:hidden"
                 />
               </Link>
             )}
 
-            <div className="hidden md:flex items-center gap-4 transition-all">
+            <div className="hidden lg:flex items-center gap-4 transition-all">
               {navItems.map((d, i) => (
                 <div
                   key={i}
@@ -124,12 +141,6 @@ export default function Navbar() {
                       <span>{d.label}</span>
                       {d.children && (
                         <IoIosArrowDown className="rotate-180 transition-all group-hover:rotate-0" />
-                      )}
-                      {d.login && (
-                        <HiOutlineLogin
-                          size={20}
-                          className="text-orange-color font-bold transition-all"
-                        />
                       )}
                     </p>
                   </Link>
@@ -151,23 +162,45 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-            {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
+            {isSideMenuOpen && (
+              <MobileNav
+                closeSideMenu={closeSideMenu}
+                handleLogout={handleLogout}
+              />
+            )}
           </section>
 
           <FiMenu
             onClick={openSideMenu}
-            className={`cursor-pointer text-4xl md:hidden ${isSideMenuOpen && "hidden"
-              }`}
+            className={`cursor-pointer text-4xl block lg:hidden ${
+              isSideMenuOpen && "hidden"
+            }`}
           />
+          <div className="hidden lg:flex items-center gap-2">
+            <Link
+              href="/sign-in"
+              className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+            >
+              Login
+              <HiOutlineLogin />
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+            >
+              Logout
+              <HiOutlineLogout />
+            </button>
+          </div>
         </div>
       </Headroom>
     </>
   );
 }
 
-function MobileNav({ closeSideMenu }) {
+function MobileNav({ closeSideMenu, handleLogout }) {
   return (
-    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:hidden">
+    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hiddenn">
       <div className="h-full w-[65%] overflow-auto bg-white px-4 py-4">
         <section className="flex justify-end">
           <AiOutlineClose
@@ -190,50 +223,67 @@ function MobileNav({ closeSideMenu }) {
             />
           ))}
         </div>
-        <section className="flex flex-col gap-4 mt-4 items-start text-gray-800 md:hidden">
-          {/* Contact Info Section */}
-          <div className="space-y-2 text-start">
-            <Link
-              href="https://wa.me/+96871197788"
-              className="flex items-center space-x-2"
-            >
-              <MdPhoneInTalk className="text-orange-color text-3xl font-bold" />
-              <span>
-                <b className="text-heading-color">WhatsApp Now:</b> <br />
-                <strong className="text-sm font-light text-text-color">
-                  +96871197788
-                </strong>
-              </span>
-            </Link>
 
-            <Link
-              href="mailto:info@learndigitalmarketing.academy"
-              className="flex items-center space-x-2"
-            >
-              <IoIosMail className="text-orange-color text-3xl font-bold" />
-              <span>
-                <b className="text-heading-color">Mail us for help:</b> <br />
-                <strong className="text-sm font-light text-text-color">
-                  info@learndigitalmarketing.academy
-                </strong>
-              </span>
-            </Link>
+        {/* Add Login and Logout buttons here */}
+        <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
+          <Link
+            onClick={closeSideMenu}
+            href="/sign-in"
+            className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+          >
+            Login
+            <HiOutlineLogin />
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+          >
+            Logout
+            <HiOutlineLogout />
+          </button>
+        </section>
 
-            <Link
-              href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
-              target="_blank"
-              className="flex items-center space-x-2"
-            >
-              <MdLocationOn className="text-orange-color text-3xl font-bold" />
-              <span>
-                <b className="text-heading-color">09, SAIF Zone 514789</b>{" "}
-                <br />
-                <strong className="text-sm font-light text-text-color">
-                  Dubai UAE
-                </strong>
-              </span>
-            </Link>
-          </div>
+        {/* Contact Info Section */}
+        <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
+          <Link
+            href="https://wa.me/+96871197788"
+            className="flex items-center space-x-2"
+          >
+            <MdPhoneInTalk className="text-orange-color text-3xl font-bold" />
+            <span>
+              <b className="text-heading-color">WhatsApp Now:</b> <br />
+              <strong className="text-sm font-light text-text-color">
+                +96871197788
+              </strong>
+            </span>
+          </Link>
+
+          <Link
+            href="mailto:info@learndigitalmarketing.academy"
+            className="flex items-center space-x-2"
+          >
+            <IoIosMail className="text-orange-color text-3xl font-bold" />
+            <span>
+              <b className="text-heading-color">Mail us for help:</b> <br />
+              <strong className="text-sm font-light text-text-color">
+                info@learndigitalmarketing.academy
+              </strong>
+            </span>
+          </Link>
+
+          <Link
+            href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
+            target="_blank"
+            className="flex items-center space-x-2"
+          >
+            <MdLocationOn className="text-orange-color text-3xl font-bold" />
+            <span>
+              <b className="text-heading-color">09, SAIF Zone 514789</b> <br />
+              <strong className="text-sm font-light text-text-color">
+                Dubai UAE
+              </strong>
+            </span>
+          </Link>
         </section>
       </div>
     </div>
