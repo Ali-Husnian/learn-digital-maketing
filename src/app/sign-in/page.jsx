@@ -69,7 +69,6 @@ const Page = () => {
         setLoading(false);
       }
     }
-    console.log(process.env.URL);
   };
 
   return (

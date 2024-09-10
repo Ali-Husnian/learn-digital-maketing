@@ -51,13 +51,15 @@ const TopNav = () => {
         <div className=" flex items-center justify-between w-full max-w-6xl mx-auto bg-white p-4">
           {/* Logo Section */}
           <div className="flex items-center space-x-4">
-            <Image
-              src="/logo.png"
-              alt="Learn Digital Marketing Logo"
-              width={220}
-              height={110}
-              className="object-contain"
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Learn Digital Marketing Logo"
+                width={220}
+                height={110}
+                className="object-contain"
+              />
+            </Link>
           </div>
 
           {/* Contact Info Section */}

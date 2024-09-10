@@ -14,6 +14,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 // Navigation items data
 const navItems = [
@@ -82,9 +83,14 @@ export default function Navbar() {
   const router = useRouter();
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenu] = useState(false);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
     setSideMenu(false);
+
+    // Fetch the token on the client side
+    const storedToken = Cookies.get("token");
+    setToken(storedToken);
   }, []);
 
   function openSideMenu() {
@@ -94,6 +100,7 @@ export default function Navbar() {
   function closeSideMenu() {
     setSideMenu(false);
   }
+  // Replace 'token' with your cookie name
 
   // Define the handleLogout function
   const handleLogout = async () => {
@@ -177,20 +184,25 @@ export default function Navbar() {
             }`}
           />
           <div className="hidden lg:flex items-center gap-2">
-            <Link
-              href="/sign-in"
-              className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-            >
-              Login
-              <HiOutlineLogin />
-            </Link>
-            <button
-              onClick={handleLogout}
-              className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-            >
-              Logout
-              <HiOutlineLogout />
-            </button>
+            <>
+              {token ? (
+                <button
+                  onClick={handleLogout}
+                  className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+                >
+                  Logout
+                  <HiOutlineLogout />
+                </button>
+              ) : (
+                <Link
+                  href="/sign-in"
+                  className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+                >
+                  Login
+                  <HiOutlineLogin />
+                </Link>
+              )}
+            </>
           </div>
         </div>
       </Headroom>
@@ -199,8 +211,13 @@ export default function Navbar() {
 }
 
 function MobileNav({ closeSideMenu, handleLogout }) {
+  const [token1, setToken1] = useState(null);
+  useEffect(() => {
+    const storedToken = Cookies.get("token");
+    setToken1(storedToken);
+  }, []);
   return (
-    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hiddenn">
+    <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hidden">
       <div className="h-full w-[65%] overflow-auto bg-white px-4 py-4">
         <section className="flex justify-end">
           <AiOutlineClose
@@ -224,23 +241,26 @@ function MobileNav({ closeSideMenu, handleLogout }) {
           ))}
         </div>
 
-        {/* Add Login and Logout buttons here */}
+        {/* Mobile View Login/Logout Buttons */}
         <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
-          <Link
-            onClick={closeSideMenu}
-            href="/sign-in"
-            className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-          >
-            Login
-            <HiOutlineLogin />
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-          >
-            Logout
-            <HiOutlineLogout />
-          </button>
+          {token1 ? (
+            <button
+              onClick={handleLogout}
+              className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+            >
+              Logout
+              <HiOutlineLogout />
+            </button>
+          ) : (
+            <Link
+              onClick={closeSideMenu}
+              href="/sign-in"
+              className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+            >
+              Login
+              <HiOutlineLogin />
+            </Link>
+          )}
         </section>
 
         {/* Contact Info Section */}
@@ -289,7 +309,6 @@ function MobileNav({ closeSideMenu, handleLogout }) {
     </div>
   );
 }
-
 function SingleNavItem({ label, link, children, closeSideMenu }) {
   const [animationParent] = useAutoAnimate();
   const [isItemOpen, setItem] = useState(false);
