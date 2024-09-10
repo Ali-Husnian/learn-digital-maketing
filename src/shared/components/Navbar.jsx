@@ -98,7 +98,7 @@ export default function Navbar() {
   // Define the handleLogout function
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:3000/api/users/logout");
+      await axios.get(`/api/users/logout`);
       toast.success("Logout Successfully!");
       closeSideMenu();
       router.push("/sign-in");

@@ -65,10 +65,7 @@ const Page = () => {
     if (Object.keys(validationErrors).length === 0) {
       try {
         setLoading(true);
-        const response = await axios.post(
-          "http://localhost:3000/api/users/sign-up",
-          formData
-        );
+        const response = await axios.post(`/api/users/sign-up`, formData);
         console.log(response.data);
         toast.success("Account created successfully!");
         router.push("/sign-in"); // Correct usage of router

@@ -58,10 +58,7 @@ const Page = () => {
 
       try {
         setLoading(true);
-        const response = await axios.post(
-          "http://localhost:3000/api/users/sgin-in",
-          formData
-        );
+        const response = await axios.post(`/api/users/sgin-in`, formData);
         console.log(response.data);
         toast.success("Login successfully!");
         router.push("/"); // Correct usage of router
@@ -72,6 +69,7 @@ const Page = () => {
         setLoading(false);
       }
     }
+    console.log(process.env.URL);
   };
 
   return (
