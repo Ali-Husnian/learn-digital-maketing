@@ -1,29 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { RiCalendarView } from "react-icons/ri";
 import Image from "next/image";
-import { PayPalButton } from "react-paypal-button-v2";
 
 function checkout() {
-  const [scriptLoaded, setScriptLoaded] = useState(false);
-  const addPaypalScript = () => {
-    if (window.paypal) {
-      setScriptLoaded(true);
-      return;
-    }
-    const script = document.createElement("script");
-    script.src = `https://sandbox.paypal.com/sdk/js?client-id=AYa_CzG3AdmTj1i9p-xb04EsCZugyD5uv2fhA6n20qOVkAI1sYHricWgR52Vlm_KDuGjuPexVPMqVxO7`;
-    script.type = "text/javascript";
-    script.async = true;
-    script.onload = () => {
-      setScriptLoaded(true);
-    };
-    document.body.appendChild(script);
-  };
-  useEffect(() => {
-    addPaypalScript();
-  }, []);
-
   return (
     <>
       <div className="relative h-55vh ">
@@ -182,7 +162,35 @@ function checkout() {
             <Image src="/download.svg" width={70} height={70} />
           </button>
             */}
-          {scriptLoaded ? <PayPalButton /> : <span>loading...</span>}
+          <PayPalScriptProvider
+            options={{
+              "client-id":
+                "AYa_CzG3AdmTj1i9p-xb04EsCZugyD5uv2fhA6n20qOVkAI1sYHricWgR52Vlm_KDuGjuPexVPMqVxO7",
+              currency: "AED", // Set the currency to AED
+            }}
+          >
+            <PayPalButtons
+              createOrder={(data, actions) => {
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        value: "6000.00",
+                        currency_code: "AED", // Ensure the currency is set to AED here as well
+                      },
+                    },
+                  ],
+                });
+              }}
+              onApprove={(data, actions) => {
+                return actions.order.capture().then((details) => {
+                  alert(
+                    `Transaction completed by ${details.payer.name.given_name}`
+                  );
+                });
+              }}
+            />
+          </PayPalScriptProvider>
         </div>
       </div>
     </>
