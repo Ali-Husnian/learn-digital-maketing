@@ -93,6 +93,14 @@ export default function Navbar() {
     setToken(storedToken);
   }, []);
 
+  // Monitor token changes and trigger re-render
+  useEffect(() => {
+    router.refresh();
+    // Re-fetch the token if any change occurs
+    const storedToken = Cookies.get("token");
+    setToken(storedToken);
+  }, [token]); // Dependency on token ensures re-render on change
+
   function openSideMenu() {
     setSideMenu(true);
   }
@@ -108,9 +116,10 @@ export default function Navbar() {
       await axios.get(`/api/users/logout`);
       toast.success("Logout Successfully!");
       closeSideMenu();
+      Cookies.remove("token");
+      setToken(null); // Update token state to trigger re-render
       router.push("/sign-in");
     } catch (error) {
-      console.log(error);
       toast.error(error.message);
     }
   };

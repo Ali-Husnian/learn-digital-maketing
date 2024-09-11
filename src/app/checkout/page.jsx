@@ -1,8 +1,29 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { RiCalendarView } from "react-icons/ri";
 import Image from "next/image";
+import { PayPalButton } from "react-paypal-button-v2";
 
 function checkout() {
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const addPaypalScript = () => {
+    if (window.paypal) {
+      setScriptLoaded(true);
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = `https://sandbox.paypal.com/sdk/js?client-id=AYa_CzG3AdmTj1i9p-xb04EsCZugyD5uv2fhA6n20qOVkAI1sYHricWgR52Vlm_KDuGjuPexVPMqVxO7`;
+    script.type = "text/javascript";
+    script.async = true;
+    script.onload = () => {
+      setScriptLoaded(true);
+    };
+    document.body.appendChild(script);
+  };
+  useEffect(() => {
+    addPaypalScript();
+  }, []);
+
   return (
     <>
       <div className="relative h-55vh ">
@@ -156,9 +177,12 @@ function checkout() {
           <br />
           <div className="border border-gray"></div>
           <br />
+          {/*
           <button className="flex items-center justify-center bg-yellow-500 rounded-lg w-40 h-12">
             <Image src="/download.svg" width={70} height={70} />
           </button>
+            */}
+          {scriptLoaded ? <PayPalButton /> : <span>loading...</span>}
         </div>
       </div>
     </>

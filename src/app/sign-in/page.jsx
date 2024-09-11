@@ -59,11 +59,9 @@ const Page = () => {
       try {
         setLoading(true);
         const response = await axios.post(`/api/users/sgin-in`, formData);
-        console.log(response.data);
         toast.success("Login successfully!");
-        router.push("/"); // Correct usage of router
+        router.push("/");
       } catch (error) {
-        console.error(error);
         toast.error(error.response?.data?.error || "An error occurred");
       } finally {
         setLoading(false);
