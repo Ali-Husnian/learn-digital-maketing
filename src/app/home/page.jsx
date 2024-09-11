@@ -9,6 +9,7 @@ import {
   FaMouse,
   FaVideo,
 } from "react-icons/fa";
+import CheckoutButton from "@/app/goToCheckout/page";
 
 function Home() {
   return (
@@ -50,10 +51,13 @@ function Home() {
               </li>
             </ul>
             <div className="flex flex-wrap mt-5 gap-y-4 gap-x-24">
-              <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
-                <FaMouse className="hover:bg-[#1D1B4C]" />
-                Click Here To Enroll
-              </button>
+              <CheckoutButton
+                icon={<FaMouse className="hover:bg-[#1D1B4C]" />}
+                price="3500"
+                details="Full Stack Digital Marketing"
+                className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer"
+                btnText="Click Here To Enroll"
+              />
               <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-280px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
                 <FaDownload />
                 Download Course Curiculum
