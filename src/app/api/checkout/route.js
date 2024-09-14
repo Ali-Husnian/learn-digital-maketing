@@ -1,22 +1,9 @@
-// pages/api/checkout.js
 import connection from "@/config/db";
-import Purchase from "@/models/perchase";
+import Purchase from "@/models/purchase";
 import { NextResponse } from "next/server";
 
 // Ensure the database connection is established
 await connection();
-
-// export async function GET(request) {
-//   try {
-//     const userId = getTokenFromCookies(request);
-//     const purchase = await Purchase.findOne({ userId });
-//     return NextResponse.json({
-//       purchase: purchase ? purchase.toObject() : null,
-//     });
-//   } catch (error) {
-//     return NextResponse.json({ error: error.message }, { status: 400 });
-//   }
-// }
 
 export async function POST(request) {
   // Parse the request body to get the purchase data
