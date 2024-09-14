@@ -51,6 +51,7 @@ function Home() {
               </li>
             </ul>
             <div className="flex flex-wrap mt-5 gap-y-4 gap-x-24">
+              {/*Price 3500*/}
               <CheckoutButton
                 icon={<FaMouse className="hover:bg-[#1D1B4C]" />}
                 price="3500"

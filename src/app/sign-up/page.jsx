@@ -66,7 +66,9 @@ const Page = () => {
       try {
         setLoading(true);
         const response = await axios.post(`/api/users/sign-up`, formData);
-        toast.success("Account created successfully!");
+        const id = response.data.newUser._id;
+        localStorage.setItem("userId", id);
+        toast.success("Account created");
         router.push("/sign-in");
       } catch (error) {
         toast.error(error.response?.data?.error || "An error occurred");

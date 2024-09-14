@@ -293,19 +293,6 @@ const modules = [
     imageSrc: "/module-14.webp",
     borderColor: "border-black-500",
   },
-  {
-    id: 21,
-    title: "Module 21:",
-    description: " Mobile app marketing (3 hours)",
-    link: "/",
-    details: [
-      "Mobile app marketing and optimization.",
-      "SMS and push notifications.",
-      "Mobile ad formats and strategies",
-    ],
-    imageSrc: "/module-12.webp",
-    borderColor: "border-purple-500",
-  },
 ];
 const mName = "Ouer new Modules";
 const mDescription =

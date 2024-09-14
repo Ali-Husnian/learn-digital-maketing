@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
 
         {/* Official Info */}
-        <div className="col-span-1 space-y-2 md:lg:space-y-6">
+        <div className="col-span-1 space-y-2 md:lg:space-y-4">
           <h4 className="text-xl text-heading-color font-bold mb-4">
             Official info:
           </h4>
@@ -106,6 +106,22 @@ const Footer = () => {
             >
               <span className="flex items-center mb-2">
                 <FaMapMarkerAlt className="text-orange-600 mr-2" /> Dubai UAE
+              </span>
+            </Link>
+            <Link href="https://wa.me/+971509139489">
+              <span className="flex items-center mb-2">
+                <FaPhoneAlt className="text-orange-600 mr-2" /> +971509139489
+              </span>
+            </Link>
+          </p>
+          <p className="text-sm text-text-color">
+            <Link
+              href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
+              target="_blank"
+            >
+              <span className="flex items-center mb-2">
+                <FaMapMarkerAlt className="text-orange-600 mr-2" />
+                Sultanate of Oman
               </span>
             </Link>
             <Link href="https://wa.me/+96871197788">

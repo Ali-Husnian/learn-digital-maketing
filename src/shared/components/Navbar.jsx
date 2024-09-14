@@ -23,20 +23,32 @@ const navItems = [
     link: "#",
     children: [
       { label: "Diploma Digital Marketing", link: "/digital-marketing" },
-      { label: "Ecommerce Website Developmemt", link: "/website-developmemt" },
       {
-        label: "Mastering in Search Engine Optimization (SEO)",
+        label: "Certification Ecommerce Web Developmemt",
+        link: "/website-developmemt",
+      },
+      {
+        label: "Certificates Mastering in Search Engine Optimization (SEO)",
         link: "/search-engine-optimization",
       },
       {
-        label: "Mastering Social Media Marketing",
+        label: "Certificates Mastering Social Media Marketing",
         link: "/social-media-marketing",
       },
-      { label: "Mastering in Google Marketing", link: "/google-marketing" },
-      { label: "Mastering in Google Analytics", link: "/google-analytics" },
-      { label: "Mastering in Email Marketing", link: "/email-marketing" },
       {
-        label: "Start your Online Busieness in 30 Days",
+        label: "Certificates Mastering in Google Marketing",
+        link: "/google-marketing",
+      },
+      {
+        label: "Certificates Mastering in Google Analytics",
+        link: "/google-analytics",
+      },
+      {
+        label: "Certificates Mastering in Email Marketing",
+        link: "/email-marketing",
+      },
+      {
+        label: "Certificates Start your Online Busieness in 30 Days",
         link: "/online-busieness",
       },
     ],
@@ -69,11 +81,9 @@ const navItems = [
     label: "About",
     link: "#",
     children: [
-      { label: "About Academy", link: "#" },
-      { label: "Mhy Choose Us", link: "#" },
-      { label: "Testimonials", link: "#" },
-      { label: "Linkein Recommendations", link: "#" },
-      { label: "Alumni Network", link: "#" },
+      { label: "About Academy", link: "/about-us" },
+      { label: "Why Choose Us", link: "#" },
+      { label: "Case Study", link: "#" },
       { label: "Blog", link: "#" },
     ],
   },

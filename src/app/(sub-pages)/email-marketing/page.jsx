@@ -201,8 +201,7 @@ const page = () => {
       <PricingSchedule
         duration="3 Weeks"
         price="2000 AED"
-        Schedule="Every Saturday (09:00 AM GMT+4)
-"
+        Schedule="Every Saturday (09:00 AM GMT+4)"
       />
 
       {/*View full details*/}

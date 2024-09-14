@@ -65,18 +65,23 @@ const TopNav = () => {
           {/* Contact Info Section */}
           <div className="flex items-center space-x-8 text-sm text-gray-600">
             {/* Phone */}
-            <Link
-              href="https://wa.me/+96871197788"
-              className="flex items-center space-x-4"
-            >
+            <div className="flex items-center space-x-4">
               <MdPhoneInTalk className="text-orange-color text-4xl font-bold" />
               <span>
                 <b className="text-heading-color">WhatsApp Now:</b> <br />
-                <strong className="text-sm font-light text-text-color">
-                  +96871197788
-                </strong>
+                <Link href="https://wa.me/+971509139489">
+                  <strong className="text-sm font-light text-text-color">
+                    UAE: +971509139489
+                  </strong>
+                </Link>
+                <br />
+                <Link href="https://wa.me/+96871197788">
+                  <strong className="text-sm font-light text-text-color">
+                    Oman: +96871197788
+                  </strong>
+                </Link>
               </span>
-            </Link>
+            </div>
 
             {/* Divider */}
             <div className="border-l h-8 border-gray-300"></div>
@@ -110,6 +115,10 @@ const TopNav = () => {
                 <br />
                 <strong className="text-sm font-light text-text-color">
                   Dubai UAE
+                </strong>
+                <br />
+                <strong className="text-sm font-light text-text-color">
+                  Sultanate of Oman
                 </strong>
               </span>
             </Link>

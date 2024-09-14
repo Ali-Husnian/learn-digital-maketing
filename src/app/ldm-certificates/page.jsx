@@ -8,6 +8,7 @@ import {
 import { TbZoom } from "react-icons/tb";
 import { SiGoogleearth } from "react-icons/si";
 import { TbDeviceAnalytics } from "react-icons/tb";
+import CheckoutButton from "@/app/goToCheckout/page";
 
 export default function LDMCertifications() {
   const certifications = [
@@ -15,49 +16,49 @@ export default function LDMCertifications() {
       title: "Ecommerce Website Development",
       description:
         "This course is designed to help you develop skills in ecommerce web design, covering key areas such as platform selection, website security, and payment gateway integration. By the end of this course, you'll be able to build a fully functional ecommerce website from scratch.",
-      fee: "AED 1000",
+      fee: "1000",
       icon: <FaGlobe />, // Icon representing website or globe
     },
     {
       title: "Mastering in Search Engine Optimization (SEO)",
       description:
         "Gain in-depth knowledge of SEO techniques that will help your website rank higher in search engine results. This course covers everything from keyword research to on-page optimization, link building, and analytics.",
-      fee: "AED 1500",
+      fee: "1500",
       icon: <TbZoom />, // Icon representing search or magnifying glass
     },
     {
       title: "Mastering in Social Media Marketing",
       description:
         "Learn to optimize social media campaigns to drive traffic, engagement, and sales. This course includes strategies for content creation, advertising, and analyzing performance across various social media platforms.",
-      fee: "AED 1500",
+      fee: "1500",
       icon: <FaUsers />, // Icon representing social media or mobile device
     },
     {
       title: "Mastering in Google Marketing",
       description:
         "Master the tools and strategies for effective Google marketing. This course covers Google Ads, Google Analytics, and other Google tools that help you reach your target audience and measure your success.",
-      fee: "AED 2000",
+      fee: "2000",
       icon: <SiGoogleearth />, // Icon representing growth or analytics
     },
     {
       title: "Mastering in Email Marketing",
       description:
         "Learn advanced email marketing strategies to engage your audience and drive conversions. This course covers list building, automation, campaign design, and performance tracking.",
-      fee: "AED 2000",
+      fee: "2000",
       icon: <FaEnvelopeOpenText />, // Icon representing email
     },
     {
       title: "Mastering in Online Business",
       description:
         "Build and grow your online business with this comprehensive course. Topics include business planning, digital marketing, customer acquisition, and scaling your business to new heights.",
-      fee: "AED 1500",
+      fee: "1500",
       icon: <FaDollarSign />, // Icon representing business or briefcase
     },
     {
       title: "Mastering in Google Analytics",
       description:
         "Understand Google Analytics to make data-driven decisions. This course covers setting up tracking, interpreting data, and optimizing your website based on user behavior.",
-      fee: "AED 2000",
+      fee: "2000",
       icon: <TbDeviceAnalytics />, // Icon representing analytics or data
     },
   ];
@@ -86,13 +87,14 @@ export default function LDMCertifications() {
                     <h3 className="text-xl font-bold">{cert.title}</h3>
                     <p className="text-sm mt-2">{cert.description}</p>
                     <p className="mt-4 font-bold">
-                      Certification Fee: {cert.fee}
+                      Certification Fee: AED {cert.fee}
                     </p>
-                    {
-                      <button className="mt-4 bg-white text-orange-color px-4 py-2 rounded-lg hover:border-heading-color border-2 transition-all">
-                        RESERVE YOUR SEAT
-                      </button>
-                    }
+                    <CheckoutButton
+                      price={cert.fee}
+                      details={cert.title}
+                      className="mt-4 bg-white text-orange-color px-4 py-2 rounded-lg hover:border-heading-color border-2 transition-all"
+                      btnText="RESERVE YOUR SEAT"
+                    />
                   </div>
                 </div>
               </div>
