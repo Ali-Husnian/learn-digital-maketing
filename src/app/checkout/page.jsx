@@ -75,32 +75,33 @@ const Checkout = () => {
   };
 
   const [aedToUsdRate, setAedToUsdRate] = useState(0.27); // Default value
+  console.log("USD", aedToUsdRate.toFixed(2));
 
   // Fetch AED to USD exchange rate from Exchangerate.host API
   const fetchExchangeRate = async () => {
+    const access_key = "0a7c955d99387bcb7c0defeeb5797e37"; // Access key
+
     try {
-      const response = await axios.get(
-        "https://api.exchangerate.host/convert?from=AED&to=USD"
+      // API endpoint for conversion from AED to USD
+      const response = await fetch(
+        `https://api.exchangerate.host/convert?access_key=${access_key}&from=AED&to=USD&amount=${price}`
       );
-      const rate = response.data.result;
-      console.log("Rate", rate);
-      setAedToUsdRate(rate);
+
+      // Parse the response as JSON
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        const rate = data.result; // Get conversion result (AED to USD)
+        console.log("AED to USD Rate:", rate);
+
+        setAedToUsdRate(rate); // Set state with the converted rate
+      } else {
+        toast.error("Failed to fetch exchange rate.");
+      }
     } catch (error) {
-      console.error("Failed to fetch exchange rate:", error);
       toast.error("Could not fetch exchange rate.");
     }
   };
-
-  const convertAEDtoUSD = (aedPrice) => {
-    if (!aedToUsdRate) {
-      return "N/A"; // Handle the case when conversion is unavailable
-    }
-    return (aedPrice * aedToUsdRate).toFixed(2);
-  };
-  console.log(
-    "Converted Price:",
-    convertAEDtoUSD(parseInt(productDetails.price))
-  );
 
   useEffect(() => {
     setUserId(localStorage.getItem("userId"));
@@ -265,8 +266,8 @@ const Checkout = () => {
               </tr>
               <tr>
                 <td className="p-4 border border-gray font-bold">Total</td>
-                <td className="p-4 border border-gray text-orange-600 font-bold">
-                  {productDetails.price}.00 AED
+                <td className="p-4 border border-gray text-orange-600 font-extrabold">
+                  {productDetails.price}.00 AED = ${aedToUsdRate.toFixed(2)}
                 </td>
               </tr>
             </tbody>
@@ -296,7 +297,7 @@ const Checkout = () => {
                 options={{
                   "client-id":
                     "AWhQsuXmmp4ZqIBy2asnmpX10n03Y1yo22Z_wjZWnPOQ7Gdj_wOYoh1t7HKvKohATBnJyfdwOgMOfhUZ",
-                  currency: "USD", // Using USD as PayPal doesn't support AED
+                  currency: "USD",
                 }}
               >
                 <PayPalButtons
@@ -305,9 +306,7 @@ const Checkout = () => {
                       purchase_units: [
                         {
                           amount: {
-                            value: convertAEDtoUSD(
-                              parseInt(productDetails.price)
-                            ), // Convert AED to USD
+                            value: aedToUsdRate.toFixed(2), // Convert AED to USD
                           },
                         },
                       ],
