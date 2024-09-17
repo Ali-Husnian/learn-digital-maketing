@@ -346,6 +346,8 @@ const page = () => {
     <>
       {/* Course Enroll section*/}
       <CourseEnroll
+        details="Website Development using WordPress Certification in UAE"
+        price={400}
         title="The Only Training You'll Ever Need"
         heading="Website Development using WordPress Certification in UAE"
         description="The “Website Development using WordPress Certification” in the UAE is a comprehensive course designed to teach you how to create professional, responsive websites using WordPress, the world’s most popular content management system."
@@ -356,8 +358,10 @@ const page = () => {
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
+        details="Website Development using WordPress Certification in UAE"
         duration="30 Weeks"
-        price="1000 AED"
+        realFee={2000}
+        descountFee={400}
         Schedule="Every Saturday ( 09:00 AM GMT+4 )"
       />
 
@@ -401,6 +405,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        price={400}
+        details="Website Development using WordPress Certification in UAE"
         levels={levels}
         heading="Design, Develop, and Deliver with a WordPress Certification."
       />

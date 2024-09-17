@@ -216,12 +216,16 @@ const page = () => {
         img="/Google-Analytics-barner.png"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
+        price={800}
+        details="Mastering in Google Analytics"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
+        realFee="4000"
+        descountFee="800"
         duration="3 Weeks"
-        price="2000 AED"
+        details="Mastering in Google Analytics"
         Schedule="Every Saturday ( 09:00 AM GMT+4)"
       />
 
@@ -265,6 +269,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        price={800}
+        details="Mastering in Google Analytics"
         levels={levels}
         heading="Unlock Data-Driven Success with Mastering Google Analytics"
       />

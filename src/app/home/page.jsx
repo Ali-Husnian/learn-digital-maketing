@@ -46,15 +46,15 @@ function Home() {
                 <span className="">
                   Course Fee:{" "}
                   <span className="line-through text-pink-500">AED 7000</span>{" "}
-                  <b className="text-black underline">AED 3500</b>
+                  <b className="text-black underline">AED 1400</b>
                 </span>
               </li>
             </ul>
             <div className="flex flex-wrap mt-5 gap-y-4 gap-x-24">
-              {/*Price 3500*/}
+              {/*Price 1400*/}
               <CheckoutButton
                 icon={<FaMouse className="hover:bg-[#1D1B4C]" />}
-                price="3500"
+                price="1400"
                 details="Full Stack Digital Marketing"
                 className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer"
                 btnText="Click Here To Enroll"

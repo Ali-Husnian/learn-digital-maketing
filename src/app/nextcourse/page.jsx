@@ -3,6 +3,7 @@ import { FaDownload } from "react-icons/fa";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import CountdownTimer from "../countdowntimer/page";
 import DynamicDate from "../dynamicDate/page";
+import CheckoutButton from "@/app/goToCheckout/page";
 
 const NextCourse = () => {
   return (
@@ -34,10 +35,13 @@ const NextCourse = () => {
                 </p>
 
                 <div className="flex justify-start flex-wrap mt-8 gap-3">
-                  <button className="bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center w-200px h-44px rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer">
-                    Enroll me now
-                    <IoArrowForwardCircleOutline />
-                  </button>
+                  <CheckoutButton
+                    icon={<IoArrowForwardCircleOutline />}
+                    price="1400"
+                    details="Full Stack Digital Marketing"
+                    className="bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center w-200px h-44px rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+                    btnText="Enroll me now"
+                  />
                   <button className="border rounded-lg border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-280px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
                     <FaDownload />
                     Download Course Curiculum

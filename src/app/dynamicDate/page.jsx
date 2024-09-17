@@ -10,8 +10,8 @@ const page = ({
     const today = new Date();
     const nextBatchDate = new Date(
       today.getFullYear(),
-      today.getMonth(),
-      21,
+      today.getMonth() + 1,
+      12,
       0,
       0
     );

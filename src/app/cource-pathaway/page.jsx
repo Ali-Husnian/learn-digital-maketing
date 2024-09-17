@@ -1,6 +1,7 @@
 import React from "react";
 import { FaHome, FaExpand, FaMouse } from "react-icons/fa";
 import Image from "next/image";
+import CheckoutButton from "@/app/goToCheckout/page";
 const countries = [
   { name: "United Arab Emirates", img: "/con2-United-Arab-Emirates.png" },
   { name: "Saudi Arabia", img: "/con3-Saudi-Arabia.png" },
@@ -84,10 +85,13 @@ const page = () => {
           ))}
         </div>
         <center className="mt-10">
-          <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
-            <FaMouse className="hover:bg-[#1D1B4C] " />
-            Click Here To Enroll
-          </button>
+          <CheckoutButton
+            price="1400"
+            details="Full Stack Digital Marketing"
+            className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer"
+            btnText="Click Here To Enroll"
+            icon=<FaMouse className="hover:bg-[#1D1B4C] " />
+          />
         </center>
       </div>
     </div>

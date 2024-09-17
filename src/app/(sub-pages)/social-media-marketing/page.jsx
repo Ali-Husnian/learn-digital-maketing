@@ -304,6 +304,8 @@ const page = () => {
     <>
       {/* Course Enroll section*/}
       <CourseEnroll
+        price={600}
+        details="Certification in Social Media Marketing in UAE"
         title="The Only Training You'll Ever Need"
         heading="Certification in Social Media Marketing in UAE"
         description="The Certification in Social Media Marketing is a specialized sub-module of our comprehensive Digital Marketing Diploma. This certification equips you with essential skills to master social media platforms."
@@ -314,8 +316,10 @@ const page = () => {
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
+        details="Certification in Social Media Marketing in UAE"
         duration="Almost 6 Months"
-        price="1500 AED"
+        realFee={3000}
+        descountFee={600}
         Schedule="Once a Week Every Thursday"
       />
 
@@ -359,6 +363,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        details="Certification in Social Media Marketing in UAE"
+        price={600}
         levels={levels}
         heading="Elevate Your Career with Certification in Social Media Marketing"
       />

@@ -5,6 +5,8 @@ import { FaDownload, FaPercent } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
 import CountUp from "react-countup";
 import Link from "next/link";
+import FormatedDate from "@/helpers/formatedDate";
+import CheckoutButtom from "@/app/goToCheckout/page";
 
 const page = ({
   title,
@@ -13,19 +15,9 @@ const page = ({
   img,
   btnAction = true,
   btnText = "Enroll Now !",
+  price,
+  details,
 }) => {
-  const today = new Date();
-  const nextBatchDate = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    21,
-    0,
-    0
-  );
-
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = nextBatchDate.toLocaleDateString("en-US", options);
-
   return (
     <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-100px px-4 bg-white">
       {/* Text Content */}
@@ -38,12 +30,13 @@ const page = ({
         </h2>
         <p className="text-text-color mb-6">{description}</p>
         <div className="flex justify-between">
-          <Link href={"/checkout"}>
-            <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
-              <MdDone className="hover:bg-[#1D1B4C]" />
-              {btnText}
-            </button>
-          </Link>
+          <CheckoutButtom
+            price={price}
+            btnText={btnText}
+            className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer"
+            details={details}
+            icon={<MdDone className="hover:bg-[#1D1B4C]" />}
+          />
 
           {btnAction && (
             <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
@@ -82,7 +75,7 @@ const page = ({
               </div>
               <div>
                 <span className="text-2xl font-bold">
-                  <CountUp start={0} end={50} duration={2} delay={0} />%
+                  <CountUp start={0} end={80} duration={2} delay={0} />%
                 </span>
                 <p>Off for Next Batch</p>
               </div>
@@ -90,7 +83,7 @@ const page = ({
           </div>
         </div>
         <div className="absolute -bottom-10 left-1/3 transform -translate-x-1/3 bg-white font-bold text-sm text-blue-950 p-2">
-          Next Batch Starting from {formattedDate}
+          Next Batch Starting from <FormatedDate day={12} />
         </div>
       </div>
     </section>

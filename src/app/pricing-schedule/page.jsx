@@ -1,8 +1,8 @@
 import React from "react";
 import { FaCalendarAlt, FaMoneyBillWave, FaRegClock } from "react-icons/fa";
 import { MdDone } from "react-icons/md";
-
-const page = ({ duration, price, Schedule, heandelClick }) => {
+import CheckoutButtom from "@/app/goToCheckout/page";
+const page = ({ duration, realFee, descountFee, Schedule, details }) => {
   return (
     <section className="bg-orange-color text-white py-12">
       <div className="max-w-6xl mx-auto text-center">
@@ -13,7 +13,7 @@ const page = ({ duration, price, Schedule, heandelClick }) => {
           <span role="img" aria-label="thumbs-up">
             👍
           </span>{" "}
-          50% Discount on upcoming Batch.
+          80% Discount on upcoming Batch.
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6">
@@ -32,7 +32,10 @@ const page = ({ duration, price, Schedule, heandelClick }) => {
               <FaMoneyBillWave className="text-4xl" />
             </div>
             <h3 className="text-xl text-black font-bold mb-2">Course Fee</h3>
-            <p className="text-md font-medium">{price}</p>
+            <p className="text-md font-medium">
+              <span className="line-through mr-2">{realFee} AED</span>{" "}
+              {descountFee} AED
+            </p>
           </div>
 
           {/* Classes Schedule Card */}
@@ -48,13 +51,13 @@ const page = ({ duration, price, Schedule, heandelClick }) => {
         </div>
 
         <div className="mt-8 flex items-center justify-center">
-          <button
-            onClick={heandelClick}
+          <CheckoutButtom
+            price={descountFee}
+            btnText="Register your Seat Today"
             className="border-2 border-orange-500 text-2xl tracking-wider bg-black text-white font-bold text-center text-17px flex items-center gap-2 justify-center px-5 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer"
-          >
-            <MdDone className="hover:bg-[#1D1B4C]" />
-            Register your Seat Today
-          </button>
+            details={details}
+            icon={<MdDone className="hover:bg-[#1D1B4C]" />}
+          />
         </div>
       </div>
     </section>

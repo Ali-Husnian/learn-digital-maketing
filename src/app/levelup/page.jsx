@@ -1,7 +1,8 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import CheckoutButton from "@/app/goToCheckout/page";
 
-const Page = ({ levels, heading }) => {
+const Page = ({ levels, heading, price, details, icon }) => {
   return (
     <section className="bg-orange-color py-12">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -27,21 +28,29 @@ const Page = ({ levels, heading }) => {
         </div>
 
         {/* Right Column */}
-        <div className="mt-8 md:mt-0 md:w-2/5 text-center md:text-right">
+        <div className="mt-8 md:mt-0 md:w-2/5 text-center">
           <p className="text-white text-lg font-semibold mb-4">
             Have Any Questions?
           </p>
-          <p className="text-white text-lg font-semibold mb-4">
-            WhatsApp: +971-222-222-1111
-          </p>
+          <div className="text-white text-lg font-semibold mb-4">
+            <p>WhatsApp:</p>
+            <p>+971509139489</p>
+            <p>+96871197788</p>
+          </div>
           <div className="space-y-6">
-            <button className="bg-blue-hover-color text-white font-bold py-2 px-6 rounded-md shadow-lg hover:bg-white hover:text-orange-color transition duration-300">
+            {/*
+              <button className="bg-blue-hover-color text-white font-bold py-2 px-6 rounded-md shadow-lg hover:bg-white hover:text-orange-color transition duration-300">
               🏆 Success Stories
             </button>
+              */}
             <br />
-            <button className="bg-blue-hover-color text-white font-bold py-2 px-6 rounded-md shadow-lg hover:bg-white hover:text-orange-color transition duration-300">
-              📚 Register Your Seat
-            </button>
+            <CheckoutButton
+              icon={icon}
+              price={price}
+              details={details}
+              btnText="📚 Register Your Seat"
+              className="bg-blue-hover-color text-white font-bold py-2 px-6 rounded-md shadow-lg hover:bg-white hover:text-orange-color transition duration-300"
+            />
           </div>
         </div>
       </div>

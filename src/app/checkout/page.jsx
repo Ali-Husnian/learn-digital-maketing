@@ -6,14 +6,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Select from "react-select";
-import PaypalButton from "@/app/paypalButton/page";
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const countryOptions = [
-  { value: "Afghanistan", label: "Afghanistan" },
-  { value: "Albania", label: "Albania" },
-  { value: "Algeria", label: "Algeria" },
-  { value: "Andorra", label: "Andorra" },
-  // ... rest of the options
+  { value: "United Kingdom", label: "United Kingdom" },
+  { value: "United States of America", label: "United States of America" },
+  { value: "Zimbabwe", label: "Zimbabwe" },
 ];
 
 const Checkout = () => {
@@ -23,7 +21,7 @@ const Checkout = () => {
   const [userId, setUserId] = useState(null);
 
   const [productDetails, setProductDetails] = useState({
-    price: "0.00",
+    price: 0.0,
     details: "",
   });
   const [selectedCountry, setSelectedCountry] = useState({
@@ -85,6 +83,7 @@ const Checkout = () => {
         "https://api.exchangerate.host/convert?from=AED&to=USD"
       );
       const rate = response.data.result;
+      console.log("Rate", rate);
       setAedToUsdRate(rate);
     } catch (error) {
       console.error("Failed to fetch exchange rate:", error);
@@ -93,8 +92,15 @@ const Checkout = () => {
   };
 
   const convertAEDtoUSD = (aedPrice) => {
+    if (!aedToUsdRate) {
+      return "N/A"; // Handle the case when conversion is unavailable
+    }
     return (aedPrice * aedToUsdRate).toFixed(2);
   };
+  console.log(
+    "Converted Price:",
+    convertAEDtoUSD(parseInt(productDetails.price))
+  );
 
   useEffect(() => {
     setUserId(localStorage.getItem("userId"));
@@ -286,13 +292,47 @@ const Checkout = () => {
 
           <div className="w-1/2">
             {isFormValid ? (
-              <PaypalButton
-                userId={userId}
-                convertAEDtoUSD={convertAEDtoUSD}
-                productDetails={productDetails}
-                isFormValid // Disable button based on form validity
-                onClick={handleFormSubmit} // Print form data on click
-              />
+              <PayPalScriptProvider
+                options={{
+                  "client-id":
+                    "AWhQsuXmmp4ZqIBy2asnmpX10n03Y1yo22Z_wjZWnPOQ7Gdj_wOYoh1t7HKvKohATBnJyfdwOgMOfhUZ",
+                  currency: "USD", // Using USD as PayPal doesn't support AED
+                }}
+              >
+                <PayPalButtons
+                  createOrder={(data, actions) => {
+                    return actions.order.create({
+                      purchase_units: [
+                        {
+                          amount: {
+                            value: convertAEDtoUSD(
+                              parseInt(productDetails.price)
+                            ), // Convert AED to USD
+                          },
+                        },
+                      ],
+                    });
+                  }}
+                  onApprove={(data, actions) => {
+                    return actions.order.capture().then(async (details) => {
+                      const userEmail = details.payer.email_address;
+                      try {
+                        const response = await axios.post("/api/checkout", {
+                          userEmail,
+                          itemDetails: productDetails.details,
+                          price: productDetails.price,
+                          userId,
+                        });
+                        toast.success("Transaction completed successfully.");
+                      } catch (error) {
+                        toast.error(
+                          error.response?.data?.error || "An error occurred."
+                        );
+                      }
+                    });
+                  }}
+                />
+              </PayPalScriptProvider>
             ) : (
               <button
                 className={`flex items-center justify-center bg-yellow-500 rounded-lg w-40 h-12 ${

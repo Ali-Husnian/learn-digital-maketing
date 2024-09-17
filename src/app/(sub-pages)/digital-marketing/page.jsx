@@ -429,12 +429,16 @@ const page = () => {
           potential today!"
         img="/digital-01.png"
         btnAction={true}
+        price="1400"
+        details="Full Stack Digital Marketing"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
         duration="Almost 7.5 Months"
-        price="3500 AED"
+        descountFee="1400"
+        realFee="7000"
+        details="Full Stack Digital Marketing"
         Schedule="Once a Week Every Thursday"
       />
 
@@ -471,7 +475,12 @@ const page = () => {
       </section>
 
       {/* LevelUpSection */}
-      <LevelUpSection levels={levels} heading="Ready to Level Up Your Game?" />
+      <LevelUpSection
+        price={1400}
+        details="Full Stack Digital Marketing"
+        levels={levels}
+        heading="Ready to Level Up Your Game?"
+      />
 
       {/*Whyewsection*/}
       <Whyewsection

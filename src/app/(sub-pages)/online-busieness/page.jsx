@@ -541,12 +541,16 @@ const page = () => {
         img="/Online-Business-1.webp"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
+        price={600}
+        details="Mastering in Online Business"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
+        details="Mastering in Online Business"
         duration="3 Weeks"
-        price="1500 AED"
+        realFee={3000}
+        descountFee={600}
         Schedule="Every Saturday (09:00 AM GMT+4)"
       />
 
@@ -666,6 +670,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        details="Mastering in Online Business"
+        price={600}
         levels={levels}
         heading="Enroll Today and Start Building Your Successful Online Business!"
       />

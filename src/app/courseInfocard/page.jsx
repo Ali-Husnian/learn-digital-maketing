@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import FormatedDate from "@/helpers/formatedDate";
+import CheckoutButton from "@/app/goToCheckout/page";
 
 export default function CourseInfoCard() {
   return (
@@ -28,7 +30,7 @@ export default function CourseInfoCard() {
             7000 AED
           </p>
           <p className="text-3xl font-bold text-orange-600 mb-4">
-            3500 AED in 90 Days.
+            1400 AED in 90 Days.
           </p>
           <h3 className="font-bold text-gray-900 mb-4">55+ Modules Covered</h3>
           <ul className="text-gray-700 space-y-2">
@@ -51,20 +53,22 @@ export default function CourseInfoCard() {
             Enrollment Form
           </h2>
           <h3 className="text-2xl font-bold text-white mb-2">
-            FEES 50% OFF FOR NEXT BATCH
+            FEES 80% OFF FOR NEXT BATCH
           </h3>
           <div className="flex gap-4 items-center ">
             <div className="line-through font-bold text-2xl ">7000 AED</div>
-            <div className="font-bold text-white text-2xl">3500 AED.</div>
+            <div className="font-bold text-white text-2xl">1400 AED.</div>
           </div>
 
           <ul className="text-white space-y-2 mb-4">
-            <li>📅 Next Batch: Starting from September</li>
+            <li>
+              📅 Next Batch: Starting from <FormatedDate day={12} />
+            </li>
             <li>⏰ Timing: Every Saturday (09:00 PM GMT+4)</li>
             <li>🕒 Lecture Duration: 3 Hours</li>
             <li>👥 Training Type: Detailed Online Classes via ZOOM</li>
           </ul>
-          <form className="space-y-4">
+          <div className="space-y-4">
             <input
               type="text"
               placeholder="Your name*"
@@ -80,13 +84,14 @@ export default function CourseInfoCard() {
               placeholder="Phone*"
               className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-600"
             />
-            <button
-              type="submit"
+
+            <CheckoutButton
+              price="1400"
+              details="Full Stack Digital Marketing"
               className="w-full bg-white text-orange-600 font-bold p-3 rounded-lg hover:bg-gray-100"
-            >
-              ENROLL FAST!
-            </button>
-          </form>
+              btnText="ENROLL FAST!"
+            />
+          </div>
         </div>
       </div>
     </div>

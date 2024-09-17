@@ -237,12 +237,16 @@ const page = () => {
         img="/Google-maketing-barner.webp"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
+        price={800}
+        details="Mastering in Google Marketing in UAE"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
         duration="6 Weeks"
-        price="200 AED"
+        realFee="4000"
+        details="Mastering in Google Marketing in UAE"
+        descountFee="800"
         Schedule="Every Saturday (09:00 AM GMT+4)"
       />
 
@@ -286,6 +290,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        details="Mastering in Google Marketing in UAE"
+        price={800}
         levels={levels}
         heading="Unlock Your Future with a Mastering in Google Marketing"
       />

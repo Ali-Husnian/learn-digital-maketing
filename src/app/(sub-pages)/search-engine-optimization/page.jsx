@@ -349,12 +349,16 @@ const page = () => {
         img="/seo-barner-2.png"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
+        price={600}
+        details="Certification in Search Engine Optimization in UAE"
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
         duration="Almost 6 Months"
-        price="1500 AED"
+        realFee={3000}
+        descountFee={600}
+        details="Certification in Search Engine Optimization in UAE"
         Schedule="Once a Week Every Thursday"
       />
 
@@ -398,6 +402,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        price={600}
+        details="Certification in Search Engine Optimization in UAE"
         levels={levels}
         heading="Master the Art of Visibility with a Certification in Search Engine Optimization (SEO)."
       />

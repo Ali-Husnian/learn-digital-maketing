@@ -195,12 +195,16 @@ const page = () => {
         img="/Email-marketing-1.png"
         btnAction={false}
         btnText="RESERVE YOUR SEAT"
+        details="Mastering in Email Marketing in UAE"
+        price={800}
       />
 
       {/*Pricing Schedule section*/}
       <PricingSchedule
         duration="3 Weeks"
-        price="2000 AED"
+        realFee="4000 "
+        details="Mastering in Email Marketing in UAE"
+        descountFee="800"
         Schedule="Every Saturday (09:00 AM GMT+4)"
       />
 
@@ -244,6 +248,8 @@ const page = () => {
 
       {/* LevelUpSection */}
       <LevelUpSection
+        price={800}
+        details="Mastering in Email Marketing in UAE"
         levels={levels}
         heading="Transform Your Outreach with a Mastering in Email Marketing"
       />
