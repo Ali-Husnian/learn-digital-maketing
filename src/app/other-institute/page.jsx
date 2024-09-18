@@ -1,10 +1,14 @@
 "use client";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
 import { MdDone } from "react-icons/md";
 import Link from "next/link";
+import FAQComponent from "../faq-component/page";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { FaEdit, FaHeadset, FaTools } from "react-icons/fa";
+import { FaChalkboardUser } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 function OtherInstitute() {
   const cardData = [
@@ -30,28 +34,28 @@ function OtherInstitute() {
   const steps = [
     {
       id: 1,
-      icon: "/1.png",
+      icon: <FaChalkboardUser size={50} className="group-hover:text-white" />,
       title: "Identify Your Needs",
       description:
         "We understand your challenges and goals to help elevate your  business through learning.",
     },
     {
       id: 2,
-      icon: "/2.png",
+      icon: <FaEdit size={50} className="group-hover:text-white" />,
       title: "Book Your Session",
       description:
         "Book a 1-on-1 session at your  convenience with flexible scheduling for busy lives.",
     },
     {
       id: 3,
-      icon: "/3.png",
+      icon: <FaTools size={50} className="group-hover:text-white" />,
       title: "Customized Learning Experience",
       description:
         "Receive personalized guidance on topics that matter in a fully tailored session.",
     },
     {
       id: 4,
-      icon: "/1.png",
+      icon: <FaHeadset size={50} className="group-hover:text-white" />,
       title: "Apply Your New Skills",
       description:
         "Apply your learning to enhance marketing strategies and launch successful campaigns.",
@@ -140,22 +144,58 @@ function OtherInstitute() {
       ),
     },
   ];
-  const [openIndex, setOpenIndex] = useState(null);
-  const contentRefs = useRef([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+  });
+  const [errors, setErrors] = useState({});
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const validateForm = () => {
+    let formErrors = {};
+    if (!formData.name) formErrors.name = "Name is required.";
+    if (!formData.email) formErrors.email = "Email is required.";
+    if (!formData.phone) formErrors.phone = "Phone number is required.";
+    if (!formData.subject) formErrors.subject = "Subject is required.";
+    return formErrors;
   };
 
-  useEffect(() => {
-    contentRefs.current.forEach((ref, index) => {
-      if (ref && openIndex === index) {
-        ref.style.maxHeight = `${ref.scrollHeight}px`;
-      } else if (ref) {
-        ref.style.maxHeight = "0";
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      {
+        /*
+         */
+        try {
+          // Sending email using EmailJS
+          const result = await emailjs.send(
+            "service_r4f2t7c", // Add your EmailJS service ID
+            "template_9wj79n4", // Add your EmailJS template ID
+            formData,
+            "Ij2w3tj27AWy0pPSs" // Add your EmailJS user ID
+          );
+          if (result.status === 200) {
+            toast.success("Message sent successfully!");
+            setFormData({ name: "", email: "", phone: "", subject: "" }); // Reset form
+          } else {
+            toast.error("Failed to send message.");
+          }
+        } catch (error) {
+          console.error("Error sending form data:", error);
+          toast.error("An error occurred. Please try again.");
+        }
       }
-    });
-  }, [openIndex]);
+    }
+  };
+
   return (
     <>
       <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-100px px-4 bg-white">
@@ -177,7 +217,7 @@ function OtherInstitute() {
             the hassle of developing new content from scratch.
           </p>
           <div className="flex justify-between">
-            <Link href={"/checkout"}>
+            <Link href="#contact">
               <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
                 <MdDone className="hover:bg-[#1D1B4C]" />
                 Request a Free Consultation
@@ -240,6 +280,7 @@ function OtherInstitute() {
           </div>
         </div>
       </div>
+
       <div className="text-center space-y-4 mb-12 mt-20">
         <h3 className="text-green-500 text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-500 before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-500 after:ml-2">
           How It Works
@@ -250,7 +291,7 @@ function OtherInstitute() {
       </div>
       {/*  */}
 
-      <div className="min-h-screen bg-gray-100 py-12">
+      <div className="bg-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             {steps.map((step) => (
@@ -262,11 +303,7 @@ function OtherInstitute() {
                   <div className="absolute -top-2 -left-2 w-8 h-8 bg-black/60 group-hover:bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
                     {step.id}
                   </div>
-                  <img
-                    src={step.icon}
-                    alt={step.title}
-                    className="w-20 h-20 "
-                  />
+                  {step.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
                 <p className="text-lg w-60 text-gray-600">{step.description}</p>
@@ -364,91 +401,73 @@ function OtherInstitute() {
               </li>
             </ul>
           </div>
-          <div className="flex-1">
+          <div className="flex-1" id="contact">
             <h2 className="text-5xl font-bold mb-4">Contact us now!</h2>
-            <form className="space-y-4">
-              <div className="flex flex-wrap -mx-2">
-                <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-                  <input
-                    type="text"
-                    placeholder="First name *"
-                    className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                  />
-                </div>
-                <div className="w-full md:w-1/2 px-2">
-                  <input
-                    type="text"
-                    placeholder="Last name *"
-                    className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                  />
-                </div>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="w-full px-2 mb-4">
+                <input
+                  onChange={handleChange}
+                  value={formData.name}
+                  type="text"
+                  placeholder="Your name*"
+                  name="name"
+                  className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                />
+                {errors.name && <p className="text-white">{errors.name}</p>}
               </div>
-              <div className="flex flex-wrap -mx-2">
-                <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-                  <input
-                    type="email"
-                    placeholder="Your mail *"
-                    className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                  />
-                </div>
-                <div className="w-full md:w-1/2 px-2">
-                  <input
-                    type="tel"
-                    placeholder="Phone number *"
-                    className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
-                  />
-                </div>
+              <div className="w-full px-2 mb-4">
+                <input
+                  onChange={handleChange}
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  placeholder="Your email*"
+                  className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                />
+                {errors.email && <p className="text-white">{errors.email}</p>}
               </div>
-              <textarea
-                placeholder="Message..."
-                className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 h-32"
-              />
-              <button
-                type="submit"
-                className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded w-full"
-              >
-                Send now
-              </button>
+              <div className="w-full px-2 mb-4">
+                <input
+                  onChange={handleChange}
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  placeholder="Phone*"
+                  className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                />
+                {errors.phone && <p className="text-white">{errors.phone}</p>}
+              </div>
+              <div className="w-full px-2 mb-4">
+                <select
+                  onChange={handleChange}
+                  value={formData.subject}
+                  name="subject"
+                  id="subject"
+                  className="w-full p-3 rounded bg-white text-slate-500 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
+                >
+                  <option value="Subject">Subject</option>
+                  <option value="Success fullfil">Success fullfil</option>
+                  <option value="StartUp Business">StartUp Business</option>
+                  <option value="Leadership work">Leadership work</option>
+                  <option value="Business Growth">Business Growth</option>
+                </select>
+                {errors.subject && (
+                  <p className="text-white">{errors.subject}</p>
+                )}
+              </div>
+              <div className="full px-2">
+                <input
+                  type="submit"
+                  value="✔️ Consult Today"
+                  className="bg-blue-hover-color text-white font-bold w-full py-2 px-6 rounded-md shadow-lg hover:bg-white hover:text-orange-color transition duration-300"
+                />
+              </div>
             </form>
           </div>
         </div>
       </div>
-      {/*  */}
-      <div className="max-w-6xl mx-auto px-4 py-10">
-        <div className="text-center space-y-4 mb-12">
-          <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-            Answered all your Quires
-          </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-950">
-            Frequently Asked Questions
-          </h2>
-        </div>
 
-        {faqs.map((faq, index) => (
-          <div key={index} className="border border-light-gray mb-2px">
-            <button
-              className="w-full text-left p-4 bg-orange-color text-white font-semibold"
-              onClick={() => toggleFAQ(index)}
-            >
-              <span className="flex items-center">
-                <MdKeyboardArrowRight
-                  size={25}
-                  className={`transform transition-transform duration-300 ${
-                    openIndex === index ? "rotate-90" : ""
-                  }`}
-                />
-                {faq.question}
-              </span>
-            </button>
-            <div
-              ref={(el) => (contentRefs.current[index] = el)}
-              className="overflow-hidden transition-max-height duration-500 ease-in-out"
-            >
-              <div className="p-4 text-gray-800 bg-white">{faq.answer}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <FAQComponent faqArray={faqs} />
     </>
   );
 }

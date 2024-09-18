@@ -1,11 +1,12 @@
 "use client";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { MdDone } from "react-icons/md";
 import Link from "next/link";
-import CheckoutButton from "@/app/goToCheckout/page";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import FAQComponent from "../faq-component/page";
 
 function BusinessSetup() {
   const cardData = [
@@ -146,22 +147,66 @@ function BusinessSetup() {
       ),
     },
   ];
-  const [openIndex, setOpenIndex] = useState(null);
-  const contentRefs = useRef([]);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const [formData, setFormData] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let formErrors = {};
+    if (!formData.fname) formErrors.fname = "First name is required.";
+    if (!formData.lname) formErrors.lname = "Last name is required.";
+    if (!formData.email) formErrors.email = "Email is required.";
+    if (!formData.phone) formErrors.phone = "Phone number is required.";
+    if (!formData.message) formErrors.message = "Message is required.";
+    return formErrors;
   };
 
-  useEffect(() => {
-    contentRefs.current.forEach((ref, index) => {
-      if (ref && openIndex === index) {
-        ref.style.maxHeight = `${ref.scrollHeight}px`;
-      } else if (ref) {
-        ref.style.maxHeight = "0";
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      {
+        /*
+         */
+        try {
+          // Sending email using EmailJS
+          const result = await emailjs.send(
+            "service_r4f2t7c", // Add your EmailJS service ID
+            "template_fc0fypk", // Add your EmailJS template ID
+            formData,
+            "Ij2w3tj27AWy0pPSs" // Add your EmailJS user ID
+          );
+          if (result.status === 200) {
+            toast.success("Message sent successfully!");
+            setFormData({
+              fname: "",
+              lname: "",
+              email: "",
+              phone: "",
+              message: "",
+            }); // Reset form
+          } else {
+            toast.error("Failed to send message.");
+          }
+        } catch (error) {
+          console.error("Error sending form data:", error);
+          toast.error("An error occurred. Please try again.");
+        }
       }
-    });
-  }, [openIndex]);
+    }
+  };
 
   return (
     <>
@@ -178,23 +223,12 @@ function BusinessSetup() {
             Zoom. Learn at your pace, on your terms.Bye. Bye.{" "}
           </p>
           <div className="flex justify-between">
-            <CheckoutButton
-              icon={<MdDone className="hover:bg-[#1D1B4C]" />}
-              price="1000"
-              details="Business-setup-1-to-1-session"
-              className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer"
-              btnText="Book Your Personalized Session"
-            />
-
-            {/*
-                            <Link href={"/checkout"}>
-                            <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
-                                <MdDone className="hover:bg-[#1D1B4C]" />
-                                Book Your Personalized Session
-                            </button>
-                        </Link>
-                            
-                            */}
+            <Link href="#contact">
+              <button className="border border-orange-color bg-orange-color text-white font-medium text-17px flex items-center gap-2 justify-center px-4 py-2  hover:bg-white hover:text-orange-color transition-all cursor-pointer">
+                <MdDone className="hover:bg-[#1D1B4C]" />
+                Book Your Personalized Session
+              </button>
+            </Link>
           </div>
         </div>
         <div className="relative mt-6 md:mt-0 md:w-1/2 flex justify-center">
@@ -351,7 +385,7 @@ function BusinessSetup() {
       </div>
       {/*  */}
       <div className="bg-orange-500 text-white ">
-        <div className="max-w-6xl mx-auto px-10 py-10   flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
+        <div className="max-w-6xl mx-auto px-10 py-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
           <div className="flex-1 pt-10">
             <h2 className="text-5xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="mb-4">
@@ -382,23 +416,30 @@ function BusinessSetup() {
               </li>
             </ul>
           </div>
-          <div className="flex-1">
+
+          <div className="flex-1" id="contact">
             <h2 className="text-5xl font-bold mb-4">Contact us now!</h2>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-2">
                 <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
                   <input
                     type="text"
                     placeholder="First name *"
+                    onChange={handleChange}
+                    name="fname"
                     className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
+                  {errors.fname && <p className="text-white">{errors.fname}</p>}
                 </div>
                 <div className="w-full md:w-1/2 px-2">
                   <input
                     type="text"
                     placeholder="Last name *"
+                    onChange={handleChange}
+                    name="lname"
                     className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
+                  {errors.lname && <p className="text-white">{errors.lname}</p>}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-2">
@@ -406,67 +447,42 @@ function BusinessSetup() {
                   <input
                     type="email"
                     placeholder="Your mail *"
+                    onChange={handleChange}
+                    name="email"
                     className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
+                  {errors.email && <p className="text-white">{errors.email}</p>}
                 </div>
                 <div className="w-full md:w-1/2 px-2">
                   <input
                     type="tel"
+                    onChange={handleChange}
+                    name="phone"
                     placeholder="Phone number *"
                     className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
                   />
+                  {errors.phone && <p className="text-white">{errors.phone}</p>}
                 </div>
               </div>
               <textarea
                 placeholder="Message..."
+                onChange={handleChange}
+                name="message"
                 className="w-full p-3 rounded bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300 h-32"
               />
+              {errors.message && <p className="text-white">{errors.message}</p>}
               <button
                 type="submit"
-                className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded w-full"
+                className="bg-blue-hover-color text-white font-bold w-full py-2 px-6 rounded-md shadow-lg hover:bg-white hover:text-orange-color transition duration-300"
               >
-                Send now
+                ➡️ Send now
               </button>
             </form>
           </div>
         </div>
       </div>
-      {/*  */}
-      <div className="max-w-6xl mx-auto px-4 py-10">
-        <div className="text-center space-y-4 mb-12">
-          <h3 className="text-green-color text-md tracking-wide font-extrabold flex items-center justify-center before:content-[''] before:h-3px before:w-10 before:bg-green-color before:mr-2 after:content-[''] after:h-3px after:w-10 after:bg-green-color after:ml-2">
-            Answered all your Quires
-          </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-950">
-            Frequently Asked Questions
-          </h2>
-        </div>
 
-        {faqs.map((faq, index) => (
-          <div key={index} className="border border-light-gray mb-2px">
-            <button
-              className="w-full text-left p-4 bg-orange-color text-white font-semibold"
-              onClick={() => toggleFAQ(index)}
-            >
-              <span className="flex items-center">
-                <MdKeyboardArrowRight
-                  size={25}
-                  className={`transform transition-transform duration-300 ${
-                    openIndex === index ? "rotate-90" : ""
-                  }`}
-                />
-                {faq.question}
-              </span>
-            </button>
-            <div
-              ref={(el) => (contentRefs.current[index] = el)}
-              className="overflow-hidden transition-max-height duration-500 ease-in-out"
-            >
-              <div className="p-4 text-gray-800 bg-white">{faq.answer}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <FAQComponent faqArray={faqs} />
     </>
   );
 }
