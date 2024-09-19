@@ -1,21 +1,39 @@
 "use client";
-import Link from "next/link";
+import axios from "axios";
 import { useState } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import toast, { ToastBar } from "react-hot-toast";
 
-const page = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
+const Page = () => {
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      setLoading(true);
+      const response = await axios.post(`/api/users/forgot-password`, formData);
+      console.log(response.data.message);
+      toast.success(response.data.message);
+      // router.push("/");
+      setFormData({ email: "" });
+    } catch (error) {
+      toast.error(error.response?.data?.error || "An error occurred");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section>
-      <div className="relative h-55vh ">
+      <div className="relative h-55vh">
         <div className="absolute inset-0 bg-cover bg-center bg-fixed bg-[url('/checkout1.jpg')]"></div>
 
-        {/* Overlay */}
         <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
           <h1 className="text-5xl font-bold mb-4">
             <span>My Account</span>
@@ -27,21 +45,24 @@ const page = () => {
       </div>
 
       <h2 className="text-2xl text-heading-color font-bold text-center mt-12">
-        Forgot Password
+        {loading ? "Processing..." : "Forgot Password"}
       </h2>
+
       <div className="max-w-2xl bg-li-gray border border-light-gray mx-auto mt-6 p-6">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <label
               className="block mb-1 font-medium text-gray-700 text-text-color"
-              htmlFor="username"
+              htmlFor="email"
             >
-              Username or email address <span className="text-red-500">*</span>
+              Enter your email address <span className="text-red-500">*</span>
             </label>
             <input
-              type="text"
-              id="username"
+              type="email"
+              id="email"
+              value={formData.email}
               className="w-full px-4 py-13px border border-light-gray focus:outline-none focus:ring-1 focus:ring-orange-color"
+              onChange={handleInputChange}
               required
             />
           </div>
@@ -52,9 +73,8 @@ const page = () => {
             >
               Submit
             </button>
-
             <p className="text-green-color">
-              Don't Forgot Password Skip this step.
+              Don't need to reset your password? Skip this step.
             </p>
           </div>
         </form>
@@ -63,4 +83,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

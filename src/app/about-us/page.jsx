@@ -125,7 +125,7 @@ const page = () => {
   return (
     <>
       <div className="relative h-55vh ">
-        <div className="absolute inset-0 bg-cover bg-center bg-fixed bg-[url('/About-us1.webp')]"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-[url('/About-us1.webp')]"></div>
 
         {/* Overlay */}
         <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">

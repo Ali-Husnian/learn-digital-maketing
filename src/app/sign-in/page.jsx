@@ -61,7 +61,6 @@ const Page = () => {
         const response = await axios.post(`/api/users/sgin-in`, formData);
         toast.success("Login successfully!");
         router.push("/");
-        window.location.reload;
       } catch (error) {
         toast.error(error.response?.data?.error || "An error occurred");
       } finally {
@@ -73,7 +72,7 @@ const Page = () => {
   return (
     <section>
       <div className="relative h-55vh">
-        <div className="absolute inset-0 bg-cover bg-center bg-fixed bg-[url('/checkout1.jpg')]"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-[url('/checkout1.jpg')]"></div>
 
         {/* Overlay */}
         <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">

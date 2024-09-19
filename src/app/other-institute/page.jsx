@@ -2,9 +2,9 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import Image from "next/image";
-import { MdDone } from "react-icons/md";
 import Link from "next/link";
 import FAQComponent from "../faq-component/page";
+import { MdDone } from "react-icons/md";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import { FaEdit, FaHeadset, FaTools } from "react-icons/fa";
 import { FaChalkboardUser } from "react-icons/fa6";

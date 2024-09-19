@@ -58,33 +58,30 @@ const navItems = [
     label: "For Entrepreneur",
     link: "/",
     children: [
-      { label: "Diploma digital Marketing", link: "#" },
+      { label: "Diploma digital Marketing", link: "/digital-marketing" },
       {
         label: "Business Setup + (1 To 1 Session)",
         link: "/business-setup-1-to-1-session",
       },
-      { label: "On Demand Modules", link: "#" },
     ],
   },
 
   { label: "Other institutes", link: "/other-institute" },
-  {
-    label: "For Companies",
-    link: "#",
-    children: [
-      { label: "eCommerce Development", link: "#" },
-      { label: "Lead Generation", link: "#" },
-      { label: "Customize Modules", link: "#" },
-    ],
-  },
+  // {
+  //   label: "For Companies",
+  //   link: "#",
+  //   children: [
+  //     { label: "eCommerce Development", link: "#" },
+  //     { label: "Lead Generation", link: "#" },
+  //     { label: "Customize Modules", link: "#" },
+  //   ],
+  // },
   {
     label: "About",
     link: "#",
     children: [
       { label: "About Academy", link: "/about-us" },
-      { label: "Why Choose Us", link: "#" },
-      { label: "Case Study", link: "#" },
-      { label: "Blog", link: "#" },
+      { label: "Blog", link: "https://learndigitalmarketing.academy/blog" },
     ],
   },
 ];
@@ -128,7 +125,7 @@ export default function Navbar() {
       closeSideMenu();
       Cookies.remove("token");
       setToken(null); // Update token state to trigger re-render
-      router.push("/sign-in");
+      router.push("/");
     } catch (error) {
       toast.error(error.message);
     }
