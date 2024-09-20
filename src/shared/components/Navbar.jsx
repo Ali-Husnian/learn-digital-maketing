@@ -81,6 +81,7 @@ const navItems = [
     link: "#",
     children: [
       { label: "About Academy", link: "/about-us" },
+      { label: "Why Choose Us", link: "/why-choose-us" },
       { label: "Blog", link: "https://learndigitalmarketing.academy/blog" },
     ],
   },
