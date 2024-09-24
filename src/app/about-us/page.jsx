@@ -169,9 +169,9 @@ const page = () => {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-4 lg:px-0 bg-orange-color p-6 rounded-lg">
+      <div className="max-w-6xl mx-auto flex flex-wrap md:justify-between text-start md:items-center px-4 lg:px-0 bg-orange-color p-6 rounded-lg">
         {/* Left Side Text */}
-        <div className="ml-6 flex items-center">
+        <div className="ml-6 flex flex-wrap items-center">
           <h2 className="font-bold text-white text-lg lg:text-xl">
             Want to know more about us?
           </h2>
@@ -179,7 +179,7 @@ const page = () => {
         </div>
 
         {/* Right Side Button */}
-        <div className="mr-6">
+        <div className="mr-6 mt-2 md:mt-0">
           <a
             href="/path-to-brochure.pdf"
             download
@@ -239,11 +239,11 @@ const page = () => {
 
         {/* Overlay */}
         <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
-          <h1 className="text-4xl font-bold mb-4 max-w-4xl">
+          <h1 className="text-2xl md:text-4xl  font-bold mb-4 max-w-4xl">
             Learn More About Our Digital Marketing Certification Course
           </h1>
           <br />
-          <h2 className="text-3xl font-bold max-w-4xl">
+          <h2 className="text-1xl md:text-3xl font-bold max-w-4xl">
             For Professionals, Entrepreneurs & Job-Seekers (Become a Google &
             Facebook Certified Professional)
           </h2>

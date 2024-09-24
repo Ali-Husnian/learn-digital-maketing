@@ -172,11 +172,14 @@ const FAQComponent = ({ faqArray = faqs }) => {
             onClick={() => toggleFAQ(index)}
           >
             <span className="flex items-center">
-              <MdKeyboardArrowRight
-                size={25}
-                className={`transform transition-transform duration-300 ${openIndex === index ? "rotate-90" : ""
+              <div>
+                <MdKeyboardArrowRight
+                  size={25}
+                  className={`transform transition-transform duration-300 ${
+                    openIndex === index ? "rotate-90" : ""
                   }`}
-              />
+                />
+              </div>
               {faq.question}
             </span>
           </button>

@@ -9,13 +9,13 @@ const CountdownTimer = () => {
     const calculateTimeLeft = () => {
       const currentDate = new Date();
 
-      //   const month = currentDate.getMonth() + 1;
-      const month = currentDate.getMonth();
+      const month = currentDate.getMonth() + 1;
+      // const month = currentDate.getMonth() + 1;
 
       const year = currentDate.getFullYear();
 
-      //   const targetDate = new Date(year, month, 1, 0, 0, 0);
-      const targetDate = new Date(year, month, 21, 0, 0, 0);
+      const targetDate = new Date(year, month, 12, 0, 0, 0);
+      // const targetDate = new Date(year, month, 12, 0, 0, 0);
 
       const difference = targetDate - new Date();
 

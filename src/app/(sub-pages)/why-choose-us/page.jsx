@@ -268,11 +268,11 @@ const page = () => {
 
         {/* Overlay */}
         <div className="relative flex flex-col items-center justify-center h-full text-center text-white bg-black/50">
-          <h1 className="text-4xl font-bold mb-4 max-w-4xl">
+          <h1 className="text-2xl md:text-4xl  font-bold mb-4 max-w-4xl">
             Learn More About Our Digital Marketing Certification Course
           </h1>
           <br />
-          <h2 className="text-3xl font-bold max-w-4xl">
+          <h2 className="text-1xl md:text-3xl font-bold max-w-4xl">
             For Professionals, Entrepreneurs & Job-Seekers (Become a Google &
             Facebook Certified Professional)
           </h2>
