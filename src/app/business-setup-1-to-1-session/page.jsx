@@ -181,14 +181,21 @@ function BusinessSetup() {
         /*
          */
         try {
+          const response = await fetch("/api/email/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
           // Sending email using EmailJS
-          const result = await emailjs.send(
-            "service_r4f2t7c", // Add your EmailJS service ID
-            "template_fc0fypk", // Add your EmailJS template ID
-            formData,
-            "Ij2w3tj27AWy0pPSs" // Add your EmailJS user ID
-          );
-          if (result.status === 200) {
+          // const response = await emailjs.send(
+          //   "service_r4f2t7c", // Add your EmailJS service ID
+          //   "template_fc0fypk", // Add your EmailJS template ID
+          //   formData,
+          //   "Ij2w3tj27AWy0pPSs" // Add your EmailJS user ID
+          // );
+          if (response.status === 200) {
             toast.success("Message sent successfully!");
             setFormData({
               fname: "",

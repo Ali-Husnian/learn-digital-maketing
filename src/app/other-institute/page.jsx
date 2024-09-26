@@ -148,7 +148,7 @@ function OtherInstitute() {
     name: "",
     email: "",
     phone: "",
-    subject: "",
+    OptionSubject: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -157,7 +157,8 @@ function OtherInstitute() {
     if (!formData.name) formErrors.name = "Name is required.";
     if (!formData.email) formErrors.email = "Email is required.";
     if (!formData.phone) formErrors.phone = "Phone number is required.";
-    if (!formData.subject) formErrors.subject = "Subject is required.";
+    if (!formData.OptionSubject)
+      formErrors.OptionSubject = "Subject is required.";
     return formErrors;
   };
 
@@ -176,13 +177,15 @@ function OtherInstitute() {
          */
         try {
           // Sending email using EmailJS
-          const result = await emailjs.send(
-            "service_r4f2t7c", // Add your EmailJS service ID
-            "template_9wj79n4", // Add your EmailJS template ID
-            formData,
-            "Ij2w3tj27AWy0pPSs" // Add your EmailJS user ID
-          );
-          if (result.status === 200) {
+          const response = await fetch("/api/email/consult", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+
+          if (response.status === 200) {
             toast.success("Message sent successfully!");
             setFormData({ name: "", email: "", phone: "", subject: "" }); // Reset form
           } else {
@@ -440,8 +443,8 @@ function OtherInstitute() {
               <div className="w-full px-2 mb-4">
                 <select
                   onChange={handleChange}
-                  value={formData.subject}
-                  name="subject"
+                  value={formData.OptionSubject}
+                  name="OptionSubject"
                   id="subject"
                   className="w-full p-3 rounded bg-white text-slate-500 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-300"
                 >
@@ -451,8 +454,8 @@ function OtherInstitute() {
                   <option value="Leadership work">Leadership work</option>
                   <option value="Business Growth">Business Growth</option>
                 </select>
-                {errors.subject && (
-                  <p className="text-white">{errors.subject}</p>
+                {errors.OptionSubject && (
+                  <p className="text-white">{errors.OptionSubject}</p>
                 )}
               </div>
               <div className="full px-2">

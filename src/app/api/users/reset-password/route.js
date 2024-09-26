@@ -36,7 +36,6 @@ export async function POST(request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error();
     return NextResponse.json(
       { error: `Token is expired resetting password` },
       { status: 500 }
