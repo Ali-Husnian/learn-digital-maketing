@@ -69,9 +69,9 @@ const TopNav = () => {
               <MdPhoneInTalk className="text-orange-color text-4xl font-bold" />
               <span>
                 <b className="text-heading-color">WhatsApp Now:</b> <br />
-                <Link href="https://wa.me/+971509139489">
+                <Link href="https://wa.me/+971501384504">
                   <strong className="text-sm font-light text-text-color">
-                    UAE: +971509139489
+                    UAE: +971501384504
                   </strong>
                 </Link>
                 <br />

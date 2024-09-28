@@ -108,9 +108,9 @@ const Footer = () => {
                 <FaMapMarkerAlt className="text-orange-600 mr-2" /> Dubai UAE
               </span>
             </Link>
-            <Link href="https://wa.me/+971509139489">
+            <Link href="https://wa.me/+971501384504">
               <span className="flex items-center mb-2">
-                <FaPhoneAlt className="text-orange-600 mr-2" /> +971509139489
+                <FaPhoneAlt className="text-orange-600 mr-2" /> ++971501384504
               </span>
             </Link>
           </p>
@@ -201,7 +201,14 @@ const Footer = () => {
         <p className="font-semibold text-md tracking-wide">
           {new Date().getFullYear()} © All rights reserved by Learn Digital
           Marketing. Powered by{" "}
-          <span className="text-orange-color ">Bab el Najah</span>.
+          <a
+            href="https://babelnajah.ae/"
+            className="text-orange-color "
+            target="_blank"
+          >
+            Bab el Najah
+          </a>
+          .
         </p>
       </div>
     </footer>

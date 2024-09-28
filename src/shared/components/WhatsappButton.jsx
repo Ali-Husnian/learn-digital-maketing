@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappButton = () => {
@@ -26,7 +27,11 @@ import Image from "next/image";
   }
   return (
     <div>
-      <a href="#" target="_blank" className="whatsapp-link visable relative">
+      <Link
+        href="https://wa.me/+96871197788"
+        target="_blank"
+        className="whatsapp-link visable relative"
+      >
         <span className="absolute left-0 right-0 top-0 bottom-0 m-auto -z-50 size-14">
           <span className="flex size-full items-center justify-center animate-ping rounded-full bg-green-400 opacity-75"></span>
         </span>
@@ -44,7 +49,7 @@ import Image from "next/image";
         />
         
         */}
-      </a>
+      </Link>
     </div>
   );
 };
