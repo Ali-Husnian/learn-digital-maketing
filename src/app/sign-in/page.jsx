@@ -60,7 +60,7 @@ const Page = () => {
         setLoading(true);
         const response = await axios.post(`/api/users/sgin-in`, formData);
         toast.success("Login successfully!");
-        router.push("/");
+        router.back();
       } catch (error) {
         toast.error(error.response?.data?.error || "An error occurred");
       } finally {

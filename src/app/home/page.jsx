@@ -17,7 +17,7 @@ function Home() {
     <>
       <div className="h-auto bg-cover bg-[url('/new.png')]">
         <div className="border border-transparent">
-          <div className="items-center text-[#1D1B4C] lg:mt-44 mt-70px pl-4 md:mt-16 w-full max-w-6xl lg:mx-auto">
+          <div className="items-center text-[#1D1B4C] lg:mt-44 mt-100px pl-4 md:mt-16 w-full max-w-6xl lg:mx-auto">
             <p className="text-2xl md:text-3xl lg:text-5xl font-bold text-balance">
               #1 Full Stack Digital Marketing Course IN UAE With Assured
               Placement Support
@@ -33,7 +33,7 @@ function Home() {
               <ul className="space-y-0 mt-5 text-xl font-extrabold italic text-[#1D1B4C]">
                 <li className="flex items-center">
                   <FaLocationArrow className="mr-2 text-orange-color rotate-45" />
-                  <span className="">➢ 80% Scholarship.</span>
+                  <span className="">80% Scholarship.</span>
                 </li>
                 <li className="flex items-center">
                   <FaLocationArrow className="mr-2 text-orange-color rotate-45" />
@@ -74,10 +74,12 @@ function Home() {
                 className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-250px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer"
                 btnText="Click Here To Enroll"
               />
+              {/*
               <button className="border border-[#1D1B4C] bg-[#1D1B4C] text-white font-medium text-17px flex items-center gap-2 justify-center w-280px h-50px hover:scale-90 hover:bg-white hover:text-[#1D1B4C] transition-all cursor-pointer">
                 <FaDownload />
                 Download Course Curiculum
               </button>
+              */}
             </div>
           </div>
         </div>

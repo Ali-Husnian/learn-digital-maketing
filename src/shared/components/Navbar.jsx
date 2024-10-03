@@ -15,6 +15,8 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+// import LoginLogout from "./loginLogout";
+import { parseCookies } from "nookies"; // for server-side cookie parsing
 
 // Navigation items data
 const navItems = [
@@ -67,43 +69,31 @@ const navItems = [
   },
 
   { label: "Other institutes", link: "/other-institute" },
-  // {
-  //   label: "For Companies",
-  //   link: "#",
-  //   children: [
-  //     { label: "eCommerce Development", link: "#" },
-  //     { label: "Lead Generation", link: "#" },
-  //     { label: "Customize Modules", link: "#" },
-  //   ],
-  // },
+  { label: "For Companies", link: "/for-companies" },
   {
     label: "About",
     link: "#",
     children: [
       { label: "About Academy", link: "/about-us" },
       { label: "Why Choose Us", link: "/why-choose-us" },
-      { label: "Blog", link: "https://learndigitalmarketing.academy/blog" },
+      { label: "Blog", link: "http://blog.learndigitalmarketing.com" },
     ],
   },
 ];
-
 export default function Navbar() {
   const router = useRouter();
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenu] = useState(false);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(undefined); // Initialize with undefined
 
   useEffect(() => {
     setSideMenu(false);
-
-    // Fetch the token on the client side
+    // Fetch the token from cookies when the component mounts
     const storedToken = Cookies.get("token");
-    setToken(storedToken);
+    setToken(storedToken || null);
   }, []);
-
   // Monitor token changes and trigger re-render
   useEffect(() => {
-    router.refresh();
     // Re-fetch the token if any change occurs
     const storedToken = Cookies.get("token");
     setToken(storedToken);
@@ -131,6 +121,10 @@ export default function Navbar() {
       toast.error(error.message);
     }
   };
+  // // Prevent rendering until the token state is properly set (on first mount)
+  // if (token === undefined) {
+  //   return null; // Show nothing while token is being determined
+  // }
 
   return (
     <>
@@ -200,6 +194,9 @@ export default function Navbar() {
               isSideMenuOpen && "hidden"
             }`}
           />
+          {/*
+          <LoginLogout closeSideMenu={closeSideMenu} />
+          */}
           <div className="hidden lg:flex items-center gap-2">
             <>
               {token ? (
@@ -228,10 +225,11 @@ export default function Navbar() {
 }
 
 function MobileNav({ closeSideMenu, handleLogout }) {
-  const [token1, setToken1] = useState(null);
+  const [token, setToken] = useState(() => Cookies.get("token"));
+
   useEffect(() => {
     const storedToken = Cookies.get("token");
-    setToken1(storedToken);
+    setToken(storedToken);
   }, []);
   return (
     <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hidden">
@@ -260,7 +258,7 @@ function MobileNav({ closeSideMenu, handleLogout }) {
 
         {/* Mobile View Login/Logout Buttons */}
         <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
-          {token1 ? (
+          {token ? (
             <button
               onClick={handleLogout}
               className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
@@ -282,18 +280,15 @@ function MobileNav({ closeSideMenu, handleLogout }) {
 
         {/* Contact Info Section */}
         <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
-          <Link
-            href="https://wa.me/+96871197788"
-            className="flex items-center space-x-2"
-          >
+          <a href="tel:+96871197788" className="flex items-center space-x-2">
             <MdPhoneInTalk className="text-orange-color text-3xl font-bold" />
             <span>
-              <b className="text-heading-color">WhatsApp Now:</b> <br />
+              <b className="text-heading-color">Call Now:</b> <br />
               <strong className="text-sm font-light text-text-color">
-                +96871197788
+                +971501384504
               </strong>
             </span>
-          </Link>
+          </a>
 
           <Link
             href="mailto:info@learndigitalmarketing.academy"
