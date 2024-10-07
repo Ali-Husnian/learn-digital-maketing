@@ -5,9 +5,6 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Image from "next/image";
-import { MdPhoneInTalk } from "react-icons/md";
-import { IoIosMail } from "react-icons/io";
-import { MdLocationOn } from "react-icons/md";
 import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
@@ -15,8 +12,6 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-// import LoginLogout from "./loginLogout";
-import { parseCookies } from "nookies"; // for server-side cookie parsing
 
 // Navigation items data
 const navItems = [
@@ -80,24 +75,28 @@ const navItems = [
     ],
   },
 ];
+
 export default function Navbar() {
   const router = useRouter();
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenu] = useState(false);
-  const [token, setToken] = useState(undefined); // Initialize with undefined
+  const [token, setToken] = useState(null); // Default to null, indicating no user logged in
 
+  // Fetch token from cookies on component mount
   useEffect(() => {
-    setSideMenu(false);
-    // Fetch the token from cookies when the component mounts
     const storedToken = Cookies.get("token");
-    setToken(storedToken || null);
+    setToken(storedToken || null); // Set token or null if it doesn't exist
   }, []);
-  // Monitor token changes and trigger re-render
+
+  // Listen for token changes in cookies and update the state
   useEffect(() => {
-    // Re-fetch the token if any change occurs
-    const storedToken = Cookies.get("token");
-    setToken(storedToken);
-  }, [token]); // Dependency on token ensures re-render on change
+    const intervalId = setInterval(() => {
+      const storedToken = Cookies.get("token");
+      setToken(storedToken || null);
+    }, 1000); // Poll every second to check for token changes
+
+    return () => clearInterval(intervalId); // Cleanup the interval on unmount
+  }, []);
 
   function openSideMenu() {
     setSideMenu(true);
@@ -106,25 +105,20 @@ export default function Navbar() {
   function closeSideMenu() {
     setSideMenu(false);
   }
-  // Replace 'token' with your cookie name
 
-  // Define the handleLogout function
+  // Logout functionality
   const handleLogout = async () => {
     try {
       await axios.get(`/api/users/logout`);
       toast.success("Logout Successfully!");
-      closeSideMenu();
       Cookies.remove("token");
-      setToken(null); // Update token state to trigger re-render
+      setToken(null); // Ensure token is null after logout
+      closeSideMenu();
       router.push("/");
     } catch (error) {
       toast.error(error.message);
     }
   };
-  // // Prevent rendering until the token state is properly set (on first mount)
-  // if (token === undefined) {
-  //   return null; // Show nothing while token is being determined
-  // }
 
   return (
     <>
@@ -181,10 +175,7 @@ export default function Navbar() {
               ))}
             </div>
             {isSideMenuOpen && (
-              <MobileNav
-                closeSideMenu={closeSideMenu}
-                handleLogout={handleLogout}
-              />
+              <MobileNav closeSideMenu={closeSideMenu} handleLogout={handleLogout} />
             )}
           </section>
 
@@ -194,29 +185,26 @@ export default function Navbar() {
               isSideMenuOpen && "hidden"
             }`}
           />
-          {/*
-          <LoginLogout closeSideMenu={closeSideMenu} />
-          */}
+
+          {/* Desktop Login/Logout Button */}
           <div className="hidden lg:flex items-center gap-2">
-            <>
-              {token ? (
-                <button
-                  onClick={handleLogout}
-                  className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-                >
-                  Logout
-                  <HiOutlineLogout />
-                </button>
-              ) : (
-                <Link
-                  href="/sign-in"
-                  className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-                >
-                  Login
-                  <HiOutlineLogin />
-                </Link>
-              )}
-            </>
+            {token !== null ? (
+              <button
+                onClick={handleLogout}
+                className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+              >
+                Logout
+                <HiOutlineLogout />
+              </button>
+            ) : (
+              <Link
+                href="/sign-in"
+                className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+              >
+                Login
+                <HiOutlineLogin />
+              </Link>
+            )}
           </div>
         </div>
       </Headroom>
@@ -229,8 +217,9 @@ function MobileNav({ closeSideMenu, handleLogout }) {
 
   useEffect(() => {
     const storedToken = Cookies.get("token");
-    setToken(storedToken);
+    setToken(storedToken || null);
   }, []);
+
   return (
     <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hidden">
       <div className="h-full w-[65%] overflow-auto bg-white px-4 py-4">
@@ -268,7 +257,6 @@ function MobileNav({ closeSideMenu, handleLogout }) {
             </button>
           ) : (
             <Link
-              onClick={closeSideMenu}
               href="/sign-in"
               className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
             >
@@ -277,82 +265,55 @@ function MobileNav({ closeSideMenu, handleLogout }) {
             </Link>
           )}
         </section>
-
-        {/* Contact Info Section */}
-        <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
-          <a href="tel:+96871197788" className="flex items-center space-x-2">
-            <MdPhoneInTalk className="text-orange-color text-3xl font-bold" />
-            <span>
-              <b className="text-heading-color">Call Now:</b> <br />
-              <strong className="text-sm font-light text-text-color">
-                +971501384504
-              </strong>
-            </span>
-          </a>
-
-          <Link
-            href="mailto:info@learndigitalmarketing.academy"
-            className="flex items-center space-x-2"
-          >
-            <IoIosMail className="text-orange-color text-3xl font-bold" />
-            <span>
-              <b className="text-heading-color">Mail us for help:</b> <br />
-              <strong className="text-sm font-light text-text-color">
-                info@learndigitalmarketing.academy
-              </strong>
-            </span>
-          </Link>
-
-          <Link
-            href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
-            target="_blank"
-            className="flex items-center space-x-2"
-          >
-            <MdLocationOn className="text-orange-color text-3xl font-bold" />
-            <span>
-              <b className="text-heading-color">09, SAIF Zone 514789</b> <br />
-              <strong className="text-sm font-light text-text-color">
-                Dubai UAE
-              </strong>
-            </span>
-          </Link>
-        </section>
       </div>
     </div>
   );
 }
-function SingleNavItem({ label, link, children, closeSideMenu }) {
-  const [animationParent] = useAutoAnimate();
-  const [isItemOpen, setItem] = useState(false);
 
-  function toggleItem() {
-    setItem(!isItemOpen);
+function SingleNavItem({ label, link, children, closeSideMenu }) {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  function toggleDropdown() {
+    setDropdownOpen(!isDropdownOpen);
   }
 
   return (
-    <div ref={animationParent} className="relative px-2 py-1 transition-all">
-      <Link href={link ?? "#"} onClick={toggleItem}>
-        <p className="flex cursor-pointer items-center gap-2 text-text-color group-hover:text-green-color">
-          <span>{label}</span>
-          {children && (
+    <div className="w-full border-b-[1px] border-gray-200">
+      {!children ? (
+        <Link
+          href={link}
+          onClick={closeSideMenu}
+          className="text-[15px] font-normal flex justify-start items-center py-2 px-2 gap-2 cursor-pointer hover:bg-slate-200 w-full"
+        >
+          {label}
+        </Link>
+      ) : (
+        <div className="py-1 transition-all">
+          <button
+            className="text-[15px] font-normal flex justify-between items-center py-2 px-2 gap-2 cursor-pointer hover:bg-slate-200 w-full"
+            onClick={toggleDropdown}
+          >
+            {label}
             <IoIosArrowDown
-              className={`text-xs transition-all ${isItemOpen && "rotate-180"}`}
+              className={`${
+                isDropdownOpen ? "rotate-0" : "rotate-180"
+              } transition-all`}
             />
+          </button>
+          {isDropdownOpen && (
+            <div className="bg-white py-2">
+              {children.map((ch, i) => (
+                <Link
+                  href={ch.link ?? "#"}
+                  key={i}
+                  onClick={closeSideMenu}
+                  className="text-[15px] font-normal flex justify-start items-center py-2 px-2 gap-2 cursor-pointer hover:bg-slate-200 w-full"
+                >
+                  {ch.label}
+                </Link>
+              ))}
+            </div>
           )}
-        </p>
-      </Link>
-      {isItemOpen && children && (
-        <div className="w-auto flex-col gap-1 rounded-lg bg-white py-3 transition-all flex">
-          {children.map((ch, i) => (
-            <Link
-              key={i}
-              href={ch.link ?? "#"}
-              className="flex cursor-pointer items-center py-1 pl-6 pr-8 text-text-color hover:text-green-color"
-              onClick={closeSideMenu} // Close side menu when a child link is clicked
-            >
-              <span className="whitespace-nowrap pl-3">{ch.label}</span>
-            </Link>
-          ))}
         </div>
       )}
     </div>
