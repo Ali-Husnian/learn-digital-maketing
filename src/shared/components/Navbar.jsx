@@ -5,6 +5,9 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Image from "next/image";
+import { MdPhoneInTalk } from "react-icons/md";
+import { IoIosMail } from "react-icons/io";
+import { MdLocationOn } from "react-icons/md";
 import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
@@ -12,29 +15,90 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+// import LoginLogout from "./loginLogout";
+import { parseCookies } from "nookies"; // for server-side cookie parsing
 
 // Navigation items data
 const navItems = [
-  /* navItems definition */
-];
+  {
+    label: "For Professionals",
+    link: "#",
+    children: [
+      { label: "Diploma Digital Marketing", link: "/digital-marketing" },
+      {
+        label: "Certification Ecommerce Web Developmemt",
+        link: "/website-developmemt",
+      },
+      {
+        label: "Certificates Mastering in Search Engine Optimization (SEO)",
+        link: "/search-engine-optimization",
+      },
+      {
+        label: "Certificates Mastering Social Media Marketing",
+        link: "/social-media-marketing",
+      },
+      {
+        label: "Certificates Mastering in Google Marketing",
+        link: "/google-marketing",
+      },
+      {
+        label: "Certificates Mastering in Google Analytics",
+        link: "/google-analytics",
+      },
+      {
+        label: "Certificates Mastering in Email Marketing",
+        link: "/email-marketing",
+      },
+      {
+        label: "Certificates Start your Online Busieness in 30 Days",
+        link: "/online-busieness",
+      },
+    ],
+  },
 
+  {
+    label: "For Entrepreneur",
+    link: "/",
+    children: [
+      { label: "Diploma digital Marketing", link: "/digital-marketing" },
+      {
+        label: "Business Setup + (1 To 1 Session)",
+        link: "/business-setup-1-to-1-session",
+      },
+    ],
+  },
+
+  { label: "Other institutes", link: "/other-institute" },
+  { label: "For Companies", link: "/for-companies" },
+  {
+    label: "About",
+    link: "#",
+    children: [
+      { label: "About Academy", link: "/about-us" },
+      { label: "Why Choose Us", link: "/why-choose-us" },
+      { label: "Blog", link: "http://blog.learndigitalmarketing.com" },
+    ],
+  },
+];
 export default function Navbar() {
   const router = useRouter();
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenu] = useState(false);
-  const [token, setToken] = useState(null); // Initialize token state
+  const [token, setToken] = useState(undefined); // Initialize with undefined
 
   useEffect(() => {
-    // Fetch the token from cookies on component mount
+    setSideMenu(false);
+    // Fetch the token from cookies when the component mounts
     const storedToken = Cookies.get("token");
-    setToken(storedToken);
+    setToken(storedToken || null);
   }, []);
 
+  // Monitor token changes and trigger re-render
   useEffect(() => {
-    // Update token state if there's a change in the token (re-fetch)
+    // Re-fetch the token if any change occurs
     const storedToken = Cookies.get("token");
     setToken(storedToken);
-  }, [token]); // Dependency ensures re-render on token change
+  }, [token]); // Dependency on token ensures re-render on change
 
   function openSideMenu() {
     setSideMenu(true);
@@ -44,13 +108,14 @@ export default function Navbar() {
     setSideMenu(false);
   }
 
+  // Define the handleLogout function
   const handleLogout = async () => {
     try {
       await axios.get(`/api/users/logout`);
       toast.success("Logout Successfully!");
       closeSideMenu();
       Cookies.remove("token");
-      setToken(null); // Update token to reflect the logout
+      setToken(null); // Update token state to trigger re-render
       router.push("/");
     } catch (error) {
       toast.error(error.message);
@@ -62,7 +127,9 @@ export default function Navbar() {
       {/* Navbar */}
       <Headroom className="absolute m-auto right-0 left-0">
         <div
-          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-between max-sm:justify-between px-4 md:px-[100px] ${!isSideMenuOpen && "py-3"} lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
+          className={`m-auto right-0 left-0 flex w-full max-w-6xl justify-between max-sm:justify-between px-4 md:px-[100px] ${
+            !isSideMenuOpen && "py-3"
+          } lg:py-0 text-sm shadow-md bg-white lg:bg-blue-navi-color`}
         >
           <section ref={animationParent} className="flex items-center gap-10">
             {!isSideMenuOpen && (
@@ -77,7 +144,6 @@ export default function Navbar() {
               </Link>
             )}
 
-            {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-4 transition-all">
               {navItems.map((d, i) => (
                 <div
@@ -110,36 +176,43 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-
             {isSideMenuOpen && (
-              <MobileNav closeSideMenu={closeSideMenu} handleLogout={handleLogout} />
+              <MobileNav
+                closeSideMenu={closeSideMenu}
+                handleLogout={handleLogout}
+              />
             )}
           </section>
 
-          {/* Mobile Menu Button */}
           <FiMenu
             onClick={openSideMenu}
-            className={`cursor-pointer text-4xl block lg:hidden ${isSideMenuOpen && "hidden"}`}
+            className={`cursor-pointer text-4xl block lg:hidden ${
+              isSideMenuOpen && "hidden"
+            }`}
           />
 
-          {/* Desktop View Login/Logout Button */}
+          {/* Desktop Login/Logout Button */}
           <div className="hidden lg:flex items-center gap-2">
-            {token ? (
-              <button
-                onClick={handleLogout}
-                className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-              >
-                Logout
-                <HiOutlineLogout />
-              </button>
-            ) : (
-              <Link
-                href="/sign-in"
-                className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-              >
-                Login
-                <HiOutlineLogin />
-              </Link>
+            {token !== undefined && ( // Ensure token is checked properly
+              <>
+                {token ? (
+                  <button
+                    onClick={handleLogout}
+                    className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+                  >
+                    Logout
+                    <HiOutlineLogout />
+                  </button>
+                ) : (
+                  <Link
+                    href="/sign-in"
+                    className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+                  >
+                    Login
+                    <HiOutlineLogin />
+                  </Link>
+                )}
+              </>
             )}
           </div>
         </div>
@@ -148,7 +221,6 @@ export default function Navbar() {
   );
 }
 
-// Mobile Nav Component
 function MobileNav({ closeSideMenu, handleLogout }) {
   const [token, setToken] = useState(() => Cookies.get("token"));
 
@@ -156,12 +228,14 @@ function MobileNav({ closeSideMenu, handleLogout }) {
     const storedToken = Cookies.get("token");
     setToken(storedToken);
   }, []);
-
   return (
     <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hidden">
       <div className="h-full w-[65%] overflow-auto bg-white px-4 py-4">
         <section className="flex justify-end">
-          <AiOutlineClose onClick={closeSideMenu} className="cursor-pointer text-4xl" />
+          <AiOutlineClose
+            onClick={closeSideMenu}
+            className="cursor-pointer text-4xl"
+          />
         </section>
         <div className="flex flex-col text-base gap-2 transition-all">
           <Link href="/">
@@ -191,7 +265,6 @@ function MobileNav({ closeSideMenu, handleLogout }) {
             </button>
           ) : (
             <Link
-              onClick={closeSideMenu}
               href="/sign-in"
               className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
             >
@@ -201,6 +274,56 @@ function MobileNav({ closeSideMenu, handleLogout }) {
           )}
         </section>
       </div>
+    </div>
+  );
+}
+
+function SingleNavItem({ label, link, children, closeSideMenu }) {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  function toggleDropdown() {
+    setDropdownOpen(!isDropdownOpen);
+  }
+
+  return (
+    <div className="w-full border-b-[1px] border-gray-200">
+      {!children ? (
+        <Link
+          href={link}
+          onClick={closeSideMenu}
+          className="text-[15px] font-normal flex justify-start items-center py-2 px-2 gap-2 cursor-pointer hover:bg-slate-200 w-full"
+        >
+          {label}
+        </Link>
+      ) : (
+        <div className="py-1 transition-all">
+          <button
+            className="text-[15px] font-normal flex justify-between items-center py-2 px-2 gap-2 cursor-pointer hover:bg-slate-200 w-full"
+            onClick={toggleDropdown}
+          >
+            {label}
+            <IoIosArrowDown
+              className={`${
+                isDropdownOpen ? "rotate-0" : "rotate-180"
+              } transition-all`}
+            />
+          </button>
+          {isDropdownOpen && (
+            <div className="bg-white py-2">
+              {children.map((ch, i) => (
+                <Link
+                  href={ch.link ?? "#"}
+                  key={i}
+                  onClick={closeSideMenu}
+                  className="text-[15px] font-normal flex justify-start items-center py-2 px-2 gap-2 cursor-pointer hover:bg-slate-200 w-full"
+                >
+                  {ch.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
