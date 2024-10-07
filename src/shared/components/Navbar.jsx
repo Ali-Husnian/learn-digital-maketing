@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosMail } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import { MdLocationOn, MdPhoneInTalk } from "react-icons/md";
 
 // Navigation items data
 const navItems = [
@@ -175,7 +176,10 @@ export default function Navbar() {
               ))}
             </div>
             {isSideMenuOpen && (
-              <MobileNav closeSideMenu={closeSideMenu} handleLogout={handleLogout} />
+              <MobileNav
+                closeSideMenu={closeSideMenu}
+                handleLogout={handleLogout}
+              />
             )}
           </section>
 
@@ -265,6 +269,47 @@ function MobileNav({ closeSideMenu, handleLogout }) {
             </Link>
           )}
         </section>
+
+        {/* Contact Info Section */}
+        <section className="flex flex-col gap-4 mt-4 items-start text-gray-800">
+          <a href="tel:+96871197788" className="flex items-center space-x-2">
+            <MdPhoneInTalk className="text-orange-color text-3xl font-bold" />
+            <span>
+              <b className="text-heading-color">Call Now:</b> <br />
+              <strong className="text-sm font-light text-text-color">
+                +971501384504
+              </strong>
+            </span>
+          </a>
+
+          <Link
+            href="mailto:info@learndigitalmarketing.academy"
+            className="flex items-center space-x-2"
+          >
+            <IoIosMail className="text-orange-color text-3xl font-bold" />
+            <span>
+              <b className="text-heading-color">Mail us for help:</b> <br />
+              <strong className="text-sm font-light text-text-color">
+                info@learndigitalmarketing.academy
+              </strong>
+            </span>
+          </Link>
+
+          <Link
+            href="https://maps.app.goo.gl/rKQU2nfkKxoG4DUN9"
+            target="_blank"
+            className="flex items-center space-x-2"
+          >
+            <MdLocationOn className="text-orange-color text-3xl font-bold" />
+            <span>
+              <b className="text-heading-color">09, SAIF Zone 514789</b> <br />
+              <strong className="text-sm font-light text-text-color">
+                Dubai UAE
+              </strong>
+            </span>
+          </Link>
+        </section>
+        {/* End */}
       </div>
     </div>
   );

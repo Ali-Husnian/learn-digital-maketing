@@ -196,7 +196,7 @@ function forCompanies() {
         {/*  */}
         <div className="relative flex justify-center items-center">
           <div className="absolute inset-0 bg-orange-600 w-full h-full transform -translate-x-14 -translate-y-14 z-0"></div>
-          <div className="relative z-10">
+          <div className="relative">
             <Image
               src="/ForCompanies1.webp"
               width={450}
