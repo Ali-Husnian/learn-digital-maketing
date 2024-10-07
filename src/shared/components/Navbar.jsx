@@ -5,9 +5,6 @@ import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Image from "next/image";
-import { MdPhoneInTalk } from "react-icons/md";
-import { IoIosMail } from "react-icons/io";
-import { MdLocationOn } from "react-icons/md";
 import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import Headroom from "react-headroom";
 import Link from "next/link";
@@ -15,8 +12,6 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-// import LoginLogout from "./loginLogout";
-import { parseCookies } from "nookies"; // for server-side cookie parsing
 
 // Navigation items data
 const navItems = [
@@ -80,25 +75,28 @@ const navItems = [
     ],
   },
 ];
+
 export default function Navbar() {
   const router = useRouter();
   const [animationParent] = useAutoAnimate();
   const [isSideMenuOpen, setSideMenu] = useState(false);
-  const [token, setToken] = useState(undefined); // Initialize with undefined
+  const [token, setToken] = useState(null); // Default to null, indicating no user logged in
 
+  // Fetch token from cookies on component mount
   useEffect(() => {
-    setSideMenu(false);
-    // Fetch the token from cookies when the component mounts
     const storedToken = Cookies.get("token");
-    setToken(storedToken || null);
+    setToken(storedToken || null); // Set token or null if it doesn't exist
   }, []);
 
-  // Monitor token changes and trigger re-render
+  // Listen for token changes in cookies and update the state
   useEffect(() => {
-    // Re-fetch the token if any change occurs
-    const storedToken = Cookies.get("token");
-    setToken(storedToken);
-  }, [token]); // Dependency on token ensures re-render on change
+    const intervalId = setInterval(() => {
+      const storedToken = Cookies.get("token");
+      setToken(storedToken || null);
+    }, 1000); // Poll every second to check for token changes
+
+    return () => clearInterval(intervalId); // Cleanup the interval on unmount
+  }, []);
 
   function openSideMenu() {
     setSideMenu(true);
@@ -108,14 +106,14 @@ export default function Navbar() {
     setSideMenu(false);
   }
 
-  // Define the handleLogout function
+  // Logout functionality
   const handleLogout = async () => {
     try {
       await axios.get(`/api/users/logout`);
       toast.success("Logout Successfully!");
-      closeSideMenu();
       Cookies.remove("token");
-      setToken(null); // Update token state to trigger re-render
+      setToken(null); // Ensure token is null after logout
+      closeSideMenu();
       router.push("/");
     } catch (error) {
       toast.error(error.message);
@@ -177,10 +175,7 @@ export default function Navbar() {
               ))}
             </div>
             {isSideMenuOpen && (
-              <MobileNav
-                closeSideMenu={closeSideMenu}
-                handleLogout={handleLogout}
-              />
+              <MobileNav closeSideMenu={closeSideMenu} handleLogout={handleLogout} />
             )}
           </section>
 
@@ -193,26 +188,22 @@ export default function Navbar() {
 
           {/* Desktop Login/Logout Button */}
           <div className="hidden lg:flex items-center gap-2">
-            {token !== undefined && ( // Ensure token is checked properly
-              <>
-                {token ? (
-                  <button
-                    onClick={handleLogout}
-                    className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-                  >
-                    Logout
-                    <HiOutlineLogout />
-                  </button>
-                ) : (
-                  <Link
-                    href="/sign-in"
-                    className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
-                  >
-                    Login
-                    <HiOutlineLogin />
-                  </Link>
-                )}
-              </>
+            {token !== null ? (
+              <button
+                onClick={handleLogout}
+                className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+              >
+                Logout
+                <HiOutlineLogout />
+              </button>
+            ) : (
+              <Link
+                href="/sign-in"
+                className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
+              >
+                Login
+                <HiOutlineLogin />
+              </Link>
             )}
           </div>
         </div>
@@ -226,8 +217,9 @@ function MobileNav({ closeSideMenu, handleLogout }) {
 
   useEffect(() => {
     const storedToken = Cookies.get("token");
-    setToken(storedToken);
+    setToken(storedToken || null);
   }, []);
+
   return (
     <div className="fixed left-0 top-0 flex h-full min-h-screen w-full justify-start bg-black/60 md:flex lg:hidden">
       <div className="h-full w-[65%] overflow-auto bg-white px-4 py-4">
