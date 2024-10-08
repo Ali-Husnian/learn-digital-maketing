@@ -262,6 +262,7 @@ function MobileNav({ closeSideMenu, handleLogout }) {
           ) : (
             <Link
               href="/sign-in"
+              onClick={() => closeSideMenu()}
               className="bg-orange-color text-white font-medium text-17px p-2 flex items-center gap-2 justify-center rounded-md hover:bg-blue-hover-color hover:text-white transition-all cursor-pointer"
             >
               Login
